@@ -10,7 +10,9 @@
         "Which end-buyers and workloads create incremental silicon sockets?",
         "Which architectures capture demand?",
         "How do TAM forecasts reconcile?",
-        "Are OEM and ODM sales already counted in end-buyer spending?"
+        "Are OEM and ODM sales already counted in end-buyer spending?",
+        "When does private closed-model inference relocate rather than add CPU sockets?",
+        "Who owns CPU hardware versus operates the inference service and licenses model IP?"
       ],
       "topic_keys": [
         "hyperscaler",
@@ -26,7 +28,12 @@
         "Intel",
         "AMD",
         "forecast",
-        "agentic demand"
+        "agentic demand",
+        "closed-model hosting",
+        "confidential inference",
+        "AI factory",
+        "sovereign on-prem inference",
+        "inference operator"
       ],
       "canonical_docs": [
         "docs/research/demand-2030/README.md",
@@ -54,7 +61,8 @@
       "unresolved": [
         "2024 IDC vintage discrepancy",
         "Server CPU chip volumes and actual ASP by buyer largely unavailable",
-        "x86/Arm installed/deployed mix by workload uncertain"
+        "x86/Arm installed/deployed mix by workload uncertain",
+        "No audited model-lab versus hyperscaler versus enterprise confidential-inference CPU host purchase decomposition"
       ],
       "related": [
         "agent-runtime-and-sandbox",
@@ -180,7 +188,12 @@
         "oneDNN",
         "CXL",
         "UALink",
-        "Ultra Ethernet"
+        "Ultra Ethernet",
+        "confidential GPU",
+        "SEV-SNP",
+        "Intel TDX",
+        "remote attestation",
+        "encrypted model weights"
       ],
       "canonical_docs": [
         "docs/ROCM-X86-ROADMAP-2026-2031.md",
@@ -212,7 +225,8 @@
       "questions": [
         "What are reproducible per-workload CPU price/performance outcomes?",
         "Which customer classes favor high-frequency vs density variants?",
-        "How do actual CPU-only unit share, ASP and margin evolve?"
+        "How do actual CPU-only unit share, ASP and margin evolve?",
+        "Does certified CPU TEE support affect EPYC versus Xeon versus Arm purchasing for secure AI factories?"
       ],
       "topic_keys": [
         "EPYC",

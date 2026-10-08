@@ -49,3 +49,11 @@ Keep every chart drill-down connected to a shared source pane: definition, unit,
 ## Compliance and refresh
 
 Only public statements, public filings and public summaries of industry datasets are allowed. **Never copy expert-network client/screenshots, nonpublic employer data, licensed sell-side research or confidential discounting** into this public GitHub repository. Store full source claims with attribution and retrieval vintage, and publish derived summarized records only. Refresh quarterly from filings and whenever public TAM estimates change; require editorial review before "verified" UI badges.
+
+## New research intake: closed-model hosting and private AI factories (October 8, 2026)
+
+The [multi-route confidential inference packet](../../../research/packets/2026-10-08--closed-model-hosting-confidential-inference.json) registers original vendor documentation, an indexed 2025–26 keynote viewing queue, typed model-operator relationships, dated contract change, sovereign-buyer signals, technical trust boundaries, hypotheses and unresolved CPU demand measurements. These are **staged**, not promoted market data or verified transcript quotations.
+
+**Evidence boundary:** AWS-operated Claude in Bedrock is distinct from Anthropic-operated Claude Platform on AWS; Google Distributed Cloud documents customer-premises Gemini configurations; NVIDIA provides a reference architecture for encrypted weights and CPU/GPU attestation. None proves that OpenAI or Anthropic currently licenses their latest proprietary weights for bank-operated on-premises hosting. The **April 27, 2026 OpenAI–Microsoft amendment supersedes the February Azure-exclusive stateless API restriction** for cross-cloud product delivery, but does not itself establish enterprise weight-hosting rights.
+
+**CPU-demand implication:** add `model_ip_owner`, `inference_stack_operator` and `service_customer` as analytical attributes alongside the existing buyer × channel × workload × ISA axes. The physical CPU equipment purchaser remains the unique unit-demand ledger owner. A bank replacing cloud tokens with bank-owned AI factory hardware may **relocate** demand, not create net new global sockets. P0 gaps: vendor commercial entitlements, GPU-rack host CPU BOM/ISA, utilization and per-token licensing economics.

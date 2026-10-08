@@ -1,0 +1,828 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--closed-model-hosting-confidential-inference",
+  "created_at": "2026-10-08",
+  "title": "Closed-model hosting: operator separation, confidential on-prem inference and CPU demand implications",
+  "status": "needs_review",
+  "public_only": true,
+  "scope": "Public-only multi-provider research plus indexed keynote URLs. Distinguish demonstrated deployment/products, historical commercial contracts, proposed security architecture and speculative enterprise GPT/Claude self-hosted weights. No full transcripts, no confidential client data and no inferred CPU TAM figures.",
+  "domains": [
+    "market-demand-2030",
+    "architecture-and-software",
+    "cpu-platforms-and-competitors"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "technical_spec",
+    "entity",
+    "relationship",
+    "company_event",
+    "buyer_demand",
+    "strategic_signal",
+    "hypothesis",
+    "question",
+    "conflict",
+    "method"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "RESEARCH-ENTRY.md",
+      "research/catalog.json",
+      "research/routes.json",
+      "docs/research/demand-2030/README.md",
+      "docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md",
+      "docs/EVIDENCE-STANDARDS.md",
+      "data/demand-2030/source-registry.json",
+      "docs/ROCM-X86-ROADMAP-2026-2031.md"
+    ],
+    "prior_ids": [],
+    "dedupe_notes": "GitHub searches for confidential computing, model hosting, sovereign AI and Bedrock returned no directly relevant existing corpus records. Existing MECE demand taxonomy is reused; no duplicated source-registry, market measurement, forecast, transcript or dashboard data is written. Earlier video research pack supplied viewing links only, not first-party verification."
+  },
+  "sources": [
+    {
+      "id": "src:closed-hosting:anthropic-aws",
+      "title": "Claude Platform on AWS",
+      "publisher": "Anthropic",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Claude Platform on AWS versus Amazon Bedrock table; How the platform integration works",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. "
+    },
+    {
+      "id": "src:closed-hosting:anthropic-bedrock",
+      "title": "Claude in Amazon Bedrock",
+      "publisher": "Anthropic",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Introduction: AWS-managed infrastructure and zero operator access",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. "
+    },
+    {
+      "id": "src:closed-hosting:aws-bedrock",
+      "title": "Amazon Bedrock Data Protection",
+      "publisher": "Amazon Web Services",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Model Deployment Account and provider-access paragraphs",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. "
+    },
+    {
+      "id": "src:closed-hosting:google-gdc-2026",
+      "title": "New innovations in Google Distributed Cloud",
+      "publisher": "Google Cloud",
+      "published_at": "2026-04-22",
+      "kind": "official_vendor_announcement",
+      "url": "https://cloud.google.com/blog/topics/hybrid-cloud/google-distributed-cloud-at-next26",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "GDC connected versus air-gapped; Foundational models in your data center",
+      "as_of": "2026-10-08",
+      "notes": ""
+    },
+    {
+      "id": "src:closed-hosting:google-gdc-2025",
+      "title": "Run Gemini anywhere, including on-premises, with Google Distributed Cloud",
+      "publisher": "Google Cloud",
+      "published_at": "2025-08-28",
+      "kind": "official_vendor_announcement",
+      "url": "https://cloud.google.com/blog/topics/hybrid-cloud/gemini-is-now-available-anywhere",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "GDC air-gapped general availability versus connected preview",
+      "as_of": "2026-10-08",
+      "notes": ""
+    },
+    {
+      "id": "src:closed-hosting:nvidia-confidential",
+      "title": "Deploying Proprietary Models Securely with NVIDIA Confidential Computing on Self-Hosted Kubernetes",
+      "publisher": "NVIDIA",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://docs.nvidia.com/enterprise-reference-architectures/deploying-proprietary-models-confidential-compute-self-hosted-kubernetes/latest/introduction.html",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Introduction, comparison of integration methods, secure model deployment workflow",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. Reference architecture documents a possible pattern; is not an OpenAI/Anthropic license announcement."
+    },
+    {
+      "id": "src:closed-hosting:nvidia-platform",
+      "title": "Platform and Hardware Requirements — Proprietary Models on Self-Hosted Kubernetes",
+      "publisher": "NVIDIA",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://docs.nvidia.com/enterprise-reference-architectures/deploying-proprietary-models-confidential-compute-self-hosted-kubernetes/latest/platform-and-hardware-requirements.html",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "CPU TEE AMD SEV-SNP or Intel TDX; validated GPU confidential-computing configurations",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. "
+    },
+    {
+      "id": "src:closed-hosting:nvidia-production",
+      "title": "Reference Implementations — Proprietary Models on Self-Hosted Kubernetes",
+      "publisher": "NVIDIA",
+      "published_at": "2026-10-08",
+      "kind": "living_product_documentation_snapshot",
+      "url": "https://docs.nvidia.com/enterprise-reference-architectures/deploying-proprietary-models-confidential-compute-self-hosted-kubernetes/latest/reference-implementations.html",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "NVIDIA CoCo GA 1.0.0 May 2026 and production entitlement note",
+      "as_of": "2026-10-08",
+      "notes": "Publication date not stated in page; published_at is snapshot vintage (2026-10-08), NOT original publication date. "
+    },
+    {
+      "id": "src:closed-hosting:openai-feb",
+      "title": "Joint Statement from OpenAI and Microsoft",
+      "publisher": "OpenAI",
+      "published_at": "2026-02-27",
+      "kind": "joint_vendor_announcement",
+      "url": "https://openai.com/index/continuing-microsoft-partnership/",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Azure-exclusive stateless API clause — historical contractual vintage",
+      "as_of": "2026-10-08",
+      "notes": ""
+    },
+    {
+      "id": "src:closed-hosting:openai-apr",
+      "title": "The next phase of the Microsoft OpenAI partnership",
+      "publisher": "OpenAI",
+      "published_at": "2026-04-27",
+      "kind": "joint_vendor_announcement",
+      "url": "https://openai.com/index/next-phase-of-microsoft-partnership/",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Amended agreement: multi-cloud product service and Microsoft non-exclusive IP license",
+      "as_of": "2026-10-08",
+      "notes": ""
+    },
+    {
+      "id": "src:closed-hosting:openai-oracle",
+      "title": "Building the compute infrastructure for the Intelligence Age",
+      "publisher": "OpenAI",
+      "published_at": "2026-04-29",
+      "kind": "official_vendor_announcement",
+      "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/",
+      "access": "public",
+      "rights": "quote_with_limits",
+      "source_locator": "Stargate Abilene site on OCI and NVIDIA GB200; training versus inference distinction",
+      "as_of": "2026-10-08",
+      "notes": ""
+    },
+    {
+      "id": "src:closed-hosting:video-gtc26",
+      "title": "NVIDIA GTC 2026 — Jensen Huang keynote",
+      "publisher": "NVIDIA",
+      "published_at": "2026-03-16",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=jIviHI7fqyc",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "27:18 vendor discussion of confidential hosting; verify in original video",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-dell26",
+      "title": "Dell Technologies World 2026 — Michael Dell keynote",
+      "publisher": "Dell Technologies",
+      "published_at": "2026-05-18",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=M1tetAL6RSc",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "22:04 and 22:32; GDC Gemini / Codex-related announcements; don't infer hosted GPT weights",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-aws25",
+      "title": "AWS re:Invent 2025 — Matt Garman keynote",
+      "publisher": "AWS",
+      "published_at": "2025-12-02",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=q3Sb9PemsSo",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "17:43 AI Factories; dedicated infrastructure != customer licensing of Claude weights",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-gdc-bank25",
+      "title": "Deploy Gemini AI On-Premises for Financial Services",
+      "publisher": "Google Cloud",
+      "published_at": "2025-06-24",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=l3VqS_x-VZU",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "Whole technical demo; bank/regulated buyer precedent",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-oracle25",
+      "title": "Oracle AI World 2025 — Clay Magouyrk keynote",
+      "publisher": "Oracle",
+      "published_at": "2025-10-15",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=fR9ooQGVA98",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "36:25 OpenAI partnership; physical capacity != model licensing",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-hpe26",
+      "title": "HPE Discover 2026 — Antonio Neri keynote",
+      "publisher": "HPE",
+      "published_at": "2026-06-16",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=dWtuDfEZsss",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "19:22–20:16 AI infrastructure; 37:19 inference; timestamp pending review",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-msbuild26",
+      "title": "Microsoft Build 2026 — Satya Nadella keynote",
+      "publisher": "Microsoft",
+      "published_at": "2026-06-02",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=FFMm454fxNA",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "17:50 infrastructure; 25:50 NVIDIA discussion; timestamp pending review",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-gnext26",
+      "title": "Google Cloud Next 2026 — Opening keynote",
+      "publisher": "Google Cloud",
+      "published_at": "2026-04-22",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=11PBno-cJ1g",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "39:58 AI Hypercomputer; timestamp pending review",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-gnextdev26",
+      "title": "Google Cloud Next 2026 — Developer keynote",
+      "publisher": "Google Cloud",
+      "published_at": "2026-04-23",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=A01DQ8_xy7Q",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "42:19, 56:05 enterprise infrastructure; timestamp pending review",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    },
+    {
+      "id": "src:closed-hosting:video-oraclebiz25",
+      "title": "Oracle AI World 2025 — Mike Sicilia keynote",
+      "publisher": "Oracle",
+      "published_at": "2025-10-14",
+      "kind": "youtube_keynote_or_technical_session",
+      "url": "https://www.youtube.com/watch?v=CVF5CsDW9pU",
+      "access": "public_secondary",
+      "rights": "unknown_do_not_copy",
+      "source_locator": "2:17 and 10:39 enterprise AI operations; timestamp pending review",
+      "as_of": "2026-10-08",
+      "notes": "Video URI and seek timestamp imported from the 2026-10-08 curated video research pack; content/transcript NOT independently audited in this intake. Do not turn viewing-guide summaries into verified video quotations."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:closed-hosting:anthropic-operated",
+      "source_id": "src:closed-hosting:anthropic-aws",
+      "statement": "Claude Platform on AWS is Anthropic-operated on AWS infrastructure; Anthropic processes inference inputs/outputs while AWS integrates identity and billing.",
+      "claim_class": "product_spec",
+      "source_locator": "How the platform integration works; comparison table",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:aws-operated",
+      "source_id": "src:closed-hosting:anthropic-bedrock",
+      "statement": "Claude in Amazon Bedrock is operated on AWS-managed infrastructure, with Anthropic personnel having no access to the inference infrastructure.",
+      "claim_class": "product_spec",
+      "source_locator": "Introduction",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:aws-model-isolation",
+      "source_id": "src:closed-hosting:aws-bedrock",
+      "statement": "Bedrock maintains AWS-owned and operated model deployment accounts inaccessible to model providers, and deep-copies provider inference/training software into those accounts.",
+      "claim_class": "product_spec",
+      "source_locator": "Model Deployment Account paragraph",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:gdc-premises",
+      "source_id": "src:closed-hosting:google-gdc-2026",
+      "statement": "Google documents GDC connected as Google-managed software on customer hardware; GDC air-gapped uses Google-supplied hardware and supports disconnected deployments.",
+      "claim_class": "product_spec",
+      "source_locator": "GDC offered as two distinct models",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:gdc-models",
+      "source_id": "src:closed-hosting:google-gdc-2026",
+      "statement": "Google announced Gemini Flash model preview on NVIDIA Blackwell/Blackwell Ultra for GDC connected, in addition to air-gapped support.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Foundational models in your data center",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:secure-deployment",
+      "source_id": "src:closed-hosting:nvidia-confidential",
+      "statement": "NVIDIA's architecture describes shipping signed encrypted proprietary models into enterprise-controlled Kubernetes confidential containers with attestation-gated key release, protecting provider IP and customer data.",
+      "claim_class": "product_spec",
+      "source_locator": "Introduction and secure model deployment workflow",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:cpu-tee",
+      "source_id": "src:closed-hosting:nvidia-platform",
+      "statement": "A supported confidential-model deployment requires a certified CPU trusted-execution configuration (AMD SEV-SNP or Intel TDX) and confidential-capable GPU, firmware and runtime; validated combinations are configuration-specific.",
+      "claim_class": "product_spec",
+      "source_locator": "Platform and Hardware Requirements; AMD and Intel paragraphs",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:prod-entitlement",
+      "source_id": "src:closed-hosting:nvidia-production",
+      "statement": "NVIDIA documentation states that its Confidential Containers Reference Architecture 1.0.0 reached initial GA in May 2026 and production use of NVIDIA confidential-computing capabilities requires an entitlement.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Upstream Implementation note",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:openai-feb-restriction",
+      "source_id": "src:closed-hosting:openai-feb",
+      "statement": "The February 2026 OpenAI–Microsoft statement described Azure as the exclusive cloud provider for stateless OpenAI model APIs.",
+      "claim_class": "partner_statement",
+      "source_locator": "Azure remains the exclusive cloud provider of stateless OpenAI APIs",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:openai-apr-amendment",
+      "source_id": "src:closed-hosting:openai-apr",
+      "statement": "The April 27, 2026 amended OpenAI–Microsoft agreement permits OpenAI to serve all products to customers across any cloud provider and makes Microsoft's OpenAI IP license non-exclusive through 2032.",
+      "claim_class": "partner_statement",
+      "source_locator": "First two bullets of amended agreement",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    },
+    {
+      "id": "claim:closed-hosting:oci-training",
+      "source_id": "src:closed-hosting:openai-oracle",
+      "statement": "OpenAI states that the Abilene Stargate site operates on Oracle Cloud Infrastructure with NVIDIA GB200 systems and was used to train GPT-5.5; this is not direct evidence of enterprise-hosted model inference.",
+      "claim_class": "vendor_claim",
+      "source_locator": "From infrastructure to intelligence",
+      "verification": "checked_against_original",
+      "as_of": "2026-10-08",
+      "routes": [
+        "claim"
+      ]
+    }
+  ],
+  "measurements": [],
+  "forecasts": [],
+  "scenarios": [],
+  "entities": [
+    {
+      "id": "ent:closed-hosting:anthropic",
+      "name": "Anthropic",
+      "entity_type": "model_developer"
+    },
+    {
+      "id": "ent:closed-hosting:aws",
+      "name": "Amazon Web Services",
+      "entity_type": "hyperscaler_operator"
+    },
+    {
+      "id": "ent:closed-hosting:openai",
+      "name": "OpenAI",
+      "entity_type": "model_developer"
+    },
+    {
+      "id": "ent:closed-hosting:microsoft",
+      "name": "Microsoft",
+      "entity_type": "cloud_and_ip_partner"
+    },
+    {
+      "id": "ent:closed-hosting:google",
+      "name": "Google Cloud",
+      "entity_type": "model_developer_and_cloud_operator"
+    },
+    {
+      "id": "ent:closed-hosting:oracle",
+      "name": "Oracle Cloud Infrastructure",
+      "entity_type": "cloud_operator"
+    },
+    {
+      "id": "ent:closed-hosting:nvidia",
+      "name": "NVIDIA",
+      "entity_type": "accelerator_and_confidential_compute_supplier"
+    },
+    {
+      "id": "ent:closed-hosting:amd",
+      "name": "AMD",
+      "entity_type": "cpu_tee_and_accelerator_supplier"
+    },
+    {
+      "id": "ent:closed-hosting:intel",
+      "name": "Intel",
+      "entity_type": "cpu_tee_supplier"
+    },
+    {
+      "id": "ent:closed-hosting:enterprise",
+      "name": "Enterprise-owned AI factory",
+      "entity_type": "hypothetical_buyer_deployment"
+    },
+    {
+      "id": "ent:closed-hosting:oem",
+      "name": "Enterprise AI factory OEM",
+      "entity_type": "channel_archetype"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:closed-hosting:01",
+      "subject_id": "ent:closed-hosting:anthropic",
+      "relation": "served_by_awsmanged_bedrock",
+      "object_id": "ent:closed-hosting:aws",
+      "evidence_ids": [
+        "claim:closed-hosting:aws-operated",
+        "claim:closed-hosting:aws-model-isolation"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "rel:closed-hosting:02",
+      "subject_id": "ent:closed-hosting:anthropic",
+      "relation": "separately_operates_platform_using_aws",
+      "object_id": "ent:closed-hosting:aws",
+      "evidence_ids": [
+        "claim:closed-hosting:anthropic-operated"
+      ],
+      "status": "documented"
+    },
+    {
+      "id": "rel:closed-hosting:03",
+      "subject_id": "ent:closed-hosting:google",
+      "relation": "offers_customer_hardware_gdc",
+      "object_id": "ent:closed-hosting:enterprise",
+      "evidence_ids": [
+        "claim:closed-hosting:gdc-premises",
+        "claim:closed-hosting:gdc-models"
+      ],
+      "status": "documented_product_option"
+    },
+    {
+      "id": "rel:closed-hosting:04",
+      "subject_id": "ent:closed-hosting:openai",
+      "relation": "partner_capacity_oci_training",
+      "object_id": "ent:closed-hosting:oracle",
+      "evidence_ids": [
+        "claim:closed-hosting:oci-training"
+      ],
+      "status": "documented_training_not_enterprise_license"
+    },
+    {
+      "id": "rel:closed-hosting:05",
+      "subject_id": "ent:closed-hosting:openai",
+      "relation": "multi_cloud_distribution_right_after_2026_04",
+      "object_id": "ent:closed-hosting:microsoft",
+      "evidence_ids": [
+        "claim:closed-hosting:openai-apr-amendment"
+      ],
+      "status": "documented_contract_amendment"
+    },
+    {
+      "id": "rel:closed-hosting:06",
+      "subject_id": "ent:closed-hosting:nvidia",
+      "relation": "designs_confidential_model_delivery_for",
+      "object_id": "ent:closed-hosting:enterprise",
+      "evidence_ids": [
+        "claim:closed-hosting:secure-deployment",
+        "claim:closed-hosting:cpu-tee"
+      ],
+      "status": "reference_architecture_not_frontier_vendor_license"
+    },
+    {
+      "id": "rel:closed-hosting:07",
+      "subject_id": "ent:closed-hosting:amd",
+      "relation": "supplies_cpu_tee_option_for",
+      "object_id": "ent:closed-hosting:enterprise",
+      "evidence_ids": [
+        "claim:closed-hosting:cpu-tee"
+      ],
+      "status": "technical_compatibility_subject_to_validation"
+    },
+    {
+      "id": "rel:closed-hosting:08",
+      "subject_id": "ent:closed-hosting:intel",
+      "relation": "supplies_cpu_tee_option_for",
+      "object_id": "ent:closed-hosting:enterprise",
+      "evidence_ids": [
+        "claim:closed-hosting:cpu-tee"
+      ],
+      "status": "technical_compatibility_subject_to_validation"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt:closed-hosting:openai-feb",
+      "name": "OpenAI–Microsoft February stateless API exclusivity restatement",
+      "event_date": "2026-02-27",
+      "status": "historical_superseded_as_of_2026_04_27",
+      "evidence_ids": [
+        "claim:closed-hosting:openai-feb-restriction"
+      ]
+    },
+    {
+      "id": "evt:closed-hosting:openai-apr",
+      "name": "OpenAI–Microsoft nonexclusive cross-cloud agreement amendment",
+      "event_date": "2026-04-27",
+      "status": "announced",
+      "evidence_ids": [
+        "claim:closed-hosting:openai-apr-amendment"
+      ]
+    },
+    {
+      "id": "evt:closed-hosting:gdc-apr",
+      "name": "Google Distributed Cloud connected Gemini Flash on Blackwell preview",
+      "event_date": "2026-04-22",
+      "status": "announced_preview",
+      "evidence_ids": [
+        "claim:closed-hosting:gdc-models"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal:closed-hosting:operational-split",
+      "actor": "Anthropic and AWS",
+      "statement": "A single closed model is offered via different operator/control plane arrangements.",
+      "inference": "A model developer can separate IP ownership from the party operating the inference stack; compare product and data-processing boundaries rather than merely cloud brand.",
+      "evidence_ids": [
+        "claim:closed-hosting:anthropic-operated",
+        "claim:closed-hosting:aws-operated",
+        "claim:closed-hosting:aws-model-isolation"
+      ]
+    },
+    {
+      "id": "signal:closed-hosting:sovereign-premises",
+      "actor": "Google Cloud",
+      "statement": "Proprietary Gemini deployment is documented in customer premises under a vendor-managed software lifecycle.",
+      "inference": "Customer-local proprietary inference is an established vendor offering, but product model/version and hardware ownership constraints matter.",
+      "evidence_ids": [
+        "claim:closed-hosting:gdc-premises",
+        "claim:closed-hosting:gdc-models"
+      ]
+    },
+    {
+      "id": "signal:closed-hosting:certification-layer",
+      "actor": "NVIDIA",
+      "statement": "A reference stack protects model weights inside attested CPU/GPU execution on enterprise infrastructure.",
+      "inference": "Security certification, attestation/key release and OEM systems integration may become enabling supply-chain layers; commercial authorization remains distinct.",
+      "evidence_ids": [
+        "claim:closed-hosting:secure-deployment",
+        "claim:closed-hosting:cpu-tee",
+        "claim:closed-hosting:prod-entitlement"
+      ]
+    },
+    {
+      "id": "signal:closed-hosting:distribution-change",
+      "actor": "OpenAI and Microsoft",
+      "statement": "The April 2026 partnership amendment broadened cross-cloud delivery rights.",
+      "inference": "Prior Azure-exclusivity narrative must be versioned and cannot be used as a current market constraint; the amendment still does not grant bank-run GPT weights.",
+      "evidence_ids": [
+        "claim:closed-hosting:openai-feb-restriction",
+        "claim:closed-hosting:openai-apr-amendment"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:closed-hosting:licensed-enterprise",
+      "thesis": "Closed-model vendors may license encrypted, nonmodifiable model runtime packages for enterprise-controlled AI factories in high-regulation/high-utilization accounts before 2030.",
+      "evidence_ids": [
+        "claim:closed-hosting:secure-deployment",
+        "claim:closed-hosting:gdc-premises",
+        "claim:closed-hosting:aws-operated",
+        "claim:closed-hosting:openai-apr-amendment"
+      ],
+      "alternative": "Vendors retain managed APIs because security, policy control, IP extraction risk and pooled-GPU utilization dominate enterprise demand.",
+      "falsification_test": "Track signed OpenAI/Anthropic customer-premises inference entitlements by model/version/operator/region and verify commercial terms; distinguish sovereign managed appliances from truly customer-operated models.",
+      "status": "analyst_scenario_not_observed"
+    },
+    {
+      "id": "hyp:closed-hosting:cpu-demand-placement",
+      "thesis": "A shift from central hyperscaler inference to private AI factories changes the entity buying CPU host silicon, its OEM channel, and ISA opportunity, but is not necessarily additive to global CPU sockets.",
+      "evidence_ids": [
+        "claim:closed-hosting:gdc-premises",
+        "claim:closed-hosting:cpu-tee",
+        "claim:closed-hosting:oci-training"
+      ],
+      "alternative": "Enterprise deployment only relocates equivalent accelerator-attached CPUs already counted in cloud equipment, or increases utilization of existing enterprise compute.",
+      "falsification_test": "For matched workloads track service buyer, physical hardware owner, CPU shipment purchaser, channel, incremental socket additions, utilization, displacement, and AMD/Intel/Arm host ISA.",
+      "status": "analyst_scenario_not_observed"
+    },
+    {
+      "id": "hyp:closed-hosting:security-bom",
+      "thesis": "Attested confidential inference increases demand for verified CPU-TEE platform support, OEM certification, secure-firmware operations and enterprise integration, potentially changing CPU/platform purchase criteria.",
+      "evidence_ids": [
+        "claim:closed-hosting:cpu-tee",
+        "claim:closed-hosting:prod-entitlement"
+      ],
+      "alternative": "GPU-side confidential compute and virtualized cloud APIs capture value without a meaningful incremental x86 CPU premium.",
+      "falsification_test": "Compare certified BOMs, CPU ISA/SKU mix, CPU attach ratio per GPU, security software costs and actual procurement contracts for private versus public inference.",
+      "status": "analyst_scenario_not_observed"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:closed-hosting:contracts",
+      "question": "Are OpenAI or Anthropic offering any customer-controlled on-prem inference licenses for closed weights; exactly which model and hardware scope?",
+      "priority": "P0",
+      "method": "Search first-party enterprise/offering docs, model entitlement matrices and public contracts; ask vendors for written deployment rights.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Determine whether proprietary models create a new OEM/enterprise buying channel."
+    },
+    {
+      "id": "q:closed-hosting:cpu-units",
+      "question": "What is the net incremental server CPU silicon demand from enterprise private AI factories versus workload relocation?",
+      "priority": "P0",
+      "method": "Build buyer–owner–channel event crosswalk; collect deployed system BOM/CPU socket and GPU attach factors; subtract relocated/double-counted cloud demand.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Protect the server CPU TAM denominator from duplicated cloud and OEM demand."
+    },
+    {
+      "id": "q:closed-hosting:tee-sku",
+      "question": "Which shipping EPYC, Xeon and Arm host platforms are certified with NVIDIA GPU confidential computing for proprietary-model inference?",
+      "priority": "P0",
+      "method": "Cross-check NVIDIA supported platform matrix, AMD SEV-SNP, Intel TDX, BIOS/driver, ODM/OEM BOM and supply availability.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Assess x86 vs Arm selection pressure from mandatory TEEs."
+    },
+    {
+      "id": "q:closed-hosting:tco",
+      "question": "Where is cost-per-usable-token crossover across bank-owned, dedicated neocloud and shared hosted APIs?",
+      "priority": "P0",
+      "method": "Model utilization, batching, GPU depreciation, CPU attachment, power, network, license fee, failover and service commitments; label scenarios.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Quantify likely private-model hosting uptake rather than infer it from announcements."
+    },
+    {
+      "id": "q:closed-hosting:security",
+      "question": "Who controls attestation root, decryption keys, revocation, model safety updates, telemetry and disconnected operation?",
+      "priority": "P1",
+      "method": "Compare Google GDC, NVIDIA CoCo, Bedrock and enterprise licensing contracts with explicit threat-model acceptance tests.",
+      "domains": [
+        "architecture-and-software",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Assess deployability in regulated and air-gapped buyers."
+    },
+    {
+      "id": "q:closed-hosting:videos",
+      "question": "Which keynote segment claims survive comparison with official product documentation and transcribed primary recording?",
+      "priority": "P1",
+      "method": "Verify each video URL and exact timestamp against publisher source; extract only authorized short quotes or normalized claims, cite the source locator.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Convert viewing queue into confirmed attributable evidence."
+    },
+    {
+      "id": "q:closed-hosting:rights",
+      "question": "How much physical capacity is actually provider-operated versus outsourced among frontier developers, separately for training and inference?",
+      "priority": "P1",
+      "method": "Triangulate public deployment announcements, infrastructure partners and revenue relationships, classify hardware owner versus model operator.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Estimate addressable infrastructure OEM and neocloud opportunity without assigning training capacity to inference."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "conflict:closed-hosting:openai-cloud-rights",
+      "left_ref": "claim:closed-hosting:openai-feb-restriction",
+      "right_ref": "claim:closed-hosting:openai-apr-amendment",
+      "issue": "The February 27 statement's Azure-exclusive stateless API language is superseded by the April 27 announcement allowing OpenAI to serve products on any cloud and making Microsoft's IP license nonexclusive.",
+      "status": "superseded_vintage",
+      "resolution_plan": "Preserve both dated contractual source assertions. Use April 27 amended terms as latest public position, without implying third-party weights self-host rights."
+    }
+  ],
+  "methods": [
+    {
+      "id": "method:closed-hosting:buyer-mapping",
+      "name": "Closed-model inference placement to CPU demand mapping",
+      "procedure": "For each deployment separately identify model IP owner, inference stack operator, underlying hardware owner, CPU procurement buyer, OEM/ODM channel, service subscriber, training/inference workload, accelerator host CPU ISA, physical CPU quantity, incremental versus relocated utilization, and contractual model rights. Aggregate CPU silicon once by physical purchase event; never sum OEM sales plus end buyer as two chip purchases.",
+      "assumptions": [
+        "Training and inference are separate workload classes.",
+        "Signed vendor rights do not follow automatically from a hardware-hosting agreement.",
+        "Private deployment may shift purchases between buyer types without raising total unit demand.",
+        "CPU TEE support must be validated by SKU/firmware/guest/GPU configuration."
+      ],
+      "notes": "Implements docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md and adds an orthogonal model control plane dimension."
+    }
+  ],
+  "requirements": [],
+  "promotions": [],
+  "handoff": {
+    "summary": "Observed today: AWS operates Bedrock Claude separately from Anthropic-operated Claude Platform on AWS; Gemini can be deployed on premises under defined GDC configurations; NVIDIA documents an attested encrypted proprietary-model inference architecture. April OpenAI-Microsoft terms supersede February Azure-exclusive clause. Enterprise GPT/Claude on-prem closed-weight licensing is NOT demonstrated by these sources.",
+    "next_actions": [
+      "P0: Find explicit OpenAI/Anthropic private deployment model entitlements rather than extrapolate cloud delivery rights.",
+      "P0: Create GPU-rack CPU host BOM and ownership/ISA evidence by enterprise versus neocloud buyer.",
+      "P0: Build token economics sensitivity on utilization, CPU+GPU BOM, license and reliability costs.",
+      "P1: Verify ten video URLs, segment timestamps and any rights-cleared transcript excerpts before upgrading source claims.",
+      "P1: Revisit NVIDIA CPU TEE validation matrices to compare EPYC SEV-SNP, Intel TDX and any Arm equivalents."
+    ],
+    "changed_decisions": [
+      "Treat OpenAI cross-cloud ability as expanded after April 27, 2026, superseding the February Azure-exclusive framing.",
+      "Add inference control-plane model (model IP owner / inference operator / physical server purchaser / service customer) orthogonally to the existing buyer-channel-workload cube.",
+      "Watch OEM CPU/socket opportunity from sovereign/private inference, but do not count relocated workloads as incremental silicon demand."
+    ],
+    "limits": [
+      "No proprietary OpenAI/Anthropic customer-premises weights license confirmed.",
+      "No transcripts in the prior video package; videos are pointers, not transcript-verified claims.",
+      "No new measured CPU quantities, shares, utilization or licensed commercial pricing.",
+      "Living technical documentation snapshot dates are not original publication dates.",
+      "No promoted data/claims were inserted in canonical files or visual dashboard."
+    ]
+  }
+}
