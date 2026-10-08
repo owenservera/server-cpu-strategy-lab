@@ -9,7 +9,7 @@
 3. [Implementation and seed handoff](IMPLEMENTATION-HANDOFF.md) — tested local ZIP, CLI, migration gates and downstream frontend contract.
 4. [Existing buyer/channel taxonomy](../research/demand-2030/TAXONOMY-AND-ACCOUNTING.md) and [data dictionaries](../research/demand-2030/DATA-DICTIONARY-AND-GAPS.md).
 
-The first implementation is supplied as **`server-cpu-research-db-v1.zip` in the creating ChatGPT session**. Extract its `db/` directory into the repository. The ZIP contains two numbered SQLite migrations, a foundation ontology, a seed loader, a read-only export, documentation and regression tests. **The ZIP's source files are not yet committed to this GitHub repository; this folder is the committed specification and integration handoff.** Avoid rebuilding from summaries: integrate the tested source bundle itself.
+The complete original implementation is **now committed unchanged under [`db/`](../../db/)** as of [commit `971a24d`](https://github.com/owenservera/server-cpu-strategy-lab/commit/971a24d3e94f03ec8a2280e07679d6e4a018ad30). All 12 file Git blobs were hash-checked against the archive. **No ZIP extraction is needed.** The local ZCode team must now execute the [full wiring assessment](ZCODE-FULL-WIRING-ASSESSMENT.md) using the [single bootstrap prompt](ZCODE-BOOTSTRAP-PROMPT.md); the real-corpus seed, CI run, packet promotion and dashboard integration are separate gates.
 
 ## Seed origin and scope
 
@@ -24,7 +24,7 @@ Do not import confidential consulting material, assume paywalled-source access, 
 
 ## Minimal commands
 
-Once the source ZIP is extracted (Python 3.11+ with SQLite 3.37+, no pip dependencies):
+From a checkout containing `db/` (Python 3.11+ with SQLite 3.37+, no pip dependencies):
 
 ```powershell
 python db/scripts/research_db.py seed
