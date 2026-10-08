@@ -11,6 +11,10 @@
 
 The complete original implementation is **now committed unchanged under [`db/`](../../db/)** as of [commit `971a24d`](https://github.com/owenservera/server-cpu-strategy-lab/commit/971a24d3e94f03ec8a2280e07679d6e4a018ad30). All 12 file Git blobs were hash-checked against the archive. **No ZIP extraction is needed.** The local ZCode team must now execute the [full wiring assessment](ZCODE-FULL-WIRING-ASSESSMENT.md) using the [single bootstrap prompt](ZCODE-BOOTSTRAP-PROMPT.md); the real-corpus seed, CI run, packet promotion and dashboard integration are separate gates.
 
+## Financial filings extension
+
+The additive [financial-disclosure program](../research/financial-filings/README.md) now introduces `db/migrations/0003_financial_filings.sql`, a [35-issuer collection watchlist](../../data/financial-filings/issuer-watchlist.json), an SEC submissions metadata discovery helper and a staged financial JSON intake command. It maps reported facts to the **existing** canonical `measurements` rows and stores contracts, liabilities, RPO/backlog and proposed model mappings separately to avoid double counting. The watchlist is not an already-acquired financial corpus; no historical issuer fact should be presumed loaded. See [database implementation](../../db/README.md) for commands. Full ETL automation, reviewed actual numbers and frontend wiring remain separate gates.
+
 ## Seed origin and scope
 
 - `data/demand-2030/source-registry.json` → source metadata, legal/access flags and lineage.
