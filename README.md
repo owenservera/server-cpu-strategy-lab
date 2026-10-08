@@ -30,6 +30,12 @@ A July 2026 public AMD keynote has been indexed as a **research source**, not ac
 
 **Core caution:** AMD's $200B+ 2030 CPU TAM estimate (later ~ $220B) is vendor guidance; the `agents per watt` figures can use CPU thread counts as estimates rather than observed agent task throughput. Helios auto-caption GPU/core figures conflict with official product literature; see the research path's contradiction queue.
 
+## Demand intelligence — 2024–2030
+
+The new [Server CPU Demand 2030 research module](docs/research/demand-2030/README.md) integrates the OEM/hyperscaler/enterprise demand study with the AMD, Microsoft, Docker and ROCm investigations. It includes [a detailed market synthesis](docs/research/demand-2030/MARKET-SYNTHESIS.md), [non-overlapping buyer/channel/workload/ISA taxonomy](docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md), [50 prioritized data fields](docs/research/demand-2030/DATA-DICTIONARY-AND-GAPS.md) and an [eight-panel UI implementation handoff](docs/research/demand-2030/DASHBOARD-HANDOFF.md).
+
+**New machine-readable inputs:** [41 source-attributed records](data/demand-2030/historical-and-forecast-evidence.csv), [30 public-source references](data/demand-2030/source-registry.json), [nine dated 2030 TAM projection vintages](data/demand-2030/tam-forecast-vintages.csv) and [2025–2030 synthetic x86/Arm CPU silicon scenarios](data/demand-2030/scenario-model.json). Whole-server spending, server CPU silicon revenue, capex, fiscal-quarter reporting and synthetic forecasts are deliberately separate; read the provenance caveats before presenting any metric as factual.
+
 ## Dashboard sections
 
 | Surface | Interaction | What it teaches |
