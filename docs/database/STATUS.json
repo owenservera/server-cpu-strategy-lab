@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "recorded_at": "2026-10-08",
   "architecture_decision": "SQLite 3.37+ local evidence warehouse first; PostgreSQL only after multi-writer need",
-  "database_source_status": "developed_in_chat_zip_not_yet_extracted_into_repo",
+  "database_source_status": "committed_unmodified_under_db",
   "artifact_name": "server-cpu-research-db-v1.zip",
   "public_repo_spec_paths": [
     "docs/database/README.md",
@@ -15,10 +15,10 @@
     "status": "passed",
     "passed": 7,
     "failed": 0,
-    "scope": "synthetic fixture seed, immutability and accounting constraints"
+    "scope": "7 fixture-based local tests, not full live GitHub research corpus"
   },
-  "actual_repo_seed_status": "not_run_or_verified",
-  "github_ci_status": "not_integrated_for_database",
+  "actual_repo_seed_status": "awaiting_actual_current_main_seed_and_verify_on_windows_and_CI",
+  "github_ci_status": "database_ci_workflow_created_run_unverified",
   "dashboard_live_db_status": "not_connected",
   "current_publication_authority": "Existing Git-based research corpus and explicit editorial review",
   "domains": [
@@ -39,5 +39,10 @@
     "No server-system vs CPU-silicon boundary mixing",
     "No double-counting end buyers and OEM channels",
     "Synthetic outputs never labeled observations"
-  ]
+  ],
+  "source_commit": "971a24d3e94f03ec8a2280e07679d6e4a018ad30",
+  "source_file_count": 12,
+  "zcode_assessment": "docs/database/ZCODE-FULL-WIRING-ASSESSMENT.md",
+  "zcode_bootstrap": "docs/database/ZCODE-BOOTSTRAP-PROMPT.md",
+  "database_ci_workflow": ".github/workflows/database-ci.yml"
 }
