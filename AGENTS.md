@@ -2,6 +2,10 @@
 
 **Start here for any research task in this repository.** This file is intended for ChatGPT, Claude, Codex and other autonomous or assisted research sessions.
 
+## Database v1 architecture
+
+**Read [docs/database/README.md](docs/database/README.md) for the SQLite-first database design and local seed integration status.** [Architecture](docs/database/ARCHITECTURE-V1.md) and [micro/macro model semantics](docs/database/SEGMENTATION-AND-MODELS.md) are canonical. Research packets still stage public evidence under Git. The database is **not yet the writer of record**; do not claim production API, PostgreSQL, or actual-data seed/CI integration is complete until verified. The companion implementation ZIP from the ChatGPT construction session must be extracted and tested as described in [the handoff](docs/database/IMPLEMENTATION-HANDOFF.md).
+
 1. Read [RESEARCH-ENTRY.md](RESEARCH-ENTRY.md) completely, then [research/README.md](research/README.md) and [research/routes.json](research/routes.json).
 2. Load [research/catalog.json](research/catalog.json) to find existing work relevant to the user's topic. **Search before creating another report or dataset.**
 3. Read [docs/EVIDENCE-STANDARDS.md](docs/EVIDENCE-STANDARDS.md) and [docs/COMPLIANCE.md](docs/COMPLIANCE.md). Public evidence only; do not reproduce expert-network/client material or private data.
