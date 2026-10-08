@@ -45,6 +45,8 @@ It's: **what reusable facts, assumptions, disagreements, relationships and quest
 
 **DO NOT:** assume vendor guidance is an observation; replace a historical forecast with the latest forecast; equate system dollars with CPU silicon; sum OEM and hyperscaler as independent buying segments; use transcript captions as verified primary technical facts; fabricate missing rows; publish full third-party texts without rights; mix any confidential consultation/client material into public GitHub.
 
+- [Competitive capture and market-share scenarios](docs/research/competitive-capture/COMPETITIVE-CAPTURE-RESEARCH-2026-10-08.md) · [staged multi-route competitive packet](research/packets/2026-10-08--competitive-capture-strategic-signals.json) · [fixed-TAM synthetic allocation stress overlay](data/demand-2030/competitive-capture-stress-overlay.json) (do **not** alter historical or forecast TAM)
+
 ## Paths you should know
 
 - [Pricing Observatory Run 01 — completed pilot and pending review](docs/research/server-cpu-pricing/RUN-01-2026-10-08.md) · [machine observations](data/pricing/run-01-2026-10-08/observations.json) · [run-01 packet](research/packets/2026-10-08--pricing-observatory-run-01.json)
