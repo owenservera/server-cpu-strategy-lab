@@ -1,0 +1,1084 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/owenservera/server-cpu-strategy-lab/blob/main/research/schema/packet.schema.json",
+  "title": "CORE/SIGNAL multipath public research transaction",
+  "description": "One logical intake event, multiple route outputs. New packets are staged evidence, NOT automatically promoted canonical data.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_id",
+    "created_at",
+    "title",
+    "status",
+    "public_only",
+    "domains",
+    "routes",
+    "search_before_write",
+    "sources",
+    "claims",
+    "measurements",
+    "forecasts",
+    "hypotheses",
+    "questions",
+    "conflicts",
+    "promotions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}--[a-z0-9][a-z0-9-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8
+    },
+    "status": {
+      "enum": [
+        "staged",
+        "needs_review",
+        "partially_promoted",
+        "promoted",
+        "archived"
+      ]
+    },
+    "sample_only": {
+      "type": "boolean",
+      "default": false
+    },
+    "public_only": {
+      "const": true
+    },
+    "scope": {
+      "type": "string"
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "search_before_write": {
+      "type": "object",
+      "required": [
+        "checked_paths",
+        "dedupe_notes"
+      ],
+      "properties": {
+        "checked_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "prior_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dedupe_notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/measurement"
+      }
+    },
+    "forecasts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/forecast"
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scenario"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/signal"
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hypothesis"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict"
+      }
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/method"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/requirement"
+      }
+    },
+    "promotions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/promotion"
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "next_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "changed_decisions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "publisher",
+        "published_at",
+        "kind",
+        "url",
+        "access",
+        "rights"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "title": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "access": {
+          "enum": [
+            "public",
+            "public_secondary",
+            "public_paywalled",
+            "licensed_unavailable",
+            "restricted_unpublishable"
+          ]
+        },
+        "rights": {
+          "enum": [
+            "link_and_extract",
+            "quote_with_limits",
+            "publish_licensed",
+            "unknown_do_not_copy"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "digest_sha256": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "statement",
+        "claim_class",
+        "source_locator",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "claim_class": {
+          "enum": [
+            "filing_disclosure",
+            "product_spec",
+            "vendor_claim",
+            "management_forecast",
+            "analyst_forecast",
+            "partner_statement",
+            "benchmark_claim",
+            "independent_benchmark",
+            "analysis",
+            "other"
+          ]
+        },
+        "verification": {
+          "enum": [
+            "attributed_unverified",
+            "checked_against_original",
+            "independently_corroborated",
+            "conflicted",
+            "rejected"
+          ]
+        },
+        "speaker": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string"
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "measurement": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "metric_id",
+        "value",
+        "unit",
+        "period",
+        "population",
+        "denominator",
+        "measurement_kind",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "metric_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "population": {
+          "type": "string"
+        },
+        "denominator": {
+          "type": "string"
+        },
+        "measurement_kind": {
+          "enum": [
+            "observed",
+            "reported_company",
+            "secondary_estimate",
+            "vendor_benchmark",
+            "independent_benchmark",
+            "modeled",
+            "missing"
+          ]
+        },
+        "verification": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string"
+        },
+        "missing_reason": {
+          "type": "string"
+        },
+        "claim_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "forecast": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "issuer",
+        "issued_at",
+        "target_period",
+        "metric_id",
+        "market_scope",
+        "value",
+        "unit",
+        "qualifier"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "issued_at": {
+          "type": "string"
+        },
+        "target_period": {
+          "type": "string"
+        },
+        "metric_id": {
+          "type": "string"
+        },
+        "market_scope": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "qualifier": {
+          "enum": [
+            "equal",
+            "approximately",
+            "greater_than",
+            "less_than",
+            "range_low",
+            "range_high"
+          ]
+        },
+        "claim_id": {
+          "type": "string"
+        },
+        "scenario": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "id",
+        "hypothesis",
+        "inputs",
+        "outputs",
+        "model_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "hypothesis": {
+          "type": "string"
+        },
+        "inputs": {
+          "type": "object"
+        },
+        "outputs": {
+          "type": "object"
+        },
+        "model_status": {
+          "const": "synthetic_not_observed"
+        }
+      },
+      "additionalProperties": true
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "entity_type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "type": "string"
+        },
+        "entity_type": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "relationship": {
+      "type": "object",
+      "required": [
+        "id",
+        "subject_id",
+        "relation",
+        "object_id",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "subject_id": {
+          "type": "string"
+        },
+        "relation": {
+          "type": "string"
+        },
+        "object_id": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "event_date",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "type": "string"
+        },
+        "event_date": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "signal": {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "statement",
+        "inference",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "inference": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "hypothesis": {
+      "type": "object",
+      "required": [
+        "id",
+        "thesis",
+        "evidence_ids",
+        "alternative",
+        "falsification_test"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "thesis": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternative": {
+          "type": "string"
+        },
+        "falsification_test": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "id",
+        "question",
+        "priority",
+        "method",
+        "domains"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "question": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2"
+          ]
+        },
+        "method": {
+          "type": "string"
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision_impacted": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "conflict": {
+      "type": "object",
+      "required": [
+        "id",
+        "left_ref",
+        "right_ref",
+        "issue",
+        "status",
+        "resolution_plan"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "left_ref": {
+          "type": "string"
+        },
+        "right_ref": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "resolved",
+            "not_comparable",
+            "superseded_vintage"
+          ]
+        },
+        "resolution_plan": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "procedure",
+        "assumptions"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "type": "string"
+        },
+        "procedure": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "requirement": {
+      "type": "object",
+      "required": [
+        "id",
+        "outcome",
+        "acceptance_criteria"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "outcome": {
+          "type": "string"
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "promotion": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "target_path",
+        "review_status",
+        "decision_note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "legacy_ref": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_locator": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "record_id": {
+          "type": "string"
+        },
+        "target_path": {
+          "type": "string"
+        },
+        "review_status": {
+          "enum": [
+            "pending",
+            "approved",
+            "rejected",
+            "not_applicable",
+            "promoted"
+          ]
+        },
+        "decision_note": {
+          "type": "string"
+        },
+        "reviewed_by": {
+          "type": "string"
+        },
+        "promoted_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
