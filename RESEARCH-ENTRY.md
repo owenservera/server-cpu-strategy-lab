@@ -47,6 +47,13 @@ It's: **what reusable facts, assumptions, disagreements, relationships and quest
 
 - [Competitive capture and market-share scenarios](docs/research/competitive-capture/COMPETITIVE-CAPTURE-RESEARCH-2026-10-08.md) · [staged multi-route competitive packet](research/packets/2026-10-08--competitive-capture-strategic-signals.json) · [fixed-TAM synthetic allocation stress overlay](data/demand-2030/competitive-capture-stress-overlay.json) (do **not** alter historical or forecast TAM)
 
+## Financial filings (2019–latest) — linked to existing market models
+
+- [Financial filings acquisition and model protocol](docs/research/financial-filings/README.md) · [35-issuer public acquisition watchlist](data/financial-filings/issuer-watchlist.json) · [financial schema migration](db/migrations/0003_financial_filings.sql).
+- Source documents, fiscal financial facts, commitments, and proposed model transformations are captured using the existing `source`, `measurement`, `relationship`, `buyer_demand`, `forecast`, `conflict` and `method` routes. A filing may carry multiple routes. **Commitments/RPO/backlog are not observed CPU sales or additive to capex, system revenue or OEM shipments.**
+- Local `sec_filing_discovery.py` indexes official SEC links and `research_db.py ingest-financial` supports staged, offline public-only JSON extraction. These are *not* a claim of full filing harvest, reviewed historical data, automatic promotion, or live frontend wiring.
+- The approved 2030 TAM scenario and historical market dataset boundaries remain unchanged; proposed financial mappings do not execute without review.
+
 ## Paths you should know
 
 - [Pricing Observatory Run 01 — completed pilot and pending review](docs/research/server-cpu-pricing/RUN-01-2026-10-08.md) · [machine observations](data/pricing/run-01-2026-10-08/observations.json) · [run-01 packet](research/packets/2026-10-08--pricing-observatory-run-01.json)
