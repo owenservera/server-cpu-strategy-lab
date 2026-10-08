@@ -17,7 +17,7 @@ import sqlite3
 import sys
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA = ['0001_core.sql', '0002_views.sql']
+SCHEMA = ['0001_core.sql', '0002_views.sql', '0003_financial_filings.sql']
 
 
 def load_json(path):
@@ -353,12 +353,170 @@ def project_gaps(cnx,root):
     return min(15,len(d['fields']))
 
 
+def financial_issuer_import(cnx, root):
+    """Seed acquisition targets only; a target is not a filing or an observation."""
+    rel = 'data/financial-filings/issuer-watchlist.json'
+    path = root / rel
+    if not path.exists():
+        return 0
+    manifest = load_json(path)
+    if manifest.get('schema_version') != '1.0':
+        raise ValueError('Unsupported financial issuer watchlist schema')
+    seen = set()
+    for issuer in manifest['issuers']:
+        iid = issuer['id']
+        if iid in seen:
+            raise ValueError('Duplicate financial issuer '+iid)
+        seen.add(iid)
+        if issuer['priority'] not in ('P0','P1','P2','P3'):
+            raise ValueError('Invalid financial issuer priority '+iid)
+        stored(cnx, 'financial_issuers', 'issuer_id', dict(
+            issuer_id=iid, entity_id=None, legal_name=issuer['name'],
+            primary_symbol=issuer.get('symbol'), jurisdiction=issuer['jurisdiction'],
+            primary_regulator=issuer['regulator'],
+            investor_relations_url=issuer.get('investor_relations_url'),
+            role_tags_json=json.dumps(issuer.get('roles', []), sort_keys=True,
+                                      separators=(',', ':')),
+            acquisition_priority=issuer['priority'],
+            coverage_start_year=issuer.get('coverage_start_year', 2019),
+            note='Acquisition target only, NOT retrieved filing evidence.'))
+    return len(seen)
+
+
+def ingest_financial(root, db_path, input_path):
+    """Transactional, offline, public-only manual filing intake; never auto-promotes."""
+    path = input_path.resolve()
+    doc = load_json(path)
+    if doc.get('schema_version') != '1.0' or not isinstance(doc.get('filings'), list):
+        raise ValueError('Expected financial filing input schema_version 1.0 and filings array')
+    cnx = open_db(db_path)
+    try:
+        init(root, cnx)
+        with cnx:
+            financial_issuer_import(cnx, root)
+            digest = source_digest(path)
+            bid = 'batch:financial:' + hashlib.sha256((str(path)+'|'+digest).encode()).hexdigest()[:20]
+            stored(cnx, 'ingestion_batches', 'batch_id', dict(
+                batch_id=bid, input_path=str(path), content_sha256=digest,
+                source_kind='research_packet', state='staged',
+                note='Public financial filing intake. Requires independent evidence review.'))
+            fcount = mcount = ccount = mapping_count = 0
+            fact_ids, commitment_ids = {}, {}
+            for f in doc['filings']:
+                if not f['url'].startswith('https://'):
+                    raise ValueError('Public HTTPS filing URL required')
+                issuer = cnx.execute('SELECT legal_name FROM financial_issuers WHERE issuer_id=?',
+                                     (f['issuer_id'],)).fetchone()
+                if issuer is None:
+                    raise ValueError('Unknown issuer: '+f['issuer_id'])
+                src = source(cnx, f['source_id'], title=f['title'],
+                             publisher=issuer['legal_name'], uri=f['url'],
+                             published=f['filed_at'], version=f.get('source_version',''),
+                             kind='financial_filing', access='public',
+                             rights='link_and_extract',
+                             sha=f.get('digest_sha256'),
+                             note='Public source metadata; extracted facts require review.',
+                             batch_id=bid)
+                fid = f['id']
+                stored(cnx, 'financial_filings', 'filing_id', dict(
+                    filing_id=fid, issuer_id=f['issuer_id'], source_id=src,
+                    regulator=f['regulator'], filing_type=f['filing_type'],
+                    accession_or_document_id=f.get('accession_or_document_id'),
+                    period_start=f.get('period_start'), period_end=f.get('period_end'),
+                    fiscal_year=f.get('fiscal_year'), fiscal_quarter=f.get('fiscal_quarter'),
+                    filed_at=f['filed_at'], accepted_at=f.get('accepted_at'),
+                    amendment_of=f.get('amendment_of'),
+                    extraction_status='needs_review' if f.get('facts') or f.get('commitments') else 'indexed',
+                    note='Intake stage only; not independently verified.'))
+                fcount += 1
+                for x in f.get('facts',[]):
+                    external_id=x['id']
+                    if external_id in fact_ids:
+                        raise ValueError('Duplicate fact id: '+external_id)
+                    mid=object_id(cnx, 'measure:filing:'+external_id, 'measurement')
+                    metric=x['metric_id']; unit=x['unit']; bound=x['economic_boundary']
+                    ensure_metric(cnx,metric,unit,bound,x['denominator'])
+                    ensure_scope(cnx,x['scope_id'],bound,x['denominator'])
+                    loc=locator(cnx,src,x['source_locator'],'filing_section')
+                    stored(cnx,'measurements','measurement_id',dict(
+                        measurement_id=mid,metric_id=metric,scope_id=x['scope_id'],
+                        source_id=src,claim_id=None,period_label=x['period_label'],
+                        period_kind=x['period_kind'],start_date=x.get('period_start'),
+                        end_date=x.get('period_end'),value_decimal=numeric(x['value']),
+                        unit=unit,qualifier=x.get('qualifier','equal'),
+                        evidence_kind='company_reported',
+                        verification_status='attributed_unverified',
+                        measurement_basis=x['denominator'],
+                        note='Public filing extract; unreviewed. '+x.get('note',''),
+                        legacy_ref=None,batch_id=bid))
+                    stored(cnx,'financial_fact_contexts','measurement_id',dict(
+                        measurement_id=mid,filing_id=fid,source_locator_id=loc,
+                        xbrl_taxonomy=x.get('xbrl_taxonomy'),xbrl_concept=x.get('xbrl_concept'),
+                        normalized_concept=x['normalized_concept'],
+                        statement_type=x['statement_type'],reporting_basis=x['reporting_basis'],
+                        accounting_standard=x.get('accounting_standard','not_disclosed'),
+                        reported_currency=x.get('reported_currency'),
+                        consolidation_scope=x.get('consolidation_scope','not_disclosed'),
+                        segment_label=x.get('segment_label'),
+                        original_context_ref=x.get('original_context_ref'),
+                        is_restated=int(bool(x.get('is_restated',False)))))
+                    fact_ids[external_id]=mid;mcount+=1
+                for x in f.get('commitments',[]):
+                    cid=x['id']
+                    if cid in commitment_ids:
+                        raise ValueError('Duplicate commitment id: '+cid)
+                    loc=locator(cnx,src,x['source_locator'],'filing_section')
+                    amount=x.get('amount')
+                    stored(cnx,'financial_commitments','commitment_id',dict(
+                        commitment_id=cid,filing_id=fid,locator_id=loc,
+                        obligor_issuer_id=f['issuer_id'],
+                        counterparty_issuer_id=x.get('counterparty_issuer_id'),
+                        counterparty_name_public=x.get('counterparty_name_public'),
+                        commitment_kind=x['commitment_kind'],
+                        amount_decimal=numeric(amount) if amount is not None else None,
+                        currency=x.get('currency') if amount is not None else None,
+                        qualifier=x.get('qualifier','equal') if amount is not None else 'unquantified',
+                        start_date=x.get('start_date'),end_date=x.get('end_date'),
+                        cancellation_terms=x.get('cancellation_terms','undisclosed'),
+                        amount_basis=x['amount_basis'],economic_layer=x['economic_layer'],
+                        status='disclosed',verification_status='attributed_unverified',
+                        note='Unreviewed, non-additive disclosure. '+x.get('note','')))
+                    commitment_ids[cid]=cid;ccount+=1
+            for x in doc.get('model_mappings',[]):
+                if x['source_kind'] not in ('fact','commitment'):
+                    raise ValueError('Mapping source_kind must be fact or commitment')
+                sid=x['source_ref']
+                fact = fact_ids.get(sid) if x['source_kind']=='fact' else None
+                commitment = commitment_ids.get(sid) if x['source_kind']=='commitment' else None
+                if fact is None and commitment is None:
+                    raise ValueError('Mapping must reference a fact/commitment in the same intake: '+sid)
+                stored(cnx,'financial_model_mappings','mapping_id',dict(
+                    mapping_id=x['id'],measurement_id=fact,commitment_id=commitment,
+                    target_model_id=x.get('target_model_id'),
+                    target_input_key=x['target_input_key'],
+                    source_boundary=x['source_boundary'],target_boundary=x['target_boundary'],
+                    transformation_method=x['transformation_method'],
+                    transformation_version=x['transformation_version'],
+                    denominator_notes=x['denominator_notes'],
+                    uncertainty_notes=x.get('uncertainty_notes',''),
+                    review_status='proposed',reviewer=None,reviewed_at=None))
+                mapping_count+=1
+        problems=verify(cnx)
+        if problems:
+            raise ValueError('Financial intake validation errors: '+str(problems))
+        return dict(filings=fcount,facts=mcount,commitments=ccount,
+                    proposed_model_mappings=mapping_count,review_state='staged')
+    finally:
+        cnx.close()
+
+
 def seed(root,db):
     cnx=open_db(db)
     init(root,cnx)
     try:
         with cnx:
             tax=taxonomy_import(cnx,root)
+            financial_issuers=financial_issuer_import(cnx,root)
             src=source_import(cnx,root)
             measures,forward=observations_import(cnx,root,src)
             tam=tam_import(cnx,root,src)
@@ -378,7 +536,7 @@ def seed(root,db):
                       resolution_state='open',resolution_method='Locate and independently compare original dated IDC 2024 and 2025 series, geography, accelerator inclusion and reported growth.'))
     finally:
         cnx.close()
-    return dict(taxonomy_nodes=tax,sources=len(src)+4,measurements=measures,market_forward_forecasts=forward,tam_forecasts=tam,
+    return dict(financial_issuers=financial_issuers,taxonomy_nodes=tax,sources=len(src)+4,measurements=measures,market_forward_forecasts=forward,tam_forecasts=tam,
                 amd_keynote_claims=claims,amd_strategic_signals=signals,microsoft_docker_claims=ms,microsoft_docker_signals=ms_signals,
                 scenario_cells=outputs,priority_questions=questions)
 
@@ -441,12 +599,26 @@ def verify(cnx):
     for x in cnx.execute('SELECT forecast_id,value_decimal FROM forecasts'):
         try: numeric(x['value_decimal'])
         except ValueError: problems.append('Invalid decimal forecast '+x['forecast_id'])
+    for c in cnx.execute('SELECT commitment_id,amount_decimal FROM financial_commitments WHERE amount_decimal IS NOT NULL'):
+        try:
+            if Decimal(numeric(c['amount_decimal'])) < 0:
+                problems.append('Negative disclosed commitment '+c['commitment_id'])
+        except ValueError:
+            problems.append('Invalid financial commitment decimal '+c['commitment_id'])
+    for x in cnx.execute("SELECT mapping_id,measurement_id,commitment_id FROM financial_model_mappings WHERE review_status='approved'"):
+        if x['measurement_id'] is not None:
+            st=cnx.execute('SELECT verification_status FROM measurements WHERE measurement_id=?',(x['measurement_id'],)).fetchone()
+        else:
+            st=cnx.execute('SELECT verification_status FROM financial_commitments WHERE commitment_id=?',(x['commitment_id'],)).fetchone()
+        if st is None or st[0] in ('attributed_unverified','rejected','conflicted'):
+            problems.append('Approved model mapping depends on unreviewed evidence '+x['mapping_id'])
     return problems
 
 
 def counts(cnx):
     tables=['source_documents','source_locators','evidence_claims','measurements','forecasts','forecast_vintages','market_scopes','metric_definitions',
-            'taxonomy_nodes','model_runs','model_outputs','partition_frames','research_questions','conflicts','ingestion_batches']
+            'taxonomy_nodes','model_runs','model_outputs','partition_frames','research_questions','conflicts','ingestion_batches',
+            'financial_issuers','financial_filings','financial_fact_contexts','financial_commitments','financial_model_mappings','financial_flow_links']
     return {t:cnx.execute('SELECT COUNT(*) FROM '+t).fetchone()[0] for t in tables}
 
 
@@ -455,7 +627,8 @@ def exports(cnx,target):
     def out(view):return [dict(row) for row in cnx.execute('SELECT * FROM '+view)]
     content={"version":"researchdb-v1","warning":"Read-only evidence snapshot. Source-backed and synthetic records are separate; no automatic verification or market summation.",
              "measurements":out('v_measurement_evidence'),"forecasts":out('v_forecast_history'),"synthetic_scenarios":out('v_synthetic_outputs'),
-             "unresolved_conflicts":out('v_unresolved_conflicts')}
+             "unresolved_conflicts":out('v_unresolved_conflicts'),
+             "financial_facts":out('v_financial_fact_context'),"financial_commitments":out('v_financial_commitment_evidence')}
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(content,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     return {k:len(v) for k,v in content.items() if isinstance(v,list)}
@@ -463,15 +636,21 @@ def exports(cnx,target):
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command',choices=['init','seed','verify','stats','export','query'])
+    p.add_argument('command',choices=['init','seed','verify','stats','export','query','ingest-financial'])
     p.add_argument('--root',type=Path,default=DEFAULT_ROOT)
     p.add_argument('--db',type=Path)
     p.add_argument('--output',type=Path)
+    p.add_argument('--input',type=Path,help='Public-only JSON filing intake; starts staged, never promoted')
     p.add_argument('--sql',type=str,help='Read-only SELECT or WITH statement for query command')
     args=p.parse_args(argv)
     root=args.root.resolve()
     db=(args.db or root/'db/runtime/research.sqlite').resolve()
     try:
+        if args.command=='ingest-financial':
+            if not args.input: raise ValueError('ingest-financial requires --input JSON path')
+            print(json.dumps(ingest_financial(root,db,args.input),indent=2))
+            print('FINANCIAL_STAGED_ONLY')
+            return 0
         if args.command=='seed':
             summary=seed(root,db)
             print(json.dumps({'seed':summary,'database':str(db)},indent=2))
