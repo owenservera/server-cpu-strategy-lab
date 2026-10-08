@@ -12,7 +12,8 @@
         "How do TAM forecasts reconcile?",
         "Are OEM and ODM sales already counted in end-buyer spending?",
         "When does private closed-model inference relocate rather than add CPU sockets?",
-        "Who owns CPU hardware versus operates the inference service and licenses model IP?"
+        "Who owns CPU hardware versus operates the inference service and licenses model IP?",
+        "How do primary agent workflow purpose and runtime reservation convert to net physical CPU sockets, shipments and CPU silicon dollars?"
       ],
       "topic_keys": [
         "hyperscaler",
@@ -33,12 +34,23 @@
         "confidential inference",
         "AI factory",
         "sovereign on-prem inference",
-        "inference operator"
+        "inference operator",
+        "agent purpose segmentation",
+        "consumer transactional agent",
+        "personal persistent agent",
+        "coding agent compute demand",
+        "enterprise agent workflow",
+        "resident RAM per agent",
+        "agent concurrency",
+        "2029 agent actions",
+        "microVM server CPU capacity",
+        "agent-to-server silicon conversion"
       ],
       "canonical_docs": [
         "docs/research/demand-2030/README.md",
         "docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md",
-        "docs/research/demand-2030/MARKET-SYNTHESIS.md"
+        "docs/research/demand-2030/MARKET-SYNTHESIS.md",
+        "docs/research/demand-2030/AGENTIC-SEGMENTATION-AND-CAPACITY.md"
       ],
       "datasets": [
         "data/demand-2030/historical-and-forecast-evidence.csv",
@@ -62,7 +74,9 @@
         "2024 IDC vintage discrepancy",
         "Server CPU chip volumes and actual ASP by buyer largely unavailable",
         "x86/Arm installed/deployed mix by workload uncertain",
-        "No audited model-lab versus hyperscaler versus enterprise confidential-inference CPU host purchase decomposition"
+        "No audited model-lab versus hyperscaler versus enterprise confidential-inference CPU host purchase decomposition",
+        "No audited workload-purpose split for 2029 agent actions or physical agent-attributable server socket shipments.",
+        "No measured concurrent sandbox resident GiB-hour/socket conversion across different agent runtime topologies."
       ],
       "related": [
         "agent-runtime-and-sandbox",
@@ -124,7 +138,8 @@
         "CPU core-seconds per successful agent task?",
         "How much work is local vs cloud?",
         "How much isolation overhead and utilization?",
-        "What is net new server CPU demand?"
+        "What is net new server CPU demand?",
+        "What is the idle and active RAM reservation and concurrent session density per physical CPU host for each sandbox topology?"
       ],
       "topic_keys": [
         "agent",
@@ -138,11 +153,20 @@
         "security",
         "code execution",
         "orchestration",
-        "hybrid"
+        "hybrid",
+        "agent workflow primary purpose",
+        "AWS AgentCore microVM",
+        "Azure Container Apps dynamic sessions",
+        "Cloud Run sandbox",
+        "persistent agent",
+        "GiB-hours",
+        "memory-constrained sockets",
+        "prewarmed session pool"
       ],
       "canonical_docs": [
         "docs/research/MICROSOFT-DOCKER-AGENTIC-DEMAND-SLICES.md",
-        "docs/research/demand-2030/DASHBOARD-HANDOFF.md"
+        "docs/research/demand-2030/DASHBOARD-HANDOFF.md",
+        "docs/research/demand-2030/AGENTIC-SEGMENTATION-AND-CAPACITY.md"
       ],
       "datasets": [
         "data/claims/microsoft-docker-agentic-2026.json"
@@ -159,7 +183,8 @@
       ],
       "unresolved": [
         "No reproducible measured CPU overhead series",
-        "Endpoint-local vs cloud per-workflow placement not measured"
+        "Endpoint-local vs cloud per-workflow placement not measured",
+        "No measured idle/resident RAM GiB-hours and sandbox concurrency per host for AWS/Azure/Google-equivalent agents."
       ],
       "related": [
         "market-demand-2030",
