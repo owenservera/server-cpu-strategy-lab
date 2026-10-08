@@ -16,6 +16,19 @@ npm start
 
 Open http://127.0.0.1:4173 in a browser. On Windows you may also double-click `OPEN-WINDOWS.cmd` inside the extracted folder, or run these commands in PowerShell. `npm test` validates the economic simulator. To generate an entirely self-contained HTML file for double-click opening (including on mobile), run `npm run build:single`; it creates `standalone.html`. The same static site can be hosted on GitHub Pages. The 2026 comparison also covers AMD EPYC 9006 (up to 256 cores/socket) and Intel Xeon 6+ (up to 288 E-cores/socket), based on their published product documents.
 
+## New: AMD Advancing AI 2026 — x86 demand research corpus
+
+A July 2026 public AMD keynote has been indexed as a **research source**, not accepted as an independent forecast. The uploaded auto-caption transcript is *not* republished publicly.
+
+- [Full research and dashboard implementation path](docs/research/AMD-ADVANCING-AI-2026-RESEARCH-PATH.md) — eight critical numbers to decompose, three CPU demand segments, workload-to-socket TAM models, pricing/margin gaps, verification priorities, and UI design.
+- [97 sourced quantitative claims](data/claims/amd-advancing-ai-2026-curated.json) — normalized claims, source line ranges, status and caveats.
+- [196 numeric-bearing source lines](data/sources/amd-advancing-ai-2026-numeric-anchors.json) — exhaustive decimal-digit line index over the 3,189-line uploaded transcript, explicitly untriaged.
+- [38 strategic/qualitative signals](data/claims/amd-advancing-ai-2026-strategic-signals.json) — attributed strategic arguments, customer testimony and vendor roadmaps.
+- [Related ROCm/x86 future](docs/ROCM-X86-ROADMAP-2026-2031.md).
+- [Corpus integrity test](tests/keynote-corpus.test.mjs); included by `npm test`.
+
+**Core caution:** AMD's $200B+ 2030 CPU TAM estimate (later ~ $220B) is vendor guidance; the `agents per watt` figures can use CPU thread counts as estimates rather than observed agent task throughput. Helios auto-caption GPU/core figures conflict with official product literature; see the research path's contradiction queue.
+
 ## Dashboard sections
 
 | Surface | Interaction | What it teaches |
