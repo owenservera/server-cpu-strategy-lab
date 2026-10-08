@@ -8,7 +8,7 @@ const here = fileURLToPath(new URL('..', import.meta.url));
 export const repoRoot = resolve(here);
 const readJSON = (path, root=repoRoot) => JSON.parse(readFileSync(resolve(root, path), 'utf8'));
 const isString = x => typeof x === 'string' && x.trim().length > 0;
-const collections = ['sources','claims','measurements','forecasts','scenarios','entities','relationships','events','signals','hypotheses','questions','conflicts','methods','requirements','promotions'];
+const collections = ['sources','claims','measurements','forecasts','scenarios','entities','relationships','events','signals','financial_filings','financial_commitments','hypotheses','questions','conflicts','methods','requirements','promotions'];
 const routeToCollection = {
   source:'sources', claim:'claims', measurement:'measurements',
   market_series:'measurements', technical_spec:'claims', benchmark:'measurements',
@@ -16,7 +16,8 @@ const routeToCollection = {
   relationship:'relationships', company_event:'events', buyer_demand:'relationships',
   strategic_signal:'signals', milestone:'events', hypothesis:'hypotheses',
   question:'questions', conflict:'conflicts', method:'methods',
-  product_requirement:'requirements'
+  product_requirement:'requirements',
+  financial_filing:'financial_filings', financial_commitment:'financial_commitments'
 };
 const dateOk = x => /^\d{4}-\d{2}-\d{2}$/.test(x||'') && !Number.isNaN(Date.parse(x));
 const hasDuplicate = arr => new Set(arr).size !== arr.length;
@@ -116,6 +117,29 @@ export function validatePacket(packet, catalog, routes, {root=repoRoot, actualPa
     if(f.value!==null && (typeof f.value!=='number'||!Number.isFinite(f.value))) add('Forecast '+f.id+' invalid value');
     if(!['equal','approximately','greater_than','less_than','range_low','range_high'].includes(f.qualifier)) add('Forecast '+f.id+' missing standardized qualifier');
     if(f.claim_id && !lookup.has(f.claim_id) && !isString(f.legacy_ref)) add('Forecast '+f.id+' has missing claim_id '+f.claim_id);
+  }
+  const filingIds=new Set((packet.financial_filings||[]).map(f=>f.id));
+  for (const f of packet.financial_filings||[]) {
+    for(const key of ['issuer_id','regulator','filing_type','filed_at','url','status']) {
+      if(!isString(f[key])) add('Financial filing '+f.id+' missing '+key);
+    }
+    if(!sourceIds.has(f.source_id)) add('Financial filing '+f.id+' references nonexistent packet source '+f.source_id);
+    if(!dateOk(f.filed_at)) add('Financial filing '+f.id+' invalid filed_at');
+    if(!/^https:\/\//i.test(f.url||'')) add('Financial filing URL must be HTTPS: '+f.id);
+    if(!['indexed','retrieved','extracted','needs_review','reviewed','rejected'].includes(f.status)) add('Invalid financial filing status '+f.id);
+  }
+  for(const c of packet.financial_commitments||[]) {
+    if(!sourceIds.has(c.source_id)) add('Financial commitment '+c.id+' references nonexistent packet source '+c.source_id);
+    if(!filingIds.has(c.filing_id)) add('Financial commitment '+c.id+' references missing packet filing '+c.filing_id);
+    if(!isString(c.source_locator)||!isString(c.amount_basis)||!isString(c.economic_layer)) add('Financial commitment missing locator/unit/boundary '+c.id);
+    if(c.non_additive!==true) add('Financial commitment must be explicitly non_additive '+c.id);
+    if(c.amount_decimal===null) {
+      if(c.currency!==null || c.qualifier!=='unquantified') add('Unknown financial commitment value must have null currency and unquantified qualifier '+c.id);
+    } else {
+      if(typeof c.amount_decimal!=='string'|| !/^(0|[1-9][0-9]*)(\.[0-9]+)?$/.test(c.amount_decimal) || !/^[A-Z]{3}$/.test(c.currency||''))
+        add('Financial commitment requires nonnegative absolute decimal string and ISO currency '+c.id);
+      if(c.qualifier==='unquantified') add('Quantified commitment cannot use unquantified qualifier '+c.id);
+    }
   }
   for(const h of packet.hypotheses||[]) {
     if(!isString(h.thesis)||!isString(h.alternative)||!isString(h.falsification_test)||!Array.isArray(h.evidence_ids)) add('Hypothesis incomplete '+h.id);
