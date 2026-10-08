@@ -387,6 +387,8 @@ def ingest_financial(root, db_path, input_path):
     """Transactional, offline, public-only manual filing intake; never auto-promotes."""
     path = input_path.resolve()
     doc = load_json(path)
+    if doc.get('public_only') is not True:
+        raise ValueError('Financial filing intake must explicitly declare public_only=true')
     if doc.get('schema_version') != '1.0' or not isinstance(doc.get('filings'), list):
         raise ValueError('Expected financial filing input schema_version 1.0 and filings array')
     cnx = open_db(db_path)
@@ -418,6 +420,10 @@ def ingest_financial(root, db_path, input_path):
                              note='Public source metadata; extracted facts require review.',
                              batch_id=bid)
                 fid = f['id']
+                existing_filing=cnx.execute('SELECT extraction_status FROM financial_filings WHERE filing_id=?',(fid,)).fetchone()
+                with_data=bool(f.get('facts') or f.get('commitments'))
+                if existing_filing and existing_filing['extraction_status']=='reviewed' and with_data:
+                    raise ValueError('Reviewed filing requires new revision/vintage before new facts: '+fid)
                 stored(cnx, 'financial_filings', 'filing_id', dict(
                     filing_id=fid, issuer_id=f['issuer_id'], source_id=src,
                     regulator=f['regulator'], filing_type=f['filing_type'],
@@ -426,8 +432,10 @@ def ingest_financial(root, db_path, input_path):
                     fiscal_year=f.get('fiscal_year'), fiscal_quarter=f.get('fiscal_quarter'),
                     filed_at=f['filed_at'], accepted_at=f.get('accepted_at'),
                     amendment_of=f.get('amendment_of'),
-                    extraction_status='needs_review' if f.get('facts') or f.get('commitments') else 'indexed',
+                    extraction_status=existing_filing['extraction_status'] if existing_filing else ('needs_review' if with_data else 'indexed'),
                     note='Intake stage only; not independently verified.'))
+                if with_data:
+                    cnx.execute("UPDATE financial_filings SET extraction_status='needs_review' WHERE filing_id=? AND extraction_status='indexed'",(fid,))
                 fcount += 1
                 for x in f.get('facts',[]):
                     external_id=x['id']
@@ -482,6 +490,21 @@ def ingest_financial(root, db_path, input_path):
                         status='disclosed',verification_status='attributed_unverified',
                         note='Unreviewed, non-additive disclosure. '+x.get('note','')))
                     commitment_ids[cid]=cid;ccount+=1
+            for edge in doc.get('flow_links',[]):
+                if edge['left_commitment_id'] not in commitment_ids or edge['right_commitment_id'] not in commitment_ids:
+                    raise ValueError('Flow edge requires both commitments in same intake')
+                evidence_src = cnx.execute(
+                    'SELECT source_id FROM financial_filings WHERE filing_id=?',
+                    (edge['evidence_filing_id'],)).fetchone()
+                if evidence_src is None:
+                    raise ValueError('Unknown filing evidence for flow edge: '+edge['evidence_filing_id'])
+                stored(cnx,'financial_flow_links',
+                       ('left_commitment_id','right_commitment_id','relationship'),
+                       dict(left_commitment_id=edge['left_commitment_id'],
+                            right_commitment_id=edge['right_commitment_id'],
+                            relationship=edge['relationship'],
+                            evidence_source_id=evidence_src['source_id'],
+                            note=edge.get('note','')))
             for x in doc.get('model_mappings',[]):
                 if x['source_kind'] not in ('fact','commitment'):
                     raise ValueError('Mapping source_kind must be fact or commitment')
@@ -501,9 +524,9 @@ def ingest_financial(root, db_path, input_path):
                     uncertainty_notes=x.get('uncertainty_notes',''),
                     review_status='proposed',reviewer=None,reviewed_at=None))
                 mapping_count+=1
-        problems=verify(cnx)
-        if problems:
-            raise ValueError('Financial intake validation errors: '+str(problems))
+            problems=verify(cnx)
+            if problems:
+                raise ValueError('Financial intake validation errors: '+str(problems))
         return dict(filings=fcount,facts=mcount,commitments=ccount,
                     proposed_model_mappings=mapping_count,review_state='staged')
     finally:
