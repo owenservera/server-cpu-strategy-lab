@@ -2,6 +2,10 @@
 
 The dashboard is the visual interface for a continuously improved, evidence-constrained public research library. Keep the initial product small. Every future surface must reduce learning time or improve decision accuracy.
 
+## Database foundation
+
+[Research database v1 architecture](database/README.md) and [implementation handoff](database/IMPLEMENTATION-HANDOFF.md) are ready. SQLite v1 uses separate evidence claims, measured facts, forecast vintages, synthetic scenario runs, hierarchical but non-additive market dimensions, additive allocation frames, source lineage and review history. The implementation source bundle and isolated 7-test suite were created separately; extraction into GitHub and real-data seed/CI validation remain explicit open gates. PostgreSQL is reserved for actual remote multi-writer requirements.
+
 ## Reusable research intake and cross-session handoff
 
 [RESEARCH-ENTRY.md](../RESEARCH-ENTRY.md) is the **universal intake document**. The agent starts with [AGENTS.md](../AGENTS.md) and uses [research/catalog.json](../research/catalog.json) plus [research/routes.json](../research/routes.json) to discover all affected topics and record types. A single keynote, benchmark, report or conversation can emit multiple linked outputs in **one staged research packet**. See [protocol](../research/INTAKE-AND-PROMOTION.md), [schema](../research/schema/packet.schema.json) and [example](../research/templates/packet.example.json).
