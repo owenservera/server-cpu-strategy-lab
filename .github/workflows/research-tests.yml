@@ -1,0 +1,32 @@
+name: Research corpus integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "docs/research/**"
+      - "docs/ROCM-X86-ROADMAP-2026-2031.md"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/research-tests.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "docs/research/**"
+      - "tests/**"
+      - "package.json"
+
+permissions:
+  contents: read
+
+jobs:
+  corpus:
+    name: Source corpus and dashboard tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
