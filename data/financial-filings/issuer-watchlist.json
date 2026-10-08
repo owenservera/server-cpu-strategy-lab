@@ -1,0 +1,764 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-10-08",
+  "purpose": "Public-company acquisition TARGETS, not claims of retrieved filings or verified measurements.",
+  "historical_start": 2019,
+  "forward_horizon": 2030,
+  "collection_rules": {
+    "default": "filings and amendments + relevant earnings exhibits and investor day documents",
+    "daily": "regulator submission discovery (rate-limit and identify client)",
+    "quarterly": "retrieve statements, footnotes, MD&A, segment recasts and comparable periods",
+    "on_event": "contract exhibits, financing, supply commitments, earnings guides",
+    "priority": "P0 first, then P1, then scenario-dependent P2/P3",
+    "copyright": "store URLs, metadata and limited attributed extracts; do not mirror full copyrighted documents into public git",
+    "identity": "resolve CIK/LEI/regulator issuer codes before automated collection; ticker not durable issuer key",
+    "financial_reporting": "never equate capex or RPO with CPU silicon sales, or add channel and buyer amounts"
+  },
+  "issuers": [
+    {
+      "id": "fin:amd",
+      "name": "AMD",
+      "symbol": "AMD",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "cpu_vendor"
+      ],
+      "investor_relations_url": "https://ir.amd.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:intel",
+      "name": "Intel",
+      "symbol": "INTC",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "cpu_vendor"
+      ],
+      "investor_relations_url": "https://www.intc.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:nvidia",
+      "name": "NVIDIA",
+      "symbol": "NVDA",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "cpu_vendor",
+        "ai_platform"
+      ],
+      "investor_relations_url": "https://investor.nvidia.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:arm",
+      "name": "Arm Holdings",
+      "symbol": "ARM",
+      "regulator": "SEC",
+      "jurisdiction": "UK",
+      "priority": "P0",
+      "roles": [
+        "cpu_ip",
+        "cpu_vendor"
+      ],
+      "investor_relations_url": "https://investors.arm.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:tsmc",
+      "name": "Taiwan Semiconductor Manufacturing",
+      "symbol": "TSM",
+      "regulator": "SEC;TWSE",
+      "jurisdiction": "TW",
+      "priority": "P0",
+      "roles": [
+        "foundry"
+      ],
+      "investor_relations_url": "https://investor.tsmc.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:amazon",
+      "name": "Amazon",
+      "symbol": "AMZN",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://ir.aboutamazon.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:microsoft",
+      "name": "Microsoft",
+      "symbol": "MSFT",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://www.microsoft.com/en-us/Investor",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:alphabet",
+      "name": "Alphabet",
+      "symbol": "GOOGL",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://abc.xyz/investor",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:meta",
+      "name": "Meta Platforms",
+      "symbol": "META",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://investor.atmeta.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:oracle",
+      "name": "Oracle",
+      "symbol": "ORCL",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://investor.oracle.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:dell",
+      "name": "Dell Technologies",
+      "symbol": "DELL",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "oem",
+        "channel"
+      ],
+      "investor_relations_url": "https://investors.delltechnologies.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:hpe",
+      "name": "Hewlett Packard Enterprise",
+      "symbol": "HPE",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P0",
+      "roles": [
+        "oem",
+        "channel"
+      ],
+      "investor_relations_url": "https://investors.hpe.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:broadcom",
+      "name": "Broadcom",
+      "symbol": "AVGO",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "custom_silicon",
+        "semiconductor"
+      ],
+      "investor_relations_url": "https://investors.broadcom.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:qualcomm",
+      "name": "Qualcomm",
+      "symbol": "QCOM",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "cpu_vendor",
+        "custom_silicon"
+      ],
+      "investor_relations_url": "https://investor.qualcomm.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:softbank",
+      "name": "SoftBank Group",
+      "symbol": "9984.T",
+      "regulator": "TSE",
+      "jurisdiction": "JP",
+      "priority": "P1",
+      "roles": [
+        "cpu_investor",
+        "ownership"
+      ],
+      "investor_relations_url": "https://group.softbank/en/ir",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:micron",
+      "name": "Micron Technology",
+      "symbol": "MU",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "memory_supplier"
+      ],
+      "investor_relations_url": "https://investors.micron.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:samsung",
+      "name": "Samsung Electronics",
+      "symbol": "005930.KS",
+      "regulator": "DART",
+      "jurisdiction": "KR",
+      "priority": "P1",
+      "roles": [
+        "memory_supplier",
+        "foundry"
+      ],
+      "investor_relations_url": "https://www.samsung.com/global/ir",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:skhynix",
+      "name": "SK hynix",
+      "symbol": "000660.KS",
+      "regulator": "DART",
+      "jurisdiction": "KR",
+      "priority": "P1",
+      "roles": [
+        "memory_supplier"
+      ],
+      "investor_relations_url": "https://news.skhynix.com/investor-relations/",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:coreweave",
+      "name": "CoreWeave",
+      "symbol": "CRWV",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "neocloud",
+        "buyer"
+      ],
+      "investor_relations_url": "https://investors.coreweave.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:supermicro",
+      "name": "Super Micro Computer",
+      "symbol": "SMCI",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "oem",
+        "channel"
+      ],
+      "investor_relations_url": "https://ir.supermicro.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:wiwynn",
+      "name": "Wiwynn",
+      "symbol": "6669.TW",
+      "regulator": "TWSE",
+      "jurisdiction": "TW",
+      "priority": "P1",
+      "roles": [
+        "odm",
+        "channel"
+      ],
+      "investor_relations_url": "https://www.wiwynn.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:quanta",
+      "name": "Quanta Computer",
+      "symbol": "2382.TW",
+      "regulator": "TWSE",
+      "jurisdiction": "TW",
+      "priority": "P1",
+      "roles": [
+        "odm",
+        "channel"
+      ],
+      "investor_relations_url": "https://www.quantatw.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:nebius",
+      "name": "Nebius Group",
+      "symbol": "NBIS",
+      "regulator": "SEC",
+      "jurisdiction": "NL",
+      "priority": "P1",
+      "roles": [
+        "neocloud",
+        "buyer"
+      ],
+      "investor_relations_url": "https://nebius.com/investors",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:asml",
+      "name": "ASML",
+      "symbol": "ASML",
+      "regulator": "SEC;AFM",
+      "jurisdiction": "NL",
+      "priority": "P1",
+      "roles": [
+        "manufacturing_equipment"
+      ],
+      "investor_relations_url": "https://www.asml.com/en/investors",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:equnix",
+      "name": "Equinix",
+      "symbol": "EQIX",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "colocation",
+        "capacity"
+      ],
+      "investor_relations_url": "https://investor.equinix.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:digitalrealty",
+      "name": "Digital Realty",
+      "symbol": "DLR",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P1",
+      "roles": [
+        "colocation",
+        "capacity"
+      ],
+      "investor_relations_url": "https://investor.digitalrealty.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:marvell",
+      "name": "Marvell Technology",
+      "symbol": "MRVL",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P2",
+      "roles": [
+        "custom_silicon",
+        "networking"
+      ],
+      "investor_relations_url": "https://investor.marvell.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:foxconn",
+      "name": "Hon Hai Precision Industry",
+      "symbol": "2317.TW",
+      "regulator": "TWSE",
+      "jurisdiction": "TW",
+      "priority": "P2",
+      "roles": [
+        "odm",
+        "channel"
+      ],
+      "investor_relations_url": "https://www.honhai.com/en-us/investor-relations",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:lenovo",
+      "name": "Lenovo Group",
+      "symbol": "0992.HK",
+      "regulator": "HKEX",
+      "jurisdiction": "HK",
+      "priority": "P2",
+      "roles": [
+        "oem",
+        "channel"
+      ],
+      "investor_relations_url": "https://investor.lenovo.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:amkor",
+      "name": "Amkor Technology",
+      "symbol": "AMKR",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P2",
+      "roles": [
+        "packaging"
+      ],
+      "investor_relations_url": "https://ir.amkor.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:vertiv",
+      "name": "Vertiv",
+      "symbol": "VRT",
+      "regulator": "SEC",
+      "jurisdiction": "US",
+      "priority": "P2",
+      "roles": [
+        "physical_infrastructure"
+      ],
+      "investor_relations_url": "https://investors.vertiv.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:eaton",
+      "name": "Eaton",
+      "symbol": "ETN",
+      "regulator": "SEC",
+      "jurisdiction": "IE",
+      "priority": "P2",
+      "roles": [
+        "physical_infrastructure"
+      ],
+      "investor_relations_url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:alibaba",
+      "name": "Alibaba Group",
+      "symbol": "BABA",
+      "regulator": "SEC;HKEX",
+      "jurisdiction": "CN",
+      "priority": "P2",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://www.alibabagroup.com/en-US/ir",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    },
+    {
+      "id": "fin:tencent",
+      "name": "Tencent Holdings",
+      "symbol": "0700.HK",
+      "regulator": "HKEX",
+      "jurisdiction": "CN",
+      "priority": "P2",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://www.tencent.com/en-us/investors.html",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "annual report",
+        "interim report",
+        "earnings presentation",
+        "material announcements"
+      ]
+    },
+    {
+      "id": "fin:baidu",
+      "name": "Baidu",
+      "symbol": "BIDU",
+      "regulator": "SEC;HKEX",
+      "jurisdiction": "CN",
+      "priority": "P2",
+      "roles": [
+        "hyperscaler",
+        "buyer"
+      ],
+      "investor_relations_url": "https://ir.baidu.com",
+      "coverage_start_year": 2019,
+      "document_types": [
+        "10-K or 20-F",
+        "10-Q or 6-K",
+        "8-K",
+        "earnings exhibit",
+        "investor day",
+        "material contracts"
+      ]
+    }
+  ]
+}
