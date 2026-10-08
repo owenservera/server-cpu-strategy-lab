@@ -1,0 +1,2182 @@
+{
+  "schema_version": "1.0",
+  "source_id": "amd-advancing-ai-2026-keynote-transcript",
+  "source_title": "AMD Advancing AI 2026 full keynote, uploaded English auto-generated transcript",
+  "event_date": "2026-07-23",
+  "indexed_on": "2026-10-08",
+  "source_video_url": "https://www.youtube.com/watch?v=crEztVjfAPM",
+  "original_line_count": 3189,
+  "original_sha256": "1e5f2be84eff6c3ff81b71564d44f7c4ac0b355141782859e7686e72b866a058",
+  "source_republication_policy": "Do not republish user-supplied third-party transcript verbatim in this public repository; this index contains only line references and value tokens.",
+  "index_policy": "Exhaustive for transcript lines containing decimal digits, not exhaustive for spelled-out numbers or qualitative claims. Untriaged entries include model identifiers, years, and conversational counts, not necessarily market data.",
+  "numeric_bearing_lines": 196,
+  "zones": [
+    {
+      "first_line": 1,
+      "last_line": 276,
+      "topic": "Opening and TAM"
+    },
+    {
+      "first_line": 277,
+      "last_line": 450,
+      "topic": "Helios systems"
+    },
+    {
+      "first_line": 451,
+      "last_line": 611,
+      "topic": "Anthropic"
+    },
+    {
+      "first_line": 612,
+      "last_line": 688,
+      "topic": "Inference economics"
+    },
+    {
+      "first_line": 689,
+      "last_line": 904,
+      "topic": "OpenAI"
+    },
+    {
+      "first_line": 905,
+      "last_line": 1189,
+      "topic": "EPYC Venice and CPU workloads"
+    },
+    {
+      "first_line": 1190,
+      "last_line": 1415,
+      "topic": "Meta"
+    },
+    {
+      "first_line": 1416,
+      "last_line": 1560,
+      "topic": "Cerebras and platform partnerships"
+    },
+    {
+      "first_line": 1561,
+      "last_line": 2030,
+      "topic": "ROCm software and OpenAI Triton"
+    },
+    {
+      "first_line": 2031,
+      "last_line": 2150,
+      "topic": "HPC and enterprise shift"
+    },
+    {
+      "first_line": 2151,
+      "last_line": 2490,
+      "topic": "Enterprise and AT&T"
+    },
+    {
+      "first_line": 2491,
+      "last_line": 2770,
+      "topic": "Personal and local AI"
+    },
+    {
+      "first_line": 2771,
+      "last_line": 2915,
+      "topic": "Cisco governance"
+    },
+    {
+      "first_line": 2916,
+      "last_line": 3050,
+      "topic": "Physical AI"
+    },
+    {
+      "first_line": 3051,
+      "last_line": 3189,
+      "topic": "2030 roadmap and closing"
+    }
+  ],
+  "anchors": [
+    {
+      "line": 7,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "2026"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L7"
+    },
+    {
+      "line": 27,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "50 years"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L27"
+    },
+    {
+      "line": 50,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "35"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L50"
+    },
+    {
+      "line": 52,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "160"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L52"
+    },
+    {
+      "line": 63,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "5x"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L63"
+    },
+    {
+      "line": 78,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "2026"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L78"
+    },
+    {
+      "line": 82,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "60%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L82"
+    },
+    {
+      "line": 130,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "500",
+        "2028"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L130"
+    },
+    {
+      "line": 141,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "2030"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L141"
+    },
+    {
+      "line": 143,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "1.4",
+        "2030"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L143"
+    },
+    {
+      "line": 162,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "6"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L162"
+    },
+    {
+      "line": 168,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "6",
+        "8"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L168"
+    },
+    {
+      "line": 177,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "18",
+        "20%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L177"
+    },
+    {
+      "line": 178,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "60"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L178"
+    },
+    {
+      "line": 193,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "50%",
+        "200"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L193"
+    },
+    {
+      "line": 194,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "2030"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L194"
+    },
+    {
+      "line": 195,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "$25"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L195"
+    },
+    {
+      "line": 196,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "200"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L196"
+    },
+    {
+      "line": 217,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "40%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L217"
+    },
+    {
+      "line": 219,
+      "zone": "Opening and TAM",
+      "numeric_tokens": [
+        "$2",
+        "2030"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L219"
+    },
+    {
+      "line": 285,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "60%",
+        "100"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L285"
+    },
+    {
+      "line": 288,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "46%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L288"
+    },
+    {
+      "line": 338,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L338"
+    },
+    {
+      "line": 349,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L349"
+    },
+    {
+      "line": 362,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "320"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L362"
+    },
+    {
+      "line": 364,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "2nm",
+        "3nm"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L364"
+    },
+    {
+      "line": 368,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "12"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L368"
+    },
+    {
+      "line": 369,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "432 GB"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L369"
+    },
+    {
+      "line": 370,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "3"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L370"
+    },
+    {
+      "line": 379,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "96 core"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L379"
+    },
+    {
+      "line": 380,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "5"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L380"
+    },
+    {
+      "line": 401,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "75"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L401"
+    },
+    {
+      "line": 412,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "15%",
+        "50%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L412"
+    },
+    {
+      "line": 413,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "4"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L413"
+    },
+    {
+      "line": 414,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "50%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L414"
+    },
+    {
+      "line": 428,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "160",
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L428"
+    },
+    {
+      "line": 434,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "18,000",
+        "5"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L434"
+    },
+    {
+      "line": 435,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "4600",
+        "6",
+        "31"
+      ],
+      "device_identifiers": [
+        "Zen6"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L435"
+    },
+    {
+      "line": 436,
+      "zone": "Helios systems",
+      "numeric_tokens": [
+        "4"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L436"
+    },
+    {
+      "line": 489,
+      "zone": "Anthropic",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L489"
+    },
+    {
+      "line": 506,
+      "zone": "Anthropic",
+      "numeric_tokens": [
+        "355"
+      ],
+      "device_identifiers": [
+        "MI355"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L506"
+    },
+    {
+      "line": 526,
+      "zone": "Anthropic",
+      "numeric_tokens": [
+        "355,"
+      ],
+      "device_identifiers": [
+        "MI355"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L526"
+    },
+    {
+      "line": 615,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L615"
+    },
+    {
+      "line": 620,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "4"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L620"
+    },
+    {
+      "line": 622,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "455",
+        "355"
+      ],
+      "device_identifiers": [
+        "MI455",
+        "MI355"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L622"
+    },
+    {
+      "line": 626,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L626"
+    },
+    {
+      "line": 627,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "4x",
+        "355"
+      ],
+      "device_identifiers": [
+        "MI355"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L627"
+    },
+    {
+      "line": 635,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "34"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L635"
+    },
+    {
+      "line": 652,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "455,"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L652"
+    },
+    {
+      "line": 653,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "18"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L653"
+    },
+    {
+      "line": 668,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "10",
+        "15%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L668"
+    },
+    {
+      "line": 675,
+      "zone": "Inference economics",
+      "numeric_tokens": [
+        "30%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L675"
+    },
+    {
+      "line": 750,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "6"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L750"
+    },
+    {
+      "line": 753,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L753"
+    },
+    {
+      "line": 760,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "300"
+      ],
+      "device_identifiers": [
+        "MI300"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L760"
+    },
+    {
+      "line": 761,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "355"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L761"
+    },
+    {
+      "line": 783,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "2027"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L783"
+    },
+    {
+      "line": 881,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "400"
+      ],
+      "device_identifiers": [
+        "MI400"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L881"
+    },
+    {
+      "line": 887,
+      "zone": "OpenAI",
+      "numeric_tokens": [
+        "500"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L887"
+    },
+    {
+      "line": 908,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "2017"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L908"
+    },
+    {
+      "line": 928,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "192 cores",
+        "384"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L928"
+    },
+    {
+      "line": 984,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "6"
+      ],
+      "device_identifiers": [
+        "Zen6"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L984"
+    },
+    {
+      "line": 987,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "1.8"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L987"
+    },
+    {
+      "line": 993,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "203"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L993"
+    },
+    {
+      "line": 994,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L994"
+    },
+    {
+      "line": 996,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "512 threads"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L996"
+    },
+    {
+      "line": 1009,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "6"
+      ],
+      "device_identifiers": [
+        "Zen6"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1009"
+    },
+    {
+      "line": 1015,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "12 cores"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1015"
+    },
+    {
+      "line": 1016,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "5 GHz"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1016"
+    },
+    {
+      "line": 1024,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "256 core"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1024"
+    },
+    {
+      "line": 1027,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "32 cores"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1027"
+    },
+    {
+      "line": 1028,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "512 threads"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1028"
+    },
+    {
+      "line": 1034,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "128 core"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1034"
+    },
+    {
+      "line": 1056,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "3"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1056"
+    },
+    {
+      "line": 1082,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "86"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1082"
+    },
+    {
+      "line": 1083,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "1.8"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1083"
+    },
+    {
+      "line": 1089,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "100"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1089"
+    },
+    {
+      "line": 1097,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "2.8"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1097"
+    },
+    {
+      "line": 1099,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "3.3"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1099"
+    },
+    {
+      "line": 1122,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "20%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1122"
+    },
+    {
+      "line": 1127,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "2.2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1127"
+    },
+    {
+      "line": 1141,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "86"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1141"
+    },
+    {
+      "line": 1143,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "86"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1143"
+    },
+    {
+      "line": 1159,
+      "zone": "EPYC Venice and CPU workloads",
+      "numeric_tokens": [
+        "25,000 cores",
+        "50,000 cores"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1159"
+    },
+    {
+      "line": 1334,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "300"
+      ],
+      "device_identifiers": [
+        "MI300"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1334"
+    },
+    {
+      "line": 1337,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "6",
+        "450"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1337"
+    },
+    {
+      "line": 1341,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1341"
+    },
+    {
+      "line": 1343,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "300"
+      ],
+      "device_identifiers": [
+        "MI300"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1343"
+    },
+    {
+      "line": 1350,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1350"
+    },
+    {
+      "line": 1354,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1354"
+    },
+    {
+      "line": 1361,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "300",
+        "350",
+        "450"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1361"
+    },
+    {
+      "line": 1378,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1378"
+    },
+    {
+      "line": 1410,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "2 years"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1410"
+    },
+    {
+      "line": 1415,
+      "zone": "Meta",
+      "numeric_tokens": [
+        "27"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1415"
+    },
+    {
+      "line": 1416,
+      "zone": "Cerebras and platform partnerships",
+      "numeric_tokens": [
+        "28"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1416"
+    },
+    {
+      "line": 1422,
+      "zone": "Cerebras and platform partnerships",
+      "numeric_tokens": [
+        "28 w"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1422"
+    },
+    {
+      "line": 1738,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "14,000"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1738"
+    },
+    {
+      "line": 1754,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "3 w",
+        "355"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1754"
+    },
+    {
+      "line": 1764,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "3 w"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1764"
+    },
+    {
+      "line": 1775,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "38%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1775"
+    },
+    {
+      "line": 1787,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "3.3"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1787"
+    },
+    {
+      "line": 1788,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "7"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1788"
+    },
+    {
+      "line": 1802,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "2.4"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1802"
+    },
+    {
+      "line": 1808,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1808"
+    },
+    {
+      "line": 1813,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "20"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1813"
+    },
+    {
+      "line": 1814,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "20"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1814"
+    },
+    {
+      "line": 1825,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1825"
+    },
+    {
+      "line": 1830,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1830"
+    },
+    {
+      "line": 1833,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1833"
+    },
+    {
+      "line": 1841,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "4",
+        "1.6"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1841"
+    },
+    {
+      "line": 1889,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "2 years"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1889"
+    },
+    {
+      "line": 1920,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "300"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1920"
+    },
+    {
+      "line": 1921,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1921"
+    },
+    {
+      "line": 1923,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1923"
+    },
+    {
+      "line": 1930,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "450 w"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1930"
+    },
+    {
+      "line": 1936,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1936"
+    },
+    {
+      "line": 1944,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "450"
+      ],
+      "device_identifiers": [
+        "MI450"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1944"
+    },
+    {
+      "line": 1972,
+      "zone": "ROCm software and OpenAI Triton",
+      "numeric_tokens": [
+        "6"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L1972"
+    },
+    {
+      "line": 2042,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2042"
+    },
+    {
+      "line": 2043,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "4",
+        "430X"
+      ],
+      "device_identifiers": [
+        "FP4",
+        "MI430X"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2043"
+    },
+    {
+      "line": 2044,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "64"
+      ],
+      "device_identifiers": [
+        "FP64"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2044"
+    },
+    {
+      "line": 2048,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "430X"
+      ],
+      "device_identifiers": [
+        "MI430X"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2048"
+    },
+    {
+      "line": 2050,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "64"
+      ],
+      "device_identifiers": [
+        "FP64"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2050"
+    },
+    {
+      "line": 2057,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "288"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2057"
+    },
+    {
+      "line": 2058,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "64"
+      ],
+      "device_identifiers": [
+        "FP64"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2058"
+    },
+    {
+      "line": 2061,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2061"
+    },
+    {
+      "line": 2062,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "430X"
+      ],
+      "device_identifiers": [
+        "MI430X"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2062"
+    },
+    {
+      "line": 2063,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "2027"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2063"
+    },
+    {
+      "line": 2067,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "430X"
+      ],
+      "device_identifiers": [
+        "MI430X"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2067"
+    },
+    {
+      "line": 2119,
+      "zone": "HPC and enterprise shift",
+      "numeric_tokens": [
+        "6",
+        "12"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2119"
+    },
+    {
+      "line": 2159,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "76%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2159"
+    },
+    {
+      "line": 2179,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "8",
+        "256 cores"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2179"
+    },
+    {
+      "line": 2195,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2195"
+    },
+    {
+      "line": 2250,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2250"
+    },
+    {
+      "line": 2256,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2256"
+    },
+    {
+      "line": 2264,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [
+        "MI350P"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2264"
+    },
+    {
+      "line": 2265,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "260"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2265"
+    },
+    {
+      "line": 2269,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2269"
+    },
+    {
+      "line": 2284,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2284"
+    },
+    {
+      "line": 2323,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "350"
+      ],
+      "device_identifiers": [
+        "MI350P"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2323"
+    },
+    {
+      "line": 2325,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "43%"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2325"
+    },
+    {
+      "line": 2326,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "3x"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2326"
+    },
+    {
+      "line": 2386,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "100"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2386"
+    },
+    {
+      "line": 2400,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "300,000"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2400"
+    },
+    {
+      "line": 2435,
+      "zone": "Enterprise and AT&T",
+      "numeric_tokens": [
+        "100"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2435"
+    },
+    {
+      "line": 2492,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "1.0"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2492"
+    },
+    {
+      "line": 2494,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "18"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2494"
+    },
+    {
+      "line": 2497,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "2.0"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2497"
+    },
+    {
+      "line": 2554,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "10"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2554"
+    },
+    {
+      "line": 2594,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "120"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2594"
+    },
+    {
+      "line": 2595,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "80"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2595"
+    },
+    {
+      "line": 2596,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "3.5"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2596"
+    },
+    {
+      "line": 2597,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "9"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2597"
+    },
+    {
+      "line": 2598,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "13"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2598"
+    },
+    {
+      "line": 2605,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "3.6",
+        "27"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2605"
+    },
+    {
+      "line": 2616,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "400"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2616"
+    },
+    {
+      "line": 2617,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "24"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2617"
+    },
+    {
+      "line": 2619,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "3.5",
+        "9"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2619"
+    },
+    {
+      "line": 2621,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "200"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2621"
+    },
+    {
+      "line": 2632,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "120"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2632"
+    },
+    {
+      "line": 2634,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "200"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2634"
+    },
+    {
+      "line": 2684,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "128"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2684"
+    },
+    {
+      "line": 2685,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "192"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2685"
+    },
+    {
+      "line": 2687,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "200",
+        "300"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2687"
+    },
+    {
+      "line": 2716,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2716"
+    },
+    {
+      "line": 2719,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "2,"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2719"
+    },
+    {
+      "line": 2743,
+      "zone": "Personal and local AI",
+      "numeric_tokens": [
+        "7",
+        "24"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2743"
+    },
+    {
+      "line": 2776,
+      "zone": "Cisco governance",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2776"
+    },
+    {
+      "line": 2788,
+      "zone": "Cisco governance",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2788"
+    },
+    {
+      "line": 2826,
+      "zone": "Cisco governance",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2826"
+    },
+    {
+      "line": 2865,
+      "zone": "Cisco governance",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2865"
+    },
+    {
+      "line": 2903,
+      "zone": "Cisco governance",
+      "numeric_tokens": [
+        "2"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2903"
+    },
+    {
+      "line": 2922,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "2, w"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2922"
+    },
+    {
+      "line": 2951,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "20 years"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2951"
+    },
+    {
+      "line": 2982,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "100"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2982"
+    },
+    {
+      "line": 2993,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "3.4"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2993"
+    },
+    {
+      "line": 2994,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "2.3"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2994"
+    },
+    {
+      "line": 2995,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "1.6"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L2995"
+    },
+    {
+      "line": 3017,
+      "zone": "Physical AI",
+      "numeric_tokens": [
+        "2,"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3017"
+    },
+    {
+      "line": 3068,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "2028, w"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3068"
+    },
+    {
+      "line": 3069,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "77 cores"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3069"
+    },
+    {
+      "line": 3077,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "8"
+      ],
+      "device_identifiers": [
+        "Zen8"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3077"
+    },
+    {
+      "line": 3079,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "2030"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3079"
+    },
+    {
+      "line": 3094,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "500"
+      ],
+      "device_identifiers": [
+        "MI500"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3094"
+    },
+    {
+      "line": 3099,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "600,"
+      ],
+      "device_identifiers": [
+        "MI600"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3099"
+    },
+    {
+      "line": 3101,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "2028"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3101"
+    },
+    {
+      "line": 3106,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "455, w"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3106"
+    },
+    {
+      "line": 3107,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "35"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3107"
+    },
+    {
+      "line": 3108,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "355,"
+      ],
+      "device_identifiers": [
+        "MI355"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3108"
+    },
+    {
+      "line": 3110,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "500"
+      ],
+      "device_identifiers": [
+        "MI500"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3110"
+    },
+    {
+      "line": 3112,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "500"
+      ],
+      "device_identifiers": [
+        "MI500"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3112"
+    },
+    {
+      "line": 3115,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "2,000"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3115"
+    },
+    {
+      "line": 3121,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "500"
+      ],
+      "device_identifiers": [
+        "MI500"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3121"
+    },
+    {
+      "line": 3143,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "455"
+      ],
+      "device_identifiers": [
+        "MI455"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3143"
+    },
+    {
+      "line": 3145,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "430",
+        "350"
+      ],
+      "device_identifiers": [
+        "MI430",
+        "MI350"
+      ],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3145"
+    },
+    {
+      "line": 3180,
+      "zone": "2030 roadmap and closing",
+      "numeric_tokens": [
+        "30,000"
+      ],
+      "device_identifiers": [],
+      "review_status": "untriaged",
+      "source_locator": "transcript:L3180"
+    }
+  ]
+}
