@@ -1,0 +1,79 @@
+name: Database v1 integration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'db/**'
+      - 'data/**'
+      - 'docs/database/**'
+      - '.github/workflows/database-ci.yml'
+  pull_request:
+    paths:
+      - 'db/**'
+      - 'data/**'
+      - 'docs/database/**'
+      - '.github/workflows/database-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sqlite-read-model:
+    name: DB fixture tests and real corpus seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check Python and SQLite versions
+        run: |
+          python - <<'PY'
+          import sqlite3, sys
+          print(sys.version)
+          print('sqlite', sqlite3.sqlite_version)
+          assert sys.version_info >= (3, 11)
+          assert sqlite3.sqlite_version_info >= (3, 37)
+          PY
+      - name: Test original DB v1 fixture suite
+        run: python -m unittest discover -s db/tests -v
+      - name: Seed actual repository corpus
+        run: python db/scripts/research_db.py seed
+      - name: Verify and export derived local snapshot
+        run: |
+          python db/scripts/research_db.py verify
+          python db/scripts/research_db.py stats
+          python db/scripts/research_db.py export
+      - name: Validate evidence classes and no accidental publication
+        run: |
+          python - <<'PY'
+          import json, pathlib, sqlite3
+          p = pathlib.Path('db/runtime/research.sqlite')
+          assert p.exists()
+          db = sqlite3.connect(p)
+          n=lambda q: db.execute(q).fetchone()[0]
+          assert n('select count(*) from source_documents') >= 30
+          assert n('select count(*) from forecast_vintages') >= 9
+          assert n('select count(*) from evidence_claims') >= 165
+          assert n('select count(*) from measurements') > 0
+          assert n('select count(*) from model_outputs') > 0
+          assert n('select count(*) from conflicts where resolution_state="open"') >= 1
+          assert n('select count(*) from model_outputs where target_year=2025 and metric_key="x86_silicon_tam_usd_b" and value_decimal is not null') == 0
+          assert n('select count(*) from measurements where verification_status="attributed_unverified"') > 0
+          db.close()
+          snap=json.loads(pathlib.Path('db/runtime/research_snapshot.json').read_text())
+          assert snap['version']=='researchdb-v1'
+          assert snap['synthetic_scenarios']
+          assert snap['forecasts']
+          assert snap['measurements']
+          print('DB_CORPUS_SMOKE_PASS', {k:len(v) for k,v in snap.items() if isinstance(v,list)})
+          PY
+      - name: Check no generated DB artifacts are tracked
+        run: |
+          if git ls-files 'db/runtime/**' '*.sqlite' '*.sqlite-shm' '*.sqlite-wal' | grep .; then
+            echo 'Generated database file accidentally tracked'; exit 1
+          fi
+          echo 'DB_RUNTIME_GITIGNORE_PASS'
