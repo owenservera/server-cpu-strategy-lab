@@ -217,6 +217,20 @@
         }
       },
       "additionalProperties": true
+    },
+    "financial_filings": {
+      "type": "array",
+      "description": "Optional source-backed financial filing records. Presence does not mean downloaded or reviewed.",
+      "items": {
+        "$ref": "#/$defs/financial_filing"
+      }
+    },
+    "financial_commitments": {
+      "type": "array",
+      "description": "Optional non-additive contractual/financing disclosures with source locators and economic boundaries.",
+      "items": {
+        "$ref": "#/$defs/financial_commitment"
+      }
     }
   },
   "additionalProperties": false,
@@ -1076,6 +1090,211 @@
             "string",
             "null"
           ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "financial_filing": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "issuer_id",
+        "regulator",
+        "filing_type",
+        "filed_at",
+        "url",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "issuer_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "regulator": {
+          "type": "string"
+        },
+        "filing_type": {
+          "type": "string"
+        },
+        "accession_or_document_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "filed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "amendment_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "indexed",
+            "retrieved",
+            "extracted",
+            "needs_review",
+            "reviewed",
+            "rejected"
+          ]
+        },
+        "rights": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "financial_commitment": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "filing_id",
+        "commitment_kind",
+        "amount_decimal",
+        "currency",
+        "qualifier",
+        "amount_basis",
+        "economic_layer",
+        "source_locator",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "filing_id": {
+          "type": "string",
+          "minLength": 5
+        },
+        "commitment_kind": {
+          "enum": [
+            "purchase_obligation",
+            "cloud_capacity",
+            "foundry_capacity",
+            "supply_capacity",
+            "equipment",
+            "lease",
+            "financing",
+            "guarantee",
+            "rpo",
+            "backlog",
+            "other"
+          ]
+        },
+        "amount_decimal": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Absolute currency units as decimal string; null if undisclosed.",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "qualifier": {
+          "enum": [
+            "equal",
+            "approximately",
+            "greater_than",
+            "less_than",
+            "range_low",
+            "range_high",
+            "unquantified"
+          ]
+        },
+        "amount_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "economic_layer": {
+          "enum": [
+            "corporate_financial",
+            "server_system",
+            "cpu_silicon",
+            "cloud_service",
+            "fleet_capacity",
+            "unresolved"
+          ]
+        },
+        "source_locator": {
+          "type": "string",
+          "minLength": 3
+        },
+        "obligor_issuer_id": {
+          "type": "string"
+        },
+        "counterparty_issuer_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "counterparty_name_public": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cancellation_terms": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_additive": {
+          "const": true
         }
       },
       "additionalProperties": true
