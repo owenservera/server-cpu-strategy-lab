@@ -13,7 +13,8 @@
         "Are OEM and ODM sales already counted in end-buyer spending?",
         "When does private closed-model inference relocate rather than add CPU sockets?",
         "Who owns CPU hardware versus operates the inference service and licenses model IP?",
-        "How do primary agent workflow purpose and runtime reservation convert to net physical CPU sockets, shipments and CPU silicon dollars?"
+        "How do primary agent workflow purpose and runtime reservation convert to net physical CPU sockets, shipments and CPU silicon dollars?",
+        "How do fixed foundational/AI host/agent execution TAM buckets redistribute among qualified CPU platforms under falsifiable market conditions?"
       ],
       "topic_keys": [
         "hyperscaler",
@@ -50,14 +51,16 @@
         "docs/research/demand-2030/README.md",
         "docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md",
         "docs/research/demand-2030/MARKET-SYNTHESIS.md",
-        "docs/research/demand-2030/AGENTIC-SEGMENTATION-AND-CAPACITY.md"
+        "docs/research/demand-2030/AGENTIC-SEGMENTATION-AND-CAPACITY.md",
+        "docs/research/competitive-capture/COMPETITIVE-CAPTURE-RESEARCH-2026-10-08.md"
       ],
       "datasets": [
         "data/demand-2030/historical-and-forecast-evidence.csv",
         "data/demand-2030/tam-forecast-vintages.csv",
         "data/demand-2030/scenario-model.json",
         "data/demand-2030/source-registry.json",
-        "data/demand-2030/priority-data-fields.json"
+        "data/demand-2030/priority-data-fields.json",
+        "data/demand-2030/competitive-capture-stress-overlay.json"
       ],
       "routes": [
         "measurement",
@@ -76,7 +79,8 @@
         "x86/Arm installed/deployed mix by workload uncertain",
         "No audited model-lab versus hyperscaler versus enterprise confidential-inference CPU host purchase decomposition",
         "No audited workload-purpose split for 2029 agent actions or physical agent-attributable server socket shipments.",
-        "No measured concurrent sandbox resident GiB-hour/socket conversion across different agent runtime topologies."
+        "No measured concurrent sandbox resident GiB-hour/socket conversion across different agent runtime topologies.",
+        "Competitive silicon economic owner and custom/cloud/merchant allocation remain unidentifiable within all-ISA market-share denominators"
       ],
       "related": [
         "agent-runtime-and-sandbox",
@@ -222,7 +226,8 @@
       ],
       "canonical_docs": [
         "docs/ROCM-X86-ROADMAP-2026-2031.md",
-        "docs/STRATEGIC-FRAMEWORK.md"
+        "docs/STRATEGIC-FRAMEWORK.md",
+        "docs/research/competitive-capture/COMPETITIVE-CAPTURE-RESEARCH-2026-10-08.md"
       ],
       "datasets": [],
       "routes": [
@@ -253,7 +258,11 @@
         "How do actual CPU-only unit share, ASP and margin evolve?",
         "Does certified CPU TEE support affect EPYC versus Xeon versus Arm purchasing for secure AI factories?",
         "How did AMD convert the Rome product lead into multigeneration commercial server share between 2019 and 2021?",
-        "How do reference CPU prices, Intel reported ASP movements, negotiated net price and OEM/buyer TCO diverge by workload and channel?"
+        "How do reference CPU prices, Intel reported ASP movements, negotiated net price and OEM/buyer TCO diverge by workload and channel?",
+        "Which buyers, workloads and cloud regions qualify each vendor platform for production deployment?",
+        "When do Arm ISA gains translate into merchant silicon sales versus captive cloud economics or royalties?",
+        "Which rack-level AI system CPU choices are locked or interchangeable?",
+        "Which evidenced demand conditions would shift competitive allocation with existing TAM fixed?"
       ],
       "topic_keys": [
         "EPYC",
@@ -283,7 +292,15 @@
         "OEM pass-through",
         "price waterfall",
         "procurement awards",
-        "CPU supplier contribution margin"
+        "CPU supplier contribution margin",
+        "Vera",
+        "Arm AGI CPU",
+        "Dragonfly C1000",
+        "merchant versus captive",
+        "CPU attachment",
+        "strategic signal",
+        "competitive capture",
+        "qualifications"
       ],
       "canonical_docs": [
         "docs/STRATEGIC-FRAMEWORK.md",
@@ -291,12 +308,14 @@
         "docs/EVIDENCE-STANDARDS.md",
         "docs/research/AMD-EPYC-ROME-MILAN-2019-2021.md",
         "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md",
-        "docs/research/server-cpu-pricing/RUN-01-2026-10-08.md"
+        "docs/research/server-cpu-pricing/RUN-01-2026-10-08.md",
+        "docs/research/competitive-capture/COMPETITIVE-CAPTURE-RESEARCH-2026-10-08.md"
       ],
       "datasets": [
         "data.js",
         "data/demand-2030/historical-and-forecast-evidence.csv",
-        "data/pricing/run-01-2026-10-08/observations.json"
+        "data/pricing/run-01-2026-10-08/observations.json",
+        "data/demand-2030/competitive-capture-stress-overlay.json"
       ],
       "routes": [
         "source",
@@ -306,7 +325,13 @@
         "entity",
         "relationship",
         "market_series",
-        "question"
+        "question",
+        "strategic_signal",
+        "scenario",
+        "company_event",
+        "hypothesis",
+        "conflict",
+        "method"
       ],
       "unresolved": [
         "Public CPU-only profit margin/ASP by buyer unavailable",
@@ -315,7 +340,10 @@
         "Historical EPYC-only revenue versus EE&SC/combined datacenter accounting requires public-source reconciliation",
         "No public same-SKU, time/volume-controlled net hyperscaler-versus-enterprise CPU price distribution; negotiated discount remains underidentified.",
         "No archived cross-OEM CPU-option delta/BOM-adjustment price panel or audited observed supplier per-SKU variable cost.",
-        "FY2024 original-vs-comparative Intel server ASP +12% vs +11% disclosure vintage conflict awaiting accounting scope review"
+        "FY2024 original-vs-comparative Intel server ASP +12% vs +11% disclosure vintage conflict awaiting accounting scope review",
+        "No verified all-ISA vendor unit/revenue market-share bridge including captive CPU silicon",
+        "No source-verified AI rack physical host CPU attach and interchangeable CPU BOM distribution",
+        "No observed cross-buyer qualified workloads and successful task TCO scorecard across x86 and Arm"
       ],
       "related": [
         "market-demand-2030",
@@ -328,7 +356,8 @@
       "questions": [
         "Which chart improves answer accuracy and learning time?",
         "Can any figure show attribution, denominator and forecast status?",
-        "What research process can be automated without publishing uncertain facts?"
+        "What research process can be automated without publishing uncertain facts?",
+        "How should conditional share transfers and market-ownership boundaries be visualized with explicit unknowns and evidence maturities?"
       ],
       "topic_keys": [
         "dashboard",
