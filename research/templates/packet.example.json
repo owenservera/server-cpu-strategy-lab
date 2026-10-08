@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--example-amd-cpu-tam",
+  "created_at": "2026-10-08",
+  "title": "Example: AMD keynote forecast routed to evidence, forecast, hypothesis and missing data",
+  "status": "staged",
+  "sample_only": true,
+  "public_only": true,
+  "scope": "Demonstration of routing an existing public source; this file is an example, not a new market fact or an additional live corpus entry.",
+  "domains": [
+    "amd-keynote-2026",
+    "market-demand-2030",
+    "agent-runtime-and-sandbox"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "forecast",
+    "hypothesis",
+    "question"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "data/claims/amd-advancing-ai-2026-curated.json",
+      "data/demand-2030/tam-forecast-vintages.csv",
+      "docs/research/AMD-ADVANCING-AI-2026-RESEARCH-PATH.md"
+    ],
+    "prior_ids": [
+      "A011",
+      "T006"
+    ],
+    "dedupe_notes": "Found prior $200B+ keynote claim and forecast vintage; only cross-reference here, never add duplicated canonical rows."
+  },
+  "sources": [
+    {
+      "id": "src:example:amd-advancing-ai-2026",
+      "title": "AMD Advancing AI 2026 Lisa Su keynote",
+      "publisher": "AMD",
+      "published_at": "2026-07-23",
+      "kind": "public_keynote_video",
+      "url": "https://www.youtube.com/watch?v=crEztVjfAPM",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "archived uploaded transcript lines 189–197 (only accessible in original conversation)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:example:amd-tam-200",
+      "source_id": "src:example:amd-advancing-ai-2026",
+      "statement": "Lisa Su projects the 2030 global server CPU market above USD 200 billion.",
+      "claim_class": "management_forecast",
+      "verification": "attributed_unverified",
+      "source_locator": "source transcript lines 189–197; verify speaker and original slide before confirming numerical scope",
+      "qualifier": "greater_than",
+      "legacy_ref": "data/claims/amd-advancing-ai-2026-curated.json#A011"
+    }
+  ],
+  "measurements": [],
+  "forecasts": [
+    {
+      "id": "forecast:example:amd-cpu-tam-2030",
+      "source_id": "src:example:amd-advancing-ai-2026",
+      "issuer": "AMD",
+      "issued_at": "2026-07-23",
+      "target_period": "2030",
+      "metric_id": "global_server_cpu_silicon_TAM",
+      "market_scope": "all_architectures_global_server_cpu_silicon",
+      "value": 200,
+      "unit": "USD_billion",
+      "qualifier": "greater_than",
+      "claim_id": "claim:example:amd-tam-200",
+      "legacy_ref": "data/demand-2030/tam-forecast-vintages.csv#T006"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:example:agent-execution-incremental-cpu",
+      "thesis": "Independent agent tool/sandbox execution adds net new server CPU silicon demand beyond GPU host CPUs.",
+      "evidence_ids": [
+        "claim:example:amd-tam-200"
+      ],
+      "alternative": "Workloads reuse spare existing compute, run locally, or switch to Arm processors.",
+      "falsification_test": "Measure completed workflows, core-seconds, local/cloud placements, utilization and incremental paid sockets."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:example:server-cpu-tam-units",
+      "question": "What units, ASP mix and workload allocations are needed to reconcile AMD's vendor forecast with physically deployed 2030 CPUs?",
+      "priority": "P0",
+      "method": "Demand cube stock-flow with real ASP/sockets, source vintage and sandbox task benchmark.",
+      "domains": [
+        "market-demand-2030",
+        "agent-runtime-and-sandbox"
+      ],
+      "decision_impacted": "2030 x86 CPU revenue opportunity and agentic TAM contribution"
+    }
+  ],
+  "conflicts": [],
+  "promotions": [
+    {
+      "record_id": "claim:example:amd-tam-200",
+      "target_path": "data/claims/amd-advancing-ai-2026-curated.json",
+      "review_status": "not_applicable",
+      "decision_note": "Legacy source A011 already exists; link only, do not duplicate."
+    },
+    {
+      "record_id": "forecast:example:amd-cpu-tam-2030",
+      "target_path": "data/demand-2030/tam-forecast-vintages.csv",
+      "review_status": "not_applicable",
+      "decision_note": "Forecast vintage T006 already exists; link only, do not overwrite."
+    }
+  ],
+  "handoff": {
+    "summary": "Illustrates cross-domain extraction from one source.",
+    "next_actions": [
+      "Review first-party TAM scope and baseline.",
+      "Measure server CPU core-seconds per successful agent workflow."
+    ],
+    "changed_decisions": [],
+    "limits": [
+      "No independent confirmation of endpoint TAM and no verified chip shipment data from this example."
+    ]
+  }
+}
