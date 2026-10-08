@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-10-08",
+  "architecture_decision": "SQLite 3.37+ local evidence warehouse first; PostgreSQL only after multi-writer need",
+  "database_source_status": "developed_in_chat_zip_not_yet_extracted_into_repo",
+  "artifact_name": "server-cpu-research-db-v1.zip",
+  "public_repo_spec_paths": [
+    "docs/database/README.md",
+    "docs/database/ARCHITECTURE-V1.md",
+    "docs/database/SEGMENTATION-AND-MODELS.md",
+    "docs/database/IMPLEMENTATION-HANDOFF.md"
+  ],
+  "integration_issue_url": "https://github.com/owenservera/server-cpu-strategy-lab/issues/5",
+  "tests_in_construction_environment": {
+    "status": "passed",
+    "passed": 7,
+    "failed": 0,
+    "scope": "synthetic fixture seed, immutability and accounting constraints"
+  },
+  "actual_repo_seed_status": "not_run_or_verified",
+  "github_ci_status": "not_integrated_for_database",
+  "dashboard_live_db_status": "not_connected",
+  "current_publication_authority": "Existing Git-based research corpus and explicit editorial review",
+  "domains": [
+    "sources",
+    "claims",
+    "measurements",
+    "forecast_vintages",
+    "taxonomy_axes",
+    "market_scopes",
+    "model_runs",
+    "allocation_partitions",
+    "conflicts",
+    "questions"
+  ],
+  "nonnegotiables": [
+    "No confidential consulting material",
+    "No automatic promotion",
+    "No server-system vs CPU-silicon boundary mixing",
+    "No double-counting end buyers and OEM channels",
+    "Synthetic outputs never labeled observations"
+  ]
+}
