@@ -85,7 +85,8 @@
       "related": [
         "agent-runtime-and-sandbox",
         "architecture-and-software",
-        "cpu-platforms-and-competitors"
+        "cpu-platforms-and-competitors",
+        "corporate-financial-filings"
       ]
     },
     {
@@ -347,7 +348,8 @@
       ],
       "related": [
         "market-demand-2030",
-        "architecture-and-software"
+        "architecture-and-software",
+        "corporate-financial-filings"
       ]
     },
     {
@@ -388,6 +390,80 @@
       "related": [
         "market-demand-2030",
         "agent-runtime-and-sandbox"
+      ]
+    },
+    {
+      "id": "corporate-financial-filings",
+      "name": "Public corporate financial filings, capital commitments and CPU supply-chain evidence",
+      "questions": [
+        "What portion of reported semiconductor revenue can be attributed to server CPU silicon rather than GPUs, IP royalties or systems?",
+        "What issuer/period-specific capex, commitments, leases and RPO signals constrain or forecast demand without double counting?",
+        "Can we trace the same financed infrastructure chain across cloud buyer, OEM/ODM, chip supplier and foundry disclosures?",
+        "Which historical quarterly revenue, volume and ASP bridges are actually reported, and where does public identification fail?",
+        "How do supply and purchase obligations differ from realized CPU shipments?"
+      ],
+      "topic_keys": [
+        "10-K",
+        "10-Q",
+        "20-F",
+        "6-K",
+        "8-K",
+        "EDGAR",
+        "corporate filings",
+        "XBRL",
+        "capital expenditures",
+        "server CPU unit volume",
+        "realized ASP",
+        "segment revenue",
+        "purchase obligations",
+        "contractual commitments",
+        "remaining performance obligations",
+        "leases",
+        "cloud capacity",
+        "customer concentration",
+        "supply chain financing",
+        "financing guarantees",
+        "OEM ODM bridge",
+        "foundry capacity",
+        "restatement",
+        "fiscal year",
+        "counterparty overlap"
+      ],
+      "canonical_docs": [
+        "docs/research/financial-filings/README.md",
+        "docs/database/ARCHITECTURE-V1.md",
+        "docs/database/SEGMENTATION-AND-MODELS.md"
+      ],
+      "datasets": [
+        "data/financial-filings/issuer-watchlist.json",
+        "db/migrations/0003_financial_filings.sql"
+      ],
+      "routes": [
+        "source",
+        "claim",
+        "measurement",
+        "market_series",
+        "forecast",
+        "entity",
+        "relationship",
+        "buyer_demand",
+        "company_event",
+        "strategic_signal",
+        "method",
+        "conflict",
+        "question"
+      ],
+      "unresolved": [
+        "No actual 2019-2026 financial filing corpus has been fully retrieved, extracted, reviewed or promoted yet",
+        "Real EPYC-only CPU revenue and contract net ASP remain mostly nonidentifiable from public segment totals",
+        "Many customers, direct procurement paths and cancellation terms are undisclosed",
+        "Counterparty links are non-additive and must not be assumed from similar amounts",
+        "SEC discovery helper covers public SEC submissions only; non-SEC authority adapters remain"
+      ],
+      "related": [
+        "market-demand-2030",
+        "cpu-platforms-and-competitors",
+        "visual-intelligence"
       ]
     }
   ],
