@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-10-08",
+  "title": "Illustrative server CPU silicon TAM scenarios — separate from server systems spending",
+  "root_measure": "annual worldwide server CPU silicon TAM in nominal USD billions",
+  "status": "synthetic_analyst_sensitivity_scenarios_not_predictions",
+  "explanatory_note": "2025 ~$25B baseline is AMD management-reported TAM estimate, NOT audited actual CPU sales. All three-way splits (including 2025) are hypothetical assumptions. 2026-2030 totals are scenario design choices, not historical figures. The 2030 high case is NOT a physical upper bound; AMD has suggested >$220B and some analysts suggest more. Company/analyst vintage series preserved separately.",
+  "segment_taxonomy": [
+    {
+      "key": "foundational",
+      "description": "Traditional cloud/enterprise applications, database, storage, governance and indirect AI-induced supporting activity (without double-counting standalone agent sandboxes)"
+    },
+    {
+      "key": "ai_host",
+      "description": "CPU silicon in accelerator host/head nodes physically tied to GPU/XPU platforms, excluding independent agent-only CPU racks"
+    },
+    {
+      "key": "agent_execution",
+      "description": "Net incremental standalone server CPU silicon used for agent sandbox/tool/code/retrieval execution, excluding reused installed capacity and endpoint CPU sales"
+    }
+  ],
+  "architecture_taxonomy": {
+    "x86": "AMD EPYC, Intel Xeon and other x86 server CPUs",
+    "nonx86": "Arm and other non-x86 CPU silicon; NOT directly comparable with IDC non-x86 whole system spending"
+  },
+  "architecture_share_by_workload_assumptions_for_2026_2030": {
+    "downside": {
+      "foundational": 0.75,
+      "ai_host": 0.35,
+      "agent_execution": 0.45
+    },
+    "central": {
+      "foundational": 0.82,
+      "ai_host": 0.45,
+      "agent_execution": 0.55
+    },
+    "upside": {
+      "foundational": 0.9,
+      "ai_host": 0.55,
+      "agent_execution": 0.65
+    }
+  },
+  "architecture_share_2025": "Unknown; 2025 shown as null rather than making up architecture mix. For 2026-2030 constant scenario shares per workload are SYNTHETIC stress-test parameters, not forecasts.",
+  "year_rows": {
+    "downside": [
+      {
+        "year": 2025,
+        "foundational_usd_b": 17.7,
+        "ai_host_usd_b": 7,
+        "agent_execution_usd_b": 0.3,
+        "total_cpu_silicon_tam_usd_b": 25,
+        "x86_silicon_tam_usd_b": null,
+        "nonx86_silicon_tam_usd_b": null,
+        "measurement_type": "AMD_management_estimate_total__analyst_model_segment_allocation"
+      },
+      {
+        "year": 2026,
+        "foundational_usd_b": 19,
+        "ai_host_usd_b": 9,
+        "agent_execution_usd_b": 2,
+        "total_cpu_silicon_tam_usd_b": 30,
+        "x86_silicon_tam_usd_b": 18.3,
+        "nonx86_silicon_tam_usd_b": 11.7,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2027,
+        "foundational_usd_b": 20,
+        "ai_host_usd_b": 12,
+        "agent_execution_usd_b": 6,
+        "total_cpu_silicon_tam_usd_b": 38,
+        "x86_silicon_tam_usd_b": 21.9,
+        "nonx86_silicon_tam_usd_b": 16.1,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2028,
+        "foundational_usd_b": 22,
+        "ai_host_usd_b": 15,
+        "agent_execution_usd_b": 13,
+        "total_cpu_silicon_tam_usd_b": 50,
+        "x86_silicon_tam_usd_b": 27.6,
+        "nonx86_silicon_tam_usd_b": 22.4,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2029,
+        "foundational_usd_b": 25,
+        "ai_host_usd_b": 21,
+        "agent_execution_usd_b": 24,
+        "total_cpu_silicon_tam_usd_b": 70,
+        "x86_silicon_tam_usd_b": 36.9,
+        "nonx86_silicon_tam_usd_b": 33.1,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2030,
+        "foundational_usd_b": 30,
+        "ai_host_usd_b": 25,
+        "agent_execution_usd_b": 45,
+        "total_cpu_silicon_tam_usd_b": 100,
+        "x86_silicon_tam_usd_b": 51.5,
+        "nonx86_silicon_tam_usd_b": 48.5,
+        "measurement_type": "synthetic_scenario_not_observed"
+      }
+    ],
+    "central": [
+      {
+        "year": 2025,
+        "foundational_usd_b": 17.7,
+        "ai_host_usd_b": 7,
+        "agent_execution_usd_b": 0.3,
+        "total_cpu_silicon_tam_usd_b": 25,
+        "x86_silicon_tam_usd_b": null,
+        "nonx86_silicon_tam_usd_b": null,
+        "measurement_type": "AMD_management_estimate_total__analyst_model_segment_allocation"
+      },
+      {
+        "year": 2026,
+        "foundational_usd_b": 20.5,
+        "ai_host_usd_b": 11,
+        "agent_execution_usd_b": 8.5,
+        "total_cpu_silicon_tam_usd_b": 40,
+        "x86_silicon_tam_usd_b": 26.435,
+        "nonx86_silicon_tam_usd_b": 13.565,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2027,
+        "foundational_usd_b": 23.5,
+        "ai_host_usd_b": 17,
+        "agent_execution_usd_b": 21.5,
+        "total_cpu_silicon_tam_usd_b": 62,
+        "x86_silicon_tam_usd_b": 38.745,
+        "nonx86_silicon_tam_usd_b": 23.255,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2028,
+        "foundational_usd_b": 27,
+        "ai_host_usd_b": 27,
+        "agent_execution_usd_b": 41,
+        "total_cpu_silicon_tam_usd_b": 95,
+        "x86_silicon_tam_usd_b": 56.84,
+        "nonx86_silicon_tam_usd_b": 38.16,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2029,
+        "foundational_usd_b": 32,
+        "ai_host_usd_b": 40,
+        "agent_execution_usd_b": 68,
+        "total_cpu_silicon_tam_usd_b": 140,
+        "x86_silicon_tam_usd_b": 81.64,
+        "nonx86_silicon_tam_usd_b": 58.36,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2030,
+        "foundational_usd_b": 40,
+        "ai_host_usd_b": 55,
+        "agent_execution_usd_b": 105,
+        "total_cpu_silicon_tam_usd_b": 200,
+        "x86_silicon_tam_usd_b": 115.3,
+        "nonx86_silicon_tam_usd_b": 84.7,
+        "measurement_type": "synthetic_scenario_not_observed"
+      }
+    ],
+    "upside": [
+      {
+        "year": 2025,
+        "foundational_usd_b": 17.7,
+        "ai_host_usd_b": 7,
+        "agent_execution_usd_b": 0.3,
+        "total_cpu_silicon_tam_usd_b": 25,
+        "x86_silicon_tam_usd_b": null,
+        "nonx86_silicon_tam_usd_b": null,
+        "measurement_type": "AMD_management_estimate_total__analyst_model_segment_allocation"
+      },
+      {
+        "year": 2026,
+        "foundational_usd_b": 22,
+        "ai_host_usd_b": 13,
+        "agent_execution_usd_b": 10,
+        "total_cpu_silicon_tam_usd_b": 45,
+        "x86_silicon_tam_usd_b": 33.45,
+        "nonx86_silicon_tam_usd_b": 11.55,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2027,
+        "foundational_usd_b": 25,
+        "ai_host_usd_b": 23,
+        "agent_execution_usd_b": 27,
+        "total_cpu_silicon_tam_usd_b": 75,
+        "x86_silicon_tam_usd_b": 52.7,
+        "nonx86_silicon_tam_usd_b": 22.3,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2028,
+        "foundational_usd_b": 30,
+        "ai_host_usd_b": 35,
+        "agent_execution_usd_b": 60,
+        "total_cpu_silicon_tam_usd_b": 125,
+        "x86_silicon_tam_usd_b": 85.25,
+        "nonx86_silicon_tam_usd_b": 39.75,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2029,
+        "foundational_usd_b": 35,
+        "ai_host_usd_b": 55,
+        "agent_execution_usd_b": 95,
+        "total_cpu_silicon_tam_usd_b": 185,
+        "x86_silicon_tam_usd_b": 123.5,
+        "nonx86_silicon_tam_usd_b": 61.5,
+        "measurement_type": "synthetic_scenario_not_observed"
+      },
+      {
+        "year": 2030,
+        "foundational_usd_b": 44,
+        "ai_host_usd_b": 70,
+        "agent_execution_usd_b": 121,
+        "total_cpu_silicon_tam_usd_b": 235,
+        "x86_silicon_tam_usd_b": 156.75,
+        "nonx86_silicon_tam_usd_b": 78.25,
+        "measurement_type": "synthetic_scenario_not_observed"
+      }
+    ]
+  },
+  "valuation_identity": "total_cpu_silicon_tam_usd_b = foundational_usd_b + ai_host_usd_b + agent_execution_usd_b; x86 = Σ (segment × scenario x86 share); nonx86 = total - x86",
+  "stock_flow_not_yet_identified": "Conversion from silicon revenue to chips/sockets MUST remain null until defensible net realized ASP and buyer mix are available. Core counts/sockets cannot be directly inferred from server-system revenue, GPU capex or $/core list prices.",
+  "market_anchor_source_id": "AMD_CITI_SEP2026",
+  "compare_only_to": [
+    "data/demand-2030/tam-forecast-vintages.csv"
+  ],
+  "prohibited": "Never present year_rows as observed or vendor forecasts, or equate this CPU TAM with IDC server-system spending."
+}
