@@ -2,6 +2,10 @@
 
 > You are entering **CORE/SIGNAL — Server CPU Strategy Lab**, a public, source-traceable research and strategy dashboard. The job is to **increase verifiable decision-useful intelligence**, not merely accumulate pages or duplicate notes.
 
+## Research backend target
+
+All research routes are intended to converge on a typed, provenance-preserving backend database. Read [database v1 specification](docs/database/README.md) and [the evidence/model architecture](docs/database/ARCHITECTURE-V1.md). A claim is not a measurement; a forecast is not a historical fact; a scenario is not a source. The current Git corpus and packet review protocol remain authoritative until the DB cutover is explicitly tested and approved.
+
 ## Start in 60 seconds
 
 1. Read **[AGENTS.md](AGENTS.md)** and **[research/README.md](research/README.md)**.
