@@ -18,7 +18,7 @@
     "scope": "7 fixture-based local tests, not full live GitHub research corpus"
   },
   "actual_repo_seed_status": "awaiting_actual_current_main_seed_and_verify_on_windows_and_CI",
-  "github_ci_status": "database_ci_workflow_created_run_unverified",
+  "github_ci_status": "database_ci_workflow_runs_report_failure; underlying job logs unavailable via connector; diagnose in GitHub Actions/local agent",
   "dashboard_live_db_status": "not_connected",
   "current_publication_authority": "Existing Git-based research corpus and explicit editorial review",
   "domains": [
@@ -44,5 +44,7 @@
   "source_file_count": 12,
   "zcode_assessment": "docs/database/ZCODE-FULL-WIRING-ASSESSMENT.md",
   "zcode_bootstrap": "docs/database/ZCODE-BOOTSTRAP-PROMPT.md",
-  "database_ci_workflow": ".github/workflows/database-ci.yml"
+  "database_ci_workflow": ".github/workflows/database-ci.yml",
+  "github_ci_last_inspected_run": "https://github.com/owenservera/server-cpu-strategy-lab/actions/runs/37816815920",
+  "assessment_status": "full_zcode_wiring_plan_committed; implementation_pending"
 }
