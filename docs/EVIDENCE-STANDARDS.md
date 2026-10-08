@@ -1,5 +1,9 @@
 # Evidence protocol
 
+## Universal source ingestion rule
+
+Any future research publication or review must begin with [RESEARCH-ENTRY.md](../RESEARCH-ENTRY.md) and use the [multi-route intake protocol](../research/INTAKE-AND-PROMOTION.md). The P1–P6 classes below remain the **source/analysis quality taxonomy**, not a substitution for a claim's observed/forecast/scenario status. Intake packets do not confer verification by their mere existence.
+
 ## Claim classes
 
 | Class | Standard | UI treatment |
