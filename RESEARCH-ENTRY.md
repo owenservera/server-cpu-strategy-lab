@@ -26,7 +26,8 @@ It's: **what reusable facts, assumptions, disagreements, relationships and quest
 | Full keynote / video transcript / report / presentation | `source`, `claim`, `strategic_signal`, `question`, `conflict` | One packet + domain indexes; no raw copyrighted transcript published |
 | SEC filing, vendor earnings, official public statistics | `source`, `financial_filing`, `measurement`, `market_series`, `company_event` | Packet; fiscal/vintage filing metadata and approved facts to relevant domain data files |
 | CPU, GPU, OS, standard, API release or product roadmap | `source`, `technical_spec`, `company_event`, `relationship`, `milestone` | Packet; specs and standards/roadmap module |
-| Disclosed financial commitments, leases, RPO or guarantees | `source`, `financial_filing`, `financial_commitment`, `relationship`, `buyer_demand`, `conflict` | Packet; non-additive obligations and overlapping counterparty flows |\n| New buyer, channel, hyperscaler or competitive strategy | `entity`, `relationship`, `buyer_demand`, `strategic_signal`, `question` | Packet; buyer/channel and market study |
+| Disclosed financial commitments, leases, RPO or guarantees | `source`, `financial_filing`, `financial_commitment`, `relationship`, `buyer_demand`, `conflict` | Packet; non-additive obligations and overlapping counterparty flows |
+| New buyer, channel, hyperscaler or competitive strategy | `entity`, `relationship`, `buyer_demand`, `strategic_signal`, `question` | Packet; buyer/channel and market study |
 | Benchmark or repeatable agent workload | `benchmark`, `measurement`, `method`, `claim` | Packet + benchmark results when verified |
 | 2030 TAM projection, analyst revision | `source`, `forecast`, `conflict`, `question` | Packet; time-stamped forecast-vintages if accepted |
 | New x86/Arm software concept, future scenario | `hypothesis`, `scenario`, `question`, `relationship` | Packet; optional model work, never marked observed |
