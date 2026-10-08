@@ -7,12 +7,18 @@ on:
       - 'db/**'
       - 'data/**'
       - 'docs/database/**'
+      - 'docs/research/financial-filings/**'
+      - 'research/**'
+      - 'RESEARCH-ENTRY.md'
       - '.github/workflows/database-ci.yml'
   pull_request:
     paths:
       - 'db/**'
       - 'data/**'
       - 'docs/database/**'
+      - 'docs/research/financial-filings/**'
+      - 'research/**'
+      - 'RESEARCH-ENTRY.md'
       - '.github/workflows/database-ci.yml'
   workflow_dispatch:
 
@@ -60,6 +66,10 @@ jobs:
           assert n('select count(*) from evidence_claims') >= 165
           assert n('select count(*) from measurements') > 0
           assert n('select count(*) from model_outputs') > 0
+          assert n('select count(*) from financial_issuers') >= 35
+          assert n("select count(*) from sqlite_master where type='view' and name='v_financial_fact_context'") == 1
+          assert n("select count(*) from sqlite_master where type='view' and name='v_financial_commitment_evidence'") == 1
+          assert n("select count(*) from financial_filings") == 0  # watchlist is NOT discovered evidence
           assert n('select count(*) from conflicts where resolution_state="open"') >= 1
           assert n('select count(*) from model_outputs where target_year=2025 and metric_key="x86_silicon_tam_usd_b" and value_decimal is not null') == 0
           assert n('select count(*) from measurements where verification_status="attributed_unverified"') > 0
@@ -69,6 +79,8 @@ jobs:
           assert snap['synthetic_scenarios']
           assert snap['forecasts']
           assert snap['measurements']
+          assert 'financial_facts' in snap and 'financial_commitments' in snap
+          assert snap['financial_facts'] == []  # no fabricated historical fact corpus
           print('DB_CORPUS_SMOKE_PASS', {k:len(v) for k,v in snap.items() if isinstance(v,list)})
           PY
       - name: Check no generated DB artifacts are tracked
