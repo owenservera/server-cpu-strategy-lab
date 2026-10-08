@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--agentic-server-cpu-segmentation",
+  "created_at": "2026-10-08",
+  "title": "Agentic-era demand segmentation, runtime reservations and incremental server CPU capacity",
+  "status": "staged",
+  "public_only": true,
+  "scope": "Public-source 2026-2035 agent-purpose taxonomy and CPU/RAM-constrained silicon demand conversion. No new observed CPU sockets, silicon TAM or run-tested hardware benchmark.",
+  "domains": [
+    "market-demand-2030",
+    "agent-runtime-and-sandbox",
+    "cpu-platforms-and-competitors",
+    "visual-intelligence"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "measurement",
+    "technical_spec",
+    "forecast",
+    "scenario",
+    "strategic_signal",
+    "hypothesis",
+    "question",
+    "method",
+    "product_requirement"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "AGENTS.md",
+      "RESEARCH-ENTRY.md",
+      "research/catalog.json",
+      "research/routes.json",
+      "research/INTAKE-AND-PROMOTION.md",
+      "research/schema/packet.schema.json",
+      "docs/EVIDENCE-STANDARDS.md",
+      "docs/COMPLIANCE.md",
+      "docs/database/SEGMENTATION-AND-MODELS.md",
+      "docs/research/demand-2030/README.md",
+      "docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md",
+      "docs/research/demand-2030/MARKET-SYNTHESIS.md",
+      "docs/research/MICROSOFT-DOCKER-AGENTIC-DEMAND-SLICES.md",
+      "data/demand-2030/tam-forecast-vintages.csv",
+      "data/demand-2030/priority-data-fields.json"
+    ],
+    "prior_ids": [
+      "T002",
+      "T006",
+      "T008",
+      "T009",
+      "D001",
+      "D002",
+      "D003",
+      "D004",
+      "D007",
+      "D008",
+      "D009"
+    ],
+    "dedupe_notes": "Retain T002 and later AMD/Citi TAM forecast vintages, IDC system-market source, buyer×channel×workload×ISA accounting, synthetic scenario model and D001-D009. Novel items are IDC adoption driver vintages, surveyed respondent segment rates, runtime-topology comparison, purpose taxonomy, memory/concurrency reservation and falsifiable questions. Neither original TAM table nor already indexed whole-server spending is duplicated."
+  },
+  "sources": [
+    {
+      "id": "src:agentseg:idc",
+      "title": "Leading Through the Agentic Deployment Era",
+      "publisher": "IDC",
+      "published_at": "2026-06-03",
+      "url": "https://www.idc.com/resource-center/blog/leading-through-the-agentic-deployment-era/",
+      "kind": "forecast_commentary",
+      "source_locator": "By 2029 IDC projects 1.15 billion active agents and 217 billion actions per day",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract"
+    },
+    {
+      "id": "src:agentseg:mck",
+      "title": "The state of AI in 2026: On the road to ROI",
+      "publisher": "McKinsey & Company",
+      "published_at": "2026-08-25",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "kind": "survey_public_report",
+      "source_locator": "Key takeaways and Exhibit 2: large vs smaller company respondents",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract"
+    },
+    {
+      "id": "src:agentseg:gartner",
+      "title": "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027",
+      "publisher": "Gartner",
+      "published_at": "2025-06-25",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "kind": "analyst_press_release",
+      "source_locator": "Lead paragraph forecasts cancellation of >40% by end-2027",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract"
+    },
+    {
+      "id": "src:agentseg:amd",
+      "title": "Agentic AI Changes the CPU/GPU Equation",
+      "publisher": "AMD",
+      "published_at": "2026-05-07",
+      "url": "https://www.amd.com/en/blogs/2026/agentic-ai-changes-the-cpu-gpu-equation.html",
+      "kind": "vendor_strategy_blog",
+      "source_locator": "Server CPU racks and >USD120B TAM by 2030",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract",
+      "notes": "Already canonical as T002; no duplicate forecast row",
+      "legacy_ref": "data/demand-2030/tam-forecast-vintages.csv#T002"
+    },
+    {
+      "id": "src:agentseg:aws",
+      "title": "Securely launch and scale your agents and tools on Amazon Bedrock AgentCore Runtime",
+      "publisher": "AWS",
+      "published_at": "2025-08-13",
+      "url": "https://aws.amazon.com/blogs/machine-learning/securely-launch-and-scale-your-agents-and-tools-on-amazon-bedrock-agentcore-runtime/",
+      "kind": "vendor_technical_blog",
+      "source_locator": "Secure agent execution with session isolation and embedded identity",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract"
+    },
+    {
+      "id": "src:agentseg:azure",
+      "title": "Azure Container Apps dynamic sessions general availability, and more",
+      "publisher": "Microsoft",
+      "published_at": "2024-11-19",
+      "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561",
+      "kind": "vendor_technical_blog",
+      "source_locator": "Hyper-V isolation; Copilot 400,000 sessions/day at Nov 2024",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract",
+      "notes": "Not a 2026 installed host count"
+    },
+    {
+      "id": "src:agentseg:gcp",
+      "title": "Safely run AI-generated code in Cloud Run sandboxes",
+      "publisher": "Google Cloud",
+      "published_at": "2026-07-09",
+      "url": "https://cloud.google.com/blog/topics/developers-practitioners/google-cloud-run-sandboxes-are-in-public-preview/",
+      "kind": "vendor_technical_blog",
+      "source_locator": "Get started today section on existing allocated CPU/memory",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract"
+    },
+    {
+      "id": "src:agentseg:idc-server",
+      "title": "Servers Market Insights",
+      "publisher": "IDC",
+      "published_at": "2026-07-28",
+      "url": "https://www.idc.com/promo/servers/",
+      "kind": "market_tracker_public_summary",
+      "source_locator": "July 28 2026 update: 2025 server system spending and Q1 2026 unit growth",
+      "as_of": "2026-10-08",
+      "access": "public",
+      "rights": "link_and_extract",
+      "notes": "Server systems not CPU-only silicon",
+      "legacy_ref": "docs/research/demand-2030/README.md"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:agentseg:idc",
+      "source_id": "src:agentseg:idc",
+      "statement": "IDC forecasts about 1.15 billion active agents and 217 billion agent actions per day in 2029. Agent/action counts are not measurements of CPU seconds or physical sockets.",
+      "claim_class": "other",
+      "source_locator": "By 2029 IDC projects",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:mck",
+      "source_id": "src:agentseg:mck",
+      "statement": "McKinsey's 2026 survey reports 40% of large-enterprise respondents (>USD1B annual revenues) vs 22% of smaller-organization respondents say their organizations are scaling AI agents.",
+      "claim_class": "other",
+      "source_locator": "Key takeaways / Exhibit 2",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:gartner",
+      "source_id": "src:agentseg:gartner",
+      "statement": "Gartner forecasts more than 40% of agentic AI projects will be canceled by end 2027, based on perceived cost/value/risk challenges.",
+      "claim_class": "analyst_forecast",
+      "source_locator": "First paragraph",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:amd",
+      "source_id": "src:agentseg:amd",
+      "statement": "AMD argues that agentic workflows may require standalone CPU-centric execution racks, separately from GPU-host CPUs; AMD's May 2026 >USD120B 2030 TAM is a management forecast.",
+      "claim_class": "management_forecast",
+      "source_locator": "Intro and first wave/structural shift/TAM paragraph",
+      "verification": "checked_against_original",
+      "legacy_ref": "data/demand-2030/tam-forecast-vintages.csv#T002"
+    },
+    {
+      "id": "claim:agentseg:aws",
+      "source_id": "src:agentseg:aws",
+      "statement": "AWS AgentCore Runtime describes dedicated microVM isolation per user session and sessions up to eight hours; no physical sockets per logical session disclosed.",
+      "claim_class": "product_spec",
+      "source_locator": "Secure agent execution with session isolation and embedded identity",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:azure",
+      "source_id": "src:agentseg:azure",
+      "statement": "Microsoft describes Hyper-V-isolated Azure dynamic sessions and claimed >400,000 Copilot sessions/day at the November 2024 announcement, not a 2026 current count.",
+      "claim_class": "product_spec",
+      "source_locator": "Microsoft Copilot uses Azure Container Apps dynamic sessions",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:gcp",
+      "source_id": "src:agentseg:gcp",
+      "statement": "Google Cloud Run sandboxes preview executes within its containing running instance's already allocated CPU and RAM, so a sandbox need not imply extra physical sockets.",
+      "claim_class": "product_spec",
+      "source_locator": "Get started today / allocated CPU/memory",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:agentseg:idc-systems",
+      "source_id": "src:agentseg:idc-server",
+      "statement": "IDC's 2025 worldwide whole-server-systems revenue estimate of USD453.531B must not be equated with revenue from server CPU chips alone.",
+      "claim_class": "other",
+      "source_locator": "Worldwide market Product Category 2025",
+      "verification": "checked_against_original",
+      "legacy_ref": "docs/research/demand-2030/README.md"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "measurement:agentseg:mck-large",
+      "source_id": "src:agentseg:mck",
+      "metric_id": "share_of_survey_respondents_reporting_organizational_agent_scaling",
+      "value": 40,
+      "unit": "percent_of_respondents",
+      "period": "2026_publication",
+      "population": "respondents working at >USD1B revenue firms",
+      "denominator": "2026 McKinsey large-organization respondent subset",
+      "measurement_kind": "observed",
+      "verification": "checked_against_original",
+      "source_locator": "Key takeaways / Exhibit 2",
+      "qualifier": "self_reported_survey_not_world_enterprise_adoption",
+      "notes": "Numerator/denominator counts not established from public summary; report proportion of sampled respondent subset only."
+    },
+    {
+      "id": "measurement:agentseg:mck-small",
+      "source_id": "src:agentseg:mck",
+      "metric_id": "share_of_survey_respondents_reporting_organizational_agent_scaling",
+      "value": 22,
+      "unit": "percent_of_respondents",
+      "period": "2026_publication",
+      "population": "respondents working at smaller-than-large firms",
+      "denominator": "2026 McKinsey smaller-organization respondent subset",
+      "measurement_kind": "observed",
+      "verification": "checked_against_original",
+      "source_locator": "Key takeaways / Exhibit 2",
+      "qualifier": "self_reported_survey_not_world_enterprise_adoption",
+      "notes": "Numerator/denominator counts not established from public summary; report proportion of sampled respondent subset only."
+    }
+  ],
+  "forecasts": [
+    {
+      "id": "forecast:agentseg:idc-active",
+      "source_id": "src:agentseg:idc",
+      "issuer": "IDC",
+      "issued_at": "2026-06-03",
+      "target_period": "2029",
+      "metric_id": "global_active_ai_agents",
+      "market_scope": "global_deployed_in_application_standalone_custom_and_bespoke_agents",
+      "value": 1150000000,
+      "unit": "active_agents",
+      "qualifier": "approximately",
+      "claim_id": "claim:agentseg:idc"
+    },
+    {
+      "id": "forecast:agentseg:idc-actions",
+      "source_id": "src:agentseg:idc",
+      "issuer": "IDC",
+      "issued_at": "2026-06-03",
+      "target_period": "2029",
+      "metric_id": "global_agent_actions_per_day",
+      "market_scope": "global_daily_agent_actions",
+      "value": 217000000000,
+      "unit": "actions_per_day",
+      "qualifier": "approximately",
+      "claim_id": "claim:agentseg:idc"
+    },
+    {
+      "id": "forecast:agentseg:gartner-attrition",
+      "source_id": "src:agentseg:gartner",
+      "issuer": "Gartner",
+      "issued_at": "2025-06-25",
+      "target_period": "2027",
+      "metric_id": "agentic_ai_projects_canceled_by_end_year",
+      "market_scope": "worldwide_projects_issued_forecast_not_observed",
+      "value": 40,
+      "unit": "percent_of_projects",
+      "qualifier": "greater_than",
+      "claim_id": "claim:agentseg:gartner"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario:agentseg:idc-core-to-sockets",
+      "hypothesis": "At an illustrative fixed IDC 2029 action forecast, assumed per-action CPU time changes gross provisioned socket equivalents by orders of magnitude.",
+      "model_status": "synthetic_not_observed",
+      "inputs": {
+        "assumed_daily_actions": 217000000000,
+        "forecast_id": "forecast:agentseg:idc-actions",
+        "physical_usable_cores_per_socket_assumed": 128,
+        "target_utilization_assumed": 0.65,
+        "seconds_per_day": 86400,
+        "server_fraction_assumed": 1,
+        "core_seconds_per_action_cases": [
+          0.1,
+          1,
+          10,
+          60
+        ]
+      },
+      "outputs": {
+        "gross_socket_equivalents_approx": [
+          3019,
+          30187,
+          301872,
+          1811231
+        ],
+        "formula": "daily_actions*core_seconds_per_action/(86400*physical_usable_cores_per_socket*utilization)",
+        "caution": "Not incremental units, annual shipments or revenue. Excludes idle RAM, placement, backend duplicates, spare fleets and CPU-GPU host splitting."
+      }
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal:agentseg:runtime-topology",
+      "actor": "AWS, Microsoft Azure and Google Cloud",
+      "statement": "Vendor-described agent sandbox architectures range from long-running per-session microVMs to isolated dynamic sessions and in-instance shared sandboxes.",
+      "inference": "Agent/server conversion depends on RAM reservations, CPU duty cycle and pooling, not count of logical agents alone.",
+      "evidence_ids": [
+        "claim:agentseg:aws",
+        "claim:agentseg:azure",
+        "claim:agentseg:gcp"
+      ]
+    },
+    {
+      "id": "signal:agentseg:population-measure",
+      "actor": "IDC, McKinsey and Gartner",
+      "statement": "IDC population/activity forecasts, McKinsey surveyed enterprise scaling and Gartner cancellation forecasts have different universes and do not provide observed chip purchases.",
+      "inference": "Need workflow-denominator, attrition and buyer-specific execution bridges before adopting market figures.",
+      "evidence_ids": [
+        "claim:agentseg:idc",
+        "claim:agentseg:mck",
+        "claim:agentseg:gartner"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:agentseg:ram-bottleneck",
+      "thesis": "For persistent personal and enterprise agents, memory and isolation reservations can drive physical sockets even with low CPU duty cycles.",
+      "evidence_ids": [
+        "claim:agentseg:aws",
+        "claim:agentseg:azure"
+      ],
+      "alternative": "MicroVM/session pooling greatly reduces idle resource reservations.",
+      "falsification_test": "Benchmark dedicated microVM, prewarmed-pool and shared-instance RAM GiB-hours/concurrent sessions per physical host at matched successful tasks."
+    },
+    {
+      "id": "hyp:agentseg:code-intensive",
+      "thesis": "Code-build-test agents may require far higher physical CPU core-seconds per successful task than lightweight consumer agent actions.",
+      "evidence_ids": [
+        "claim:agentseg:amd"
+      ],
+      "alternative": "Most agent actions are API/I/O bound or use already provisioned CI/cloud fleets.",
+      "falsification_test": "Trace matched successful end-to-end coding, browser, data and business tasks at physical host CPU counters including retries."
+    },
+    {
+      "id": "hyp:agentseg:hybrid",
+      "thesis": "Local agent model inference can reduce cloud core-seconds per task but simultaneously generate new backend workflows.",
+      "evidence_ids": [
+        "claim:agentseg:gcp",
+        "claim:agentseg:amd"
+      ],
+      "alternative": "Tasks migrate almost entirely to endpoints; net cloud load falls.",
+      "falsification_test": "Per-step execution location trace and controlled price elasticity test with source and destination CPU fleet impacts."
+    },
+    {
+      "id": "hyp:agentseg:arm-displacement",
+      "thesis": "Agentic global CPU demand may rise without an equally large x86 socket opportunity because Arm/custom ISA and physical core density capture capacity.",
+      "evidence_ids": [
+        "claim:agentseg:amd"
+      ],
+      "alternative": "x86 compatibility/TCO retains most installed agent execution.",
+      "falsification_test": "Measure buyer×workload physical ISA and actual shipment mix/ASP, not total cloud instance revenue."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:agentseg:d001",
+      "question": "What measured CPU core-seconds and failed attempts per successfully completed workflow across consumer, enterprise, coding and machine agents?",
+      "priority": "P0",
+      "method": "Controlled replay benchmark with task success criteria and physical host counters across ISA/runtime, initial 20+ trials per case.",
+      "domains": [
+        "agent-runtime-and-sandbox",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Core-hour conversion to physical socket demand; extends D001"
+    },
+    {
+      "id": "q:agentseg:ram",
+      "question": "How many idle and active GiB-hours and concurrent isolation slots must be provisioned per agent session by runtime architecture?",
+      "priority": "P0",
+      "method": "Benchmark active/idle reserved RAM, CPU, concurrent sessions and peak host placement at homogeneous hosts.",
+      "domains": [
+        "agent-runtime-and-sandbox",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Memory versus CPU constrained fleet size"
+    },
+    {
+      "id": "q:agentseg:d002",
+      "question": "Which CPU-side execution events happen on endpoints, cloud, private enterprise and remote SaaS during each hybrid workflow?",
+      "priority": "P0",
+      "method": "Per-step transition matrix with actual cloud backend resource consumption and demand elasticity.",
+      "domains": [
+        "agent-runtime-and-sandbox",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Net placement and 2030 CPU fleet; extends D002"
+    },
+    {
+      "id": "q:agentseg:d008",
+      "question": "What incremental agent work requires new physical hardware rather than spare/displaced CPU capacity or a replacement fleet refresh?",
+      "priority": "P0",
+      "method": "Reconcile buyer physical stock, deployed sockets, usable spare, host memory and actual annual shipments.",
+      "domains": [
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Incremental CPU silicon revenue; extends D007/D008"
+    },
+    {
+      "id": "q:agentseg:d003",
+      "question": "What are AMD/Intel/Arm/custom CPU hardware shares and net ASP by the economic buyer and the actual workload?",
+      "priority": "P0",
+      "method": "Buyer-by-workload physical BOM/source matched to ISA, unit shipments and realized ASP not list prices.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "x86 silicon TAM and AMD capture"
+    },
+    {
+      "id": "q:agentseg:units",
+      "question": "How are IDC action counts, Microsoft/AWS sandbox sessions and completed workflows related without double-counting?",
+      "priority": "P1",
+      "method": "Crosswalk stable workflow/session/action/execution IDs with concurrency and retry taxonomy.",
+      "domains": [
+        "agent-runtime-and-sandbox",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Forecast driver unit validity"
+    }
+  ],
+  "conflicts": [],
+  "methods": [
+    {
+      "id": "method:agentseg:cpu-capacity",
+      "name": "Workflow-purpose and constrained CPU+memory capacity bridge",
+      "procedure": "Uniquely attribute successful initiating workflows to one primary purpose; assign distinct execution steps to runtime/site/physical host; measure attempts, CPU core-seconds, peak RAM and idle session reservation; determine homogeneous host pool binding CPU/RAM/I/O/isolation capacity; subtract usable spare and displaced capacity; reconcile installed socket stock and yearly replacement/new shipments; estimate CPU silicon dollars as net realized chip ASP times physical shipments, allocated once by buyer×ISA×procurement channel.",
+      "assumptions": [
+        "A consumer/enterprise purpose partition is not the same axis as hardware buyer, industry or cloud provider.",
+        "Physical hardware host event IDs prevent double-counted nested delegations.",
+        "Idle/resident RAM matters independently of CPU duty cycles.",
+        "No assumed interchangeability between in-house enterprise, endpoint and cloud spare pools.",
+        "No new socket sale until capacity exceeds existing usable fleet; replacement still counts as annual shipment.",
+        "Scenarios must never become observed hardware-market metrics without verified source/denominator."
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req:agentseg:four-profiles",
+      "outcome": "Integrate agent purpose, workflow telemetry, runtime placement and immutable demand-model runs into existing evidence-first SQLite planning; design only.",
+      "acceptance_criteria": [
+        "agent_demand_segment: exactly one primary purpose per initiating workflow plus optional secondary tags",
+        "agent_workflow_profile: versioned steps, successful outputs, attempts, core-seconds and GiB-hours",
+        "runtime_placement_profile: site, architecture, isolation topology, peak concurrency and idle reservation",
+        "segment_demand_projection: dated scenario, stock flow, buyer/channel/ISA and evidence pointers",
+        "Keep legacy T001-T009 and existing buyer ledger authoritative; distinguish synthetic vs measured"
+      ]
+    }
+  ],
+  "promotions": [
+    {
+      "record_id": "claim:agentseg:amd",
+      "target_path": "data/demand-2030/tam-forecast-vintages.csv",
+      "review_status": "not_applicable",
+      "decision_note": "AMD >USD120B 2030 management forecast already stored as T002; historical vintage remains unchanged."
+    },
+    {
+      "record_id": "claim:agentseg:idc-systems",
+      "target_path": "docs/research/demand-2030/README.md",
+      "review_status": "not_applicable",
+      "decision_note": "Existing IDC whole-system spending reference; not CPU chip TAM."
+    },
+    {
+      "record_id": "forecast:agentseg:idc-active",
+      "target_path": "data/demand-2030/priority-data-fields.json",
+      "review_status": "pending",
+      "decision_note": "Demand adoption driver—not a CPU silicon TAM forecast; separate future schema/metric after review."
+    },
+    {
+      "record_id": "measurement:agentseg:mck-large",
+      "target_path": "data/demand-2030/priority-data-fields.json",
+      "review_status": "pending",
+      "decision_note": "Survey calibration needs explicit response universe, subgroup sample and methodology review; do not backfill worldwide population."
+    },
+    {
+      "record_id": "method:agentseg:cpu-capacity",
+      "target_path": "docs/research/demand-2030/AGENTIC-SEGMENTATION-AND-CAPACITY.md",
+      "review_status": "not_applicable",
+      "decision_note": "Detailed method is linked analytical guidance, not an observed market measurement."
+    }
+  ],
+  "handoff": {
+    "summary": "Eight primary public sources, eight checked original assertions, two survey respondent-share observations, three distinct non-CPU silicon forecasts, one transparent synthetic stress test, hypotheses, requirements, and six measurement questions; no changes to canonical CPU TAM forecast table.",
+    "changed_decisions": [
+      "Agent demand classified by primary purpose independently of physical buyer/industry/channel.",
+      "Physical CPU capacity model requires binding RAM, I/O, peak concurrency/isolation as well as active CPU core-hours.",
+      "IDC agent actions are useful adoption drivers but cannot imply CPU shipments without measured host utilization, placement and spare capacity."
+    ],
+    "next_actions": [
+      "Instrument completed task CPU core-seconds by D001 across coding/browser/business workload types.",
+      "Measure active+idle RAM GiB-hours per concurrent AWS/Azure/GCP-style runtime topology.",
+      "Survey denominator and production conversion checks before extrapolation.",
+      "Reconcile projected net physical sockets, ISA and CPU-only ASP by actual end buyer; preserve scenario vintages."
+    ],
+    "limits": [
+      "No host-level CPU benchmark or measured socket fleet data was gathered.",
+      "Vendor documentation describes product design, not independent performance measurements.",
+      "IDC/Gartner data are forecasts and McKinsey percentages are respondent subsets, not a census.",
+      "No new public AMD 2030 management TAM row; existing T002/T006/T008 and T009 retained.",
+      "Public, link-and-extract sources only; no confidential former-employer/client material."
+    ]
+  },
+  "entities": [],
+  "relationships": [],
+  "events": []
+}
