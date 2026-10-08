@@ -50,6 +50,15 @@ Keep every chart drill-down connected to a shared source pane: definition, unit,
 
 Only public statements, public filings and public summaries of industry datasets are allowed. **Never copy expert-network client/screenshots, nonpublic employer data, licensed sell-side research or confidential discounting** into this public GitHub repository. Store full source claims with attribution and retrieval vintage, and publish derived summarized records only. Refresh quarterly from filings and whenever public TAM estimates change; require editorial review before "verified" UI badges.
 
+
+## New agentic workload segmentation and CPU capacity bridge (October 8, 2026)
+
+The [agentic-era segmentation and capacity methodology](AGENTIC-SEGMENTATION-AND-CAPACITY.md) and [staged eight-source research packet](../../../research/packets/2026-10-08--agentic-server-cpu-segmentation.json) extend the existing **economic buyer × channel × workload × ISA** accounting with **primary agent-workflow purpose**, per-step local/cloud/private placement, runtime topology and host reservation. The purpose labels (C1–C3, E1–E4, D1–D2, P1–P2, X1, U0) partition initiating successful workflows; they are **not additional additive hardware buyer categories**.
+
+**What is new:** distinct consumer transactional/creative/persistent, enterprise function, coding/SRE, SaaS-embedded, machine-to-machine and industrial purposes; runtime comparison of AWS isolated microVMs, Azure Hyper-V sessions and Google shared Cloud Run sandboxes; memory/GiB-hour and concurrency as physical capacity bottlenecks alongside measured host core-seconds; the proper workflows → capacity → stock/shipments → CPU silicon ASP bridge. IDC's 2029 1.15B agents/217B actions/day is a **forecast**, McKinsey's 2026 40%/22% scaling shares are **survey respondents**, and Gartner's 2027 cancellation percentage is a **forecast**. They cannot be mechanically treated as measured CPU socket purchases.
+
+A deliberately hypothetical four-point sensitivity shows that core-seconds/action could move gross installed socket equivalents by orders of magnitude, but is **not a market forecast**. AMD's >$120B 2030 May forecast already exists as T002 and later vintages remain intact. No adoption forecast is promoted to the existing **CPU silicon** TAM CSV or to dashboard actuals. Highest-priority research gaps are physical CPU-seconds per successful task (D001), RAM reservation/isolated concurrency, per-step endpoint/cloud fractions (D002), reused fleet capacity (D007/D008), and workload/buyer-specific ISA + realized ASP (D003/D009).
+
 ## New research intake: closed-model hosting and private AI factories (October 8, 2026)
 
 The [multi-route confidential inference packet](../../../research/packets/2026-10-08--closed-model-hosting-confidential-inference.json) registers original vendor documentation, an indexed 2025–26 keynote viewing queue, typed model-operator relationships, dated contract change, sovereign-buyer signals, technical trust boundaries, hypotheses and unresolved CPU demand measurements. These are **staged**, not promoted market data or verified transcript quotations.
