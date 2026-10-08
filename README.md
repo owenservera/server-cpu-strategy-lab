@@ -6,6 +6,16 @@ Intended for fast strategic orientation: x86 competition, Arm's adjacent pressur
 
 ![Status](https://img.shields.io/badge/status-working%20starter-c3f68d) ![Data](https://img.shields.io/badge/data-public%20only-blue)
 
+## Researcher / AI agent entry point
+
+**New research, keynote, filing, dataset, technical concept or strategic question? Start at [RESEARCH-ENTRY.md](RESEARCH-ENTRY.md).** AI research sessions should also read [AGENTS.md](AGENTS.md), [research/README.md](research/README.md), and the machine-readable [domain catalog](research/catalog.json) and [multi-route taxonomy](research/routes.json).
+
+A single research conversation may route simultaneously into source provenance, numeric measurements, claims, revised forecasts, product and supplier relationships, benchmark methods, hypotheses, contradictions and next research questions. Stage one [traceable research packet](research/schema/packet.schema.json), reuse older IDs and promote only reviewed evidence into the existing domain datasets.
+
+Quick commands (Node 20+, no dependencies): `npm run research:route -- "ROCm x86 AI inference"` to discover relevant topics; `npm run check:research` to validate routing, schema-compatible packet records, source links and repo references; `npm test` for the complete test suite. See the [worked packet](research/templates/packet.example.json) and [promotion protocol](research/INTAKE-AND-PROMOTION.md).
+
+**This is an additive intake layer, not a new database.** Existing AMD, Microsoft/Docker and market-demand datasets remain intact; the dashboard does not automatically publish unreviewed staged claims.
+
 ## ⚡ Start in 30 seconds
 
 Requirements: Node.js 20+; no package installation or API keys required.
