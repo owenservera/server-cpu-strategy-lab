@@ -20,6 +20,7 @@ Open http://127.0.0.1:4173 in a browser. On Windows you may also double-click `O
 
 A July 2026 public AMD keynote has been indexed as a **research source**, not accepted as an independent forecast. The uploaded auto-caption transcript is *not* republished publicly.
 
+- [Eight key figures — decompositions and source gaps](docs/research/KEY-FIGURE-DECOMPOSITION.md) — $25B to $200B+/220B assumptions, agent CPU core-hour demands, rack BOM, CPU unit/ASP/margin mix and x86/ARM substitution.
 - [Full research and dashboard implementation path](docs/research/AMD-ADVANCING-AI-2026-RESEARCH-PATH.md) — eight critical numbers to decompose, three CPU demand segments, workload-to-socket TAM models, pricing/margin gaps, verification priorities, and UI design.
 - [97 sourced quantitative claims](data/claims/amd-advancing-ai-2026-curated.json) — normalized claims, source line ranges, status and caveats.
 - [196 numeric-bearing source lines](data/sources/amd-advancing-ai-2026-numeric-anchors.json) — exhaustive decimal-digit line index over the 3,189-line uploaded transcript, explicitly untriaged.
