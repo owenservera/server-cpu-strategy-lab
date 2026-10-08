@@ -2,6 +2,12 @@
 
 The dashboard is the visual interface for a continuously improved, evidence-constrained public research library. Keep the initial product small. Every future surface must reduce learning time or improve decision accuracy.
 
+## Reusable research intake and cross-session handoff
+
+[RESEARCH-ENTRY.md](../RESEARCH-ENTRY.md) is the **universal intake document**. The agent starts with [AGENTS.md](../AGENTS.md) and uses [research/catalog.json](../research/catalog.json) plus [research/routes.json](../research/routes.json) to discover all affected topics and record types. A single keynote, benchmark, report or conversation can emit multiple linked outputs in **one staged research packet**. See [protocol](../research/INTAKE-AND-PROMOTION.md), [schema](../research/schema/packet.schema.json) and [example](../research/templates/packet.example.json).
+
+Status: **routing, documentation, example and lightweight validation implemented**; future work includes empirical benchmark telemetry, source-vintage normalization across all legacy datasets, optional automated source dedupe, and materialized views for the dashboard. Do not bulk-migrate historic corpora or automatically promote third-party claims.
+
 ## Milestone 1 — Current starter (complete)
 
 - [x] Cross-device responsive, static, zero-dependency interface.
