@@ -47,6 +47,7 @@ It's: **what reusable facts, assumptions, disagreements, relationships and quest
 
 ## Paths you should know
 
+- [Pricing Observatory Run 01 — completed pilot and pending review](docs/research/server-cpu-pricing/RUN-01-2026-10-08.md) · [machine observations](data/pricing/run-01-2026-10-08/observations.json) · [run-01 packet](research/packets/2026-10-08--pricing-observatory-run-01.json)
 - [Pricing Observatory methodology](docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md) · [pricing public-evidence packet](research/packets/2026-10-08--server-cpu-pricing-economics.json) (staged; not net contract prices)
 - [Research architecture and lifecycle](research/README.md) · [machine routing](research/routes.json) · [topic catalog](research/catalog.json)
 - [Research packet schema](research/schema/packet.schema.json) · [packet example](research/templates/packet.example.json) · [promotion protocol](research/INTAKE-AND-PROMOTION.md)

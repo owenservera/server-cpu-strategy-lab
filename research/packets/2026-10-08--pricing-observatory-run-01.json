@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--pricing-observatory-run-01",
+  "created_at": "2026-10-08",
+  "title": "Pricing Observatory Run 01 — ASP filing-vintage conflict and two-platform Dell quote normalization",
+  "status": "needs_review",
+  "public_only": true,
+  "scope": "Reproducible public source pilot: Intel original versus comparative ASP vintage, AMD and Intel reference prices, Dell Spain CPU option shadows; no user-specific consulting information or inferred net contract discounts.",
+  "domains": [
+    "cpu-platforms-and-competitors",
+    "market-demand-2030",
+    "visual-intelligence"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "measurement",
+    "market_series",
+    "conflict",
+    "method",
+    "question",
+    "strategic_signal",
+    "product_requirement"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "research/packets/2026-10-08--server-cpu-pricing-economics.json",
+      "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md",
+      "data/demand-2030/priority-data-fields.json",
+      "docs/database/SEGMENTATION-AND-MODELS.md"
+    ],
+    "prior_ids": [
+      "m:pricing:intel-2024-asp",
+      "m:pricing:amd-9965-launch-reference",
+      "D006"
+    ],
+    "dedupe_notes": "Run 01 references previously staged FY2025 comparative +11% and AMD launch 9965 $14,813 by stable IDs. Adds the different FY2024 original +12% vintage, mutable 2026 product-page anchor, Dell OEM option price measurements and explicit conflict; no duplication in canonical demand CSV."
+  },
+  "sources": [
+    {
+      "id": "src:run01:intel-2024-original",
+      "title": "Intel FY2024 Form 10-K original MD&A",
+      "publisher": "Intel",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-25-000009/intc-20241228.htm",
+      "published_at": "2025-01-31",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Operating Segment Revenue Summary / DCAI 2024 vs 2023: server ASP +12%; volume -10%."
+    },
+    {
+      "id": "src:run01:intel-2025-comparative",
+      "title": "Intel FY2025 Form 10-K comparative MD&A",
+      "publisher": "Intel",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+      "published_at": "2026-01-22",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Operating Segment Revenue Summary / DCAI 2024 vs 2023: server ASP +11%; volume -8%; 2025 vs 2024 server ASP -4%."
+    },
+    {
+      "id": "src:run01:amd-launch-2024",
+      "title": "AMD 5th Gen EPYC launch 1KU price table",
+      "publisher": "AMD",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2024-10-10-amd-launches-5th-gen-amd-epyc-cpus-maintaining-le.html",
+      "published_at": "2024-10-10",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "EPYC 9005 Price (1 KU, USD): 9965 $14,813; 9355 $3,694; 9555 $9,826; 9015 $527; 9255 $2,495."
+    },
+    {
+      "id": "src:run01:amd-9965-live",
+      "title": "AMD EPYC 9965 product page / 1000 units",
+      "publisher": "AMD",
+      "url": "https://www.amd.com/es/products/processors/server/epyc/9005-series/amd-epyc-9965.html",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_product_page",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "General Specifications > 1000-unit pricing 11988 USD",
+      "notes": "published_at is pilot retrieval as-of date, NOT the original publication or repricing date; no raw archival snapshot obtained."
+    },
+    {
+      "id": "src:run01:intel-6980p-live",
+      "title": "Intel Xeon 6980P ARK / recommended price",
+      "publisher": "Intel",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/240777/intel-xeon-6980p-processor-504m-cache-2-00-ghz/specifications.html",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_product_page",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Essentials > Recommended Customer Price $13,955 and qualification disclaimer",
+      "notes": "published_at is pilot retrieval as-of date, NOT original listing date; no raw archival snapshot obtained."
+    },
+    {
+      "id": "src:run01:dell-r7725-a",
+      "title": "Dell España PowerEdge R7725 9015 baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r7725/spd/poweredge-r7725/gl_promo_per7725_1",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > CPU selections, AMD EPYC 9015 selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r7725-b",
+      "title": "Dell España PowerEdge R7725 9355 baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/cty/pdp/spd/poweredge-r7725/emea_r7725",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > CPU selections, AMD EPYC 9355 selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r770-a",
+      "title": "Dell España PowerEdge R770 6520P baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r770/spd/poweredge-r770/promo_r770_1?view=configurations",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > Xeon 6520P selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r770-b",
+      "title": "Dell España PowerEdge R770 6515P baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r770/spd/poweredge-r770/promo_r770_2?view=configurations",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > Xeon 6515P selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:run01:intel-vintage-divergence",
+      "source_id": "src:run01:intel-2024-original",
+      "statement": "Intel's original FY2024 server ASP change was +12% YoY and server unit change -10%, contrasting with FY2025 filing's comparison of +11% and -8%, respectively.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "Operating Segment Revenue Summary, DCAI 2024 vs. 2023",
+      "verification": "checked_against_original",
+      "qualifier": "different disclosed historical vintages, cause unresolved"
+    },
+    {
+      "id": "claim:run01:intel-2025-comp",
+      "source_id": "src:run01:intel-2025-comparative",
+      "statement": "Intel's FY2025 comparative presents FY2024 server ASP +11% and units -8%, while FY2025 server ASP moved -4%.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "Operating Segment Revenue Summary, 2024 vs. 2023 and 2025 vs. 2024",
+      "verification": "checked_against_original",
+      "legacy_ref": "m:pricing:intel-2024-asp"
+    },
+    {
+      "id": "claim:run01:amd-reference-current",
+      "source_id": "src:run01:amd-9965-live",
+      "statement": "The mutable EPYC 9965 page displays 1000-unit reference price USD 11,988 at 2026-10-08 retrieval, compared with USD 14,813 on AMD's October 2024 launch table.",
+      "claim_class": "product_spec",
+      "source_locator": "General Specifications > Prices for 1000 units",
+      "verification": "checked_against_original",
+      "qualifier": "not a confirmed transaction price or repricing effective date"
+    },
+    {
+      "id": "claim:run01:intel-rcp",
+      "source_id": "src:run01:intel-6980p-live",
+      "statement": "Xeon 6980P ARK lists USD 13,955 Recommended Customer Price, explicitly guidance not a formal offer.",
+      "claim_class": "product_spec",
+      "source_locator": "Essentials > Recommended Customer Price; RCP caveat",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:run01:dell-base-invariance",
+      "source_id": "src:run01:dell-r7725-a",
+      "statement": "Published Dell Spain R7725 9015-base CPU options and 9355-base options are consistent after subtracting selected-baseline relative price shifts; these are not CPU procurement invoices.",
+      "claim_class": "analysis",
+      "source_locator": "Components > Processor list / selection offsets",
+      "verification": "checked_against_original",
+      "notes": "Cross-check second source src:run01:dell-r7725-b and both R770 source IDs; co-requisite BOM not verified."
+    }
+  ],
+  "measurements": [
+    {
+      "id": "m:run01:intel-asp-2024-original",
+      "source_id": "src:run01:intel-2024-original",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": 12,
+      "unit": "percent_change_yoy",
+      "period": "FY2024 vs FY2023 (as published in 2024 10-K)",
+      "population": "Intel server CPU product sales in original FY2024 DCAI MD&A",
+      "denominator": "corresponding original-report FY2023 server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "DCAI revenue summary FY2024 vs FY2023"
+    },
+    {
+      "id": "m:run01:amd-9965-live-reference",
+      "source_id": "src:run01:amd-9965-live",
+      "metric_id": "AMD_EPYC_9965_published_1KU_reference_price",
+      "value": 11988,
+      "unit": "USD_per_cpu_at_1KU",
+      "period": "current mutable page viewed 2026-10-08; effective date unknown",
+      "population": "AMD EPYC 9965 SKU 192 cores; global USD catalog",
+      "denominator": "one physical AMD EPYC 9965 CPU at 1000-unit quoted basis",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "Prices for 1000 units"
+    },
+    {
+      "id": "m:run01:intel-6980p-live-RCP",
+      "source_id": "src:run01:intel-6980p-live",
+      "metric_id": "Intel_Xeon_6980P_current_RCP",
+      "value": 13955,
+      "unit": "USD_per_cpu_RCP",
+      "period": "current mutable page viewed 2026-10-08; effective date unknown",
+      "population": "Intel Xeon 6980P, 128 cores; published product price guidance",
+      "denominator": "one physical Xeon 6980P CPU at RCP basis; not quantity-discounted invoice",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "Essentials > Recommended Customer Price"
+    },
+    {
+      "id": "m:run01:dell-amd-9355-premium",
+      "source_id": "src:run01:dell-r7725-a",
+      "metric_id": "Dell_R7725_EPYC_9355_vs_9015_option_premium",
+      "value": 4589.89,
+      "unit": "EUR_per_selected_option_delta",
+      "period": "web displayed at 2026-10-08 retrieval; cached page",
+      "population": "Dell España R7725 AMD CPU selection, 9015 as baseline",
+      "denominator": "one published CPU option change relative to EPYC 9015 selected configuration",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "Procesador EPYC 9355 +4589,89; EPYC 9015 selected"
+    },
+    {
+      "id": "m:run01:dell-intel-6520p-premium",
+      "source_id": "src:run01:dell-r770-b",
+      "metric_id": "Dell_R770_Xeon_6520P_vs_6515P_option_premium",
+      "value": 1172.25,
+      "unit": "EUR_per_selected_option_delta",
+      "period": "web displayed at 2026-10-08 retrieval; cached page",
+      "population": "Dell España R770 Xeon option selector, 6515P baseline",
+      "denominator": "one published CPU option change relative to Xeon 6515P selected configuration",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "Procesador Xeon 6520P +1172,25; Xeon 6515P selected"
+    }
+  ],
+  "forecasts": [],
+  "scenarios": [],
+  "entities": [],
+  "relationships": [],
+  "events": [],
+  "signals": [
+    {
+      "id": "signal:run01:source-vintage-boundary",
+      "actor": "Intel",
+      "statement": "Original and later-comparative FY2024 disclosed server ASP/units percentages differ.",
+      "inference": "Comparison vintage joins must gate historical ASP indices; a default latest-only series loses valuable contradictory data.",
+      "evidence_ids": [
+        "claim:run01:intel-vintage-divergence",
+        "claim:run01:intel-2025-comp"
+      ],
+      "alternative": "A specific segment recast or rounding could resolve the apparent conflict; formal reconciliation remains required."
+    },
+    {
+      "id": "signal:run01:OEM-offset",
+      "actor": "Dell",
+      "statement": "R770 and R7725 published CPU option ladders are additive across different selected default CPUs.",
+      "inference": "Build relative SKU-pair shadow option prices from Dell rather than compare base-dependent options raw; cannot infer Dell processor acquisition costs.",
+      "evidence_ids": [
+        "claim:run01:dell-base-invariance"
+      ],
+      "alternative": "Same Dell product pricing system could cause identical ladder despite disparate co-requisite configuration costs."
+    }
+  ],
+  "hypotheses": [],
+  "questions": [
+    {
+      "id": "q:run01:intel-2024-reconciliation",
+      "question": "Why did the original FY2024 Intel server ASP YoY +12%, volume -10% become +11%, -8% in the later FY2025 comparative?",
+      "priority": "P0",
+      "method": "Audit original vs comparative metric scope and segment restatement explanations in both 10-Ks and accounting notes; preserve both until specific cause confirmed.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Avoid silently chaining non-equivalent disclosed ASP growth factors."
+    },
+    {
+      "id": "q:run01:immutable-snapshot",
+      "question": "Can we obtain two immutable independently timestamped original SKU price snapshots and fully BOM-normalized OEM cart totals?",
+      "priority": "P0",
+      "method": "Implement archival hash capture and full-co-requisite quote capture; rerun matched-SKU panel on two true dates.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Move from one descriptive reference comparison toward defensible actual price index."
+    },
+    {
+      "id": "q:run01:price-identifiability",
+      "question": "Can public buyer-specific x86 server CPU net semiconductor prices or matching pure CPU revenue/physical units be identified?",
+      "priority": "P0",
+      "method": "Audit government and OEM BOM-level awards and volume sources; refuse CPU net invoice estimates if missing.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Prevent invented hyperscaler-vs-enterprise discount fractions."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "conflict:run01:intel-fy2024",
+      "left_ref": "m:run01:intel-asp-2024-original",
+      "right_ref": "m:pricing:intel-2024-asp",
+      "issue": "FY2024 Intel server ASP growth is +12% in original FY2024 10-K versus +11% in FY2025 comparative; FY2024 server volume -10% vs -8%; reporting methodology and comparability unresolved.",
+      "status": "open",
+      "resolution_plan": "Review 2024 vs 2025 Intel reported server metric definitions, restated DCAI scope, notes and investor IR; preserve original and comparative if incompatible."
+    }
+  ],
+  "methods": [
+    {
+      "id": "method:run01:baseline-invariance",
+      "name": "Two-model OEM CPU configurator price-ladder normalization",
+      "procedure": "For two configurations with same OEM/model/region/currency/price basis but differing selected baseline, compute SKU s relative to reference r: (option_a(s)-option_a(r))-(option_b(s)-option_b(r)); require <=1 EUR cent across overlapping available SKUs; missing/unavailable stays null. Failing co-requisite verification means only quote-internal price ladder agreement, not actual paid hardware totals.",
+      "inputs": [
+        "OEM model, region, selected baseline, source, listed availability and EUR cent integers"
+      ],
+      "output": "Matched-SKU relative option spreads and residuals; supplier procurement price NEVER inferred.",
+      "code_ref": "scripts/pricing/analyze-run-01.mjs",
+      "test_ref": "tests/pricing-run-01.test.mjs",
+      "version": "1.0"
+    },
+    {
+      "id": "method:run01:source-vintage-audit",
+      "name": "Original vs comparative filing ASP conflict detection",
+      "procedure": "Group by publisher, metric, FY comparison, denominator, then retain each dated filing vintage. Emit conflict if percent different, do not create a single market series without resolution.",
+      "code_ref": "scripts/pricing/analyze-run-01.mjs",
+      "version": "1.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req:run01:source-capture",
+      "name": "Immutable public SKU and configured-cart snapshot capture",
+      "user_outcome": "Local ZCode agents can archive authorized source renders with UTC timestamp, raw SHA, parsed SKU, region, tax, quantity basis, co-requisites and reproducible normalized quotes.",
+      "acceptance_criteria": [
+        "Two dated original snapshots for same SKU, not merely two content caches",
+        "Mark all mutable sources unarchived until hash capture",
+        "Do not automatically promote a price to CPU market actuals",
+        "Collect all forced BOM co-requisites and chosen socket count"
+      ],
+      "status": "design_not_implemented"
+    }
+  ],
+  "promotions": [
+    {
+      "record_id": "m:run01:intel-asp-2024-original",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Hold due to FY2024 original-vs-2025 comparative +12/+11 conflict; no overwrite of preexisting +11 vintage."
+    },
+    {
+      "record_id": "m:run01:amd-9965-live-reference",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "not_applicable",
+      "decision_note": "Per-SKU live 1KU reference belongs in future pricing snapshot warehouse, not revenue/shipments macro series."
+    },
+    {
+      "record_id": "m:run01:dell-amd-9355-premium",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "not_applicable",
+      "decision_note": "OEM selected-option premium not same as chip net ASP; preserve typed data/pricing/run-01 only."
+    },
+    {
+      "record_id": "method:run01:baseline-invariance",
+      "target_path": "docs/research/server-cpu-pricing/RUN-01-2026-10-08.md",
+      "review_status": "not_applicable",
+      "decision_note": "Reusable run design already recorded in methodology/runbook; not a promoted measured market series."
+    }
+  ],
+  "handoff": {
+    "summary": "Completed public-source extraction and typed normalization of Intel filing ASP vintage conflict, AMD and Intel public reference anchors, and two baseline-invariance OEM Dell model pairs; no transaction-level price estimates.",
+    "next_actions": [
+      "Run source-content snapshot collector and compute digests",
+      "Audit Intel +12 original vs +11 comparative restatement/scope",
+      "Replay full Dell BOM configurations on synchronized day",
+      "Stage 10–20 public awards with system-level denominators",
+      "After CI and human review, approve appropriate quoted-source observations without promoting as net CPU ASP"
+    ],
+    "changed_decisions": [
+      "Preserve FY2024 reported ASP dual source-vintages; reject automatic latest-only chaining.",
+      "Normalize CPU option ladders by SKU pair; do not claim supplier purchase price.",
+      "Report exact hyperscaler net discounts as unidentifiable until qualified data."
+    ],
+    "limits": [
+      "Public web render not immutable original bytes; publication date unknown for live pricing pages.",
+      "Some Dell models display SKU unavailable; no zero imputation.",
+      "OEM page comparison is not evidence of same final cart with all co-requisites.",
+      "No 2026 Intel historical matched-SKU price index, AMD net realized ASP, pure CPU market price or actual tender sample."
+    ]
+  }
+}

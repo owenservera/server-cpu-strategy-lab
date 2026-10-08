@@ -290,11 +290,13 @@
         "docs/RESEARCH-ROADMAP.md",
         "docs/EVIDENCE-STANDARDS.md",
         "docs/research/AMD-EPYC-ROME-MILAN-2019-2021.md",
-        "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md"
+        "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md",
+        "docs/research/server-cpu-pricing/RUN-01-2026-10-08.md"
       ],
       "datasets": [
         "data.js",
-        "data/demand-2030/historical-and-forecast-evidence.csv"
+        "data/demand-2030/historical-and-forecast-evidence.csv",
+        "data/pricing/run-01-2026-10-08/observations.json"
       ],
       "routes": [
         "source",
@@ -312,7 +314,8 @@
         "Historical 2019-2021 Mercury broad x86 server unit-share endpoints are staged, not yet normalized into canonical market series",
         "Historical EPYC-only revenue versus EE&SC/combined datacenter accounting requires public-source reconciliation",
         "No public same-SKU, time/volume-controlled net hyperscaler-versus-enterprise CPU price distribution; negotiated discount remains underidentified.",
-        "No archived cross-OEM CPU-option delta/BOM-adjustment price panel or audited observed supplier per-SKU variable cost."
+        "No archived cross-OEM CPU-option delta/BOM-adjustment price panel or audited observed supplier per-SKU variable cost.",
+        "FY2024 original-vs-comparative Intel server ASP +12% vs +11% disclosure vintage conflict awaiting accounting scope review"
       ],
       "related": [
         "market-demand-2030",

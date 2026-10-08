@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0",
+  "run_id": "pricing-observatory-run-01",
+  "as_of": "2026-10-08",
+  "status": "staged_requires_editorial_review",
+  "scope": "PUBLIC Intel Xeon and AMD EPYC reference prices, Intel filed ASP-vintage discrepancy, and Dell Spain published relative CPU upgrade choices. No net contract pricing.",
+  "source_registry": [
+    {
+      "id": "src:run01:intel-2024-original",
+      "title": "Intel FY2024 Form 10-K original MD&A",
+      "publisher": "Intel",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-25-000009/intc-20241228.htm",
+      "published_at": "2025-01-31",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Operating Segment Revenue Summary / DCAI 2024 vs 2023: server ASP +12%; volume -10%."
+    },
+    {
+      "id": "src:run01:intel-2025-comparative",
+      "title": "Intel FY2025 Form 10-K comparative MD&A",
+      "publisher": "Intel",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+      "published_at": "2026-01-22",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Operating Segment Revenue Summary / DCAI 2024 vs 2023: server ASP +11%; volume -8%; 2025 vs 2024 server ASP -4%."
+    },
+    {
+      "id": "src:run01:amd-launch-2024",
+      "title": "AMD 5th Gen EPYC launch 1KU price table",
+      "publisher": "AMD",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2024-10-10-amd-launches-5th-gen-amd-epyc-cpus-maintaining-le.html",
+      "published_at": "2024-10-10",
+      "as_of": "2026-10-08",
+      "kind": "public_primary",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "EPYC 9005 Price (1 KU, USD): 9965 $14,813; 9355 $3,694; 9555 $9,826; 9015 $527; 9255 $2,495."
+    },
+    {
+      "id": "src:run01:amd-9965-live",
+      "title": "AMD EPYC 9965 product page / 1000 units",
+      "publisher": "AMD",
+      "url": "https://www.amd.com/es/products/processors/server/epyc/9005-series/amd-epyc-9965.html",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_product_page",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "General Specifications > 1000-unit pricing 11988 USD",
+      "notes": "published_at is pilot retrieval as-of date, NOT the original publication or repricing date; no raw archival snapshot obtained."
+    },
+    {
+      "id": "src:run01:intel-6980p-live",
+      "title": "Intel Xeon 6980P ARK / recommended price",
+      "publisher": "Intel",
+      "url": "https://www.intel.com/content/www/us/en/products/sku/240777/intel-xeon-6980p-processor-504m-cache-2-00-ghz/specifications.html",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_product_page",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Essentials > Recommended Customer Price $13,955 and qualification disclaimer",
+      "notes": "published_at is pilot retrieval as-of date, NOT original listing date; no raw archival snapshot obtained."
+    },
+    {
+      "id": "src:run01:dell-r7725-a",
+      "title": "Dell España PowerEdge R7725 9015 baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r7725/spd/poweredge-r7725/gl_promo_per7725_1",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > CPU selections, AMD EPYC 9015 selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r7725-b",
+      "title": "Dell España PowerEdge R7725 9355 baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/cty/pdp/spd/poweredge-r7725/emea_r7725",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > CPU selections, AMD EPYC 9355 selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r770-a",
+      "title": "Dell España PowerEdge R770 6520P baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r770/spd/poweredge-r770/promo_r770_1?view=configurations",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > Xeon 6520P selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    },
+    {
+      "id": "src:run01:dell-r770-b",
+      "title": "Dell España PowerEdge R770 6515P baseline configured CPU options",
+      "publisher": "Dell",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r770/spd/poweredge-r770/promo_r770_2?view=configurations",
+      "published_at": "2026-10-08",
+      "as_of": "2026-10-08",
+      "kind": "undated_evolving_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Components > Procesador > Xeon 6515P selected",
+      "notes": "Web-extracted cached page; exact publication/capture time unknown; forced co-requisite effects not quantified."
+    }
+  ],
+  "reported_asp": [
+    {
+      "id": "asp:intel-2024-as-filed",
+      "source_id": "src:run01:intel-2024-original",
+      "metric": "reported_server_ASP_yoy_percent",
+      "period": "FY2024_vs_FY2023",
+      "value_percent": 12,
+      "report_vintage": "FY2024-original",
+      "population": "Intel server products; excludes unrelated DCAI businesses",
+      "price_layer": "reported_aggregate_ASP_change",
+      "denominator": "prior_year_reported_server_ASP"
+    },
+    {
+      "id": "asp:intel-2024-comparative",
+      "source_id": "src:run01:intel-2025-comparative",
+      "metric": "reported_server_ASP_yoy_percent",
+      "period": "FY2024_vs_FY2023",
+      "value_percent": 11,
+      "report_vintage": "FY2025-comparative",
+      "population": "Intel server products; excludes unrelated DCAI businesses",
+      "price_layer": "reported_aggregate_ASP_change",
+      "denominator": "prior_year_reported_server_ASP"
+    },
+    {
+      "id": "asp:intel-2025-as-filed",
+      "source_id": "src:run01:intel-2025-comparative",
+      "metric": "reported_server_ASP_yoy_percent",
+      "period": "FY2025_vs_FY2024",
+      "value_percent": -4,
+      "report_vintage": "FY2025-original",
+      "population": "Intel server products; excludes unrelated DCAI businesses",
+      "price_layer": "reported_aggregate_ASP_change",
+      "denominator": "prior_year_reported_server_ASP"
+    }
+  ],
+  "reference_prices": [
+    {
+      "id": "ref:amd-9965-2024-launch",
+      "source_id": "src:run01:amd-launch-2024",
+      "sku": "EPYC 9965",
+      "vendor": "AMD",
+      "cores": 192,
+      "price_usd": 14813,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "2024-10-10 published launch",
+      "first_seen_as_of": "2024-10-10",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:amd-9965-current",
+      "source_id": "src:run01:amd-9965-live",
+      "sku": "EPYC 9965",
+      "vendor": "AMD",
+      "cores": 192,
+      "price_usd": 11988,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "undated_mutable_web_current",
+      "first_seen_as_of": "2026-10-08",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:amd-9355-2024-launch",
+      "source_id": "src:run01:amd-launch-2024",
+      "sku": "EPYC 9355",
+      "vendor": "AMD",
+      "cores": 32,
+      "price_usd": 3694,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "2024-10-10 published launch",
+      "first_seen_as_of": "2024-10-10",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:amd-9555-2024-launch",
+      "source_id": "src:run01:amd-launch-2024",
+      "sku": "EPYC 9555",
+      "vendor": "AMD",
+      "cores": 64,
+      "price_usd": 9826,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "2024-10-10 published launch",
+      "first_seen_as_of": "2024-10-10",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:amd-9255-2024-launch",
+      "source_id": "src:run01:amd-launch-2024",
+      "sku": "EPYC 9255",
+      "vendor": "AMD",
+      "cores": 24,
+      "price_usd": 2495,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "2024-10-10 published launch",
+      "first_seen_as_of": "2024-10-10",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:amd-9015-2024-launch",
+      "source_id": "src:run01:amd-launch-2024",
+      "sku": "EPYC 9015",
+      "vendor": "AMD",
+      "cores": 8,
+      "price_usd": 527,
+      "quantity_basis": "1000_unit_list_reference",
+      "validity": "2024-10-10 published launch",
+      "first_seen_as_of": "2024-10-10",
+      "price_layer": "published_reference"
+    },
+    {
+      "id": "ref:intel-6980p-current",
+      "source_id": "src:run01:intel-6980p-live",
+      "sku": "Xeon 6980P",
+      "vendor": "Intel",
+      "cores": 128,
+      "price_usd": 13955,
+      "quantity_basis": "Intel_RCP_not_formal_offer",
+      "validity": "undated_mutable_web_current",
+      "first_seen_as_of": "2026-10-08",
+      "price_layer": "published_reference"
+    }
+  ],
+  "oem_quotes": [
+    {
+      "id": "oem:dell-r7725-base9015",
+      "source_id": "src:run01:dell-r7725-a",
+      "brand": "Dell",
+      "vendor": "AMD",
+      "server_model": "PowerEdge R7725",
+      "region": "ES",
+      "currency": "EUR",
+      "tax_treatment": "undetermined_for_option_delta",
+      "price_layer": "oem_configurator_cpu_option_delta",
+      "unit": "EUR_per_displayed_option_relative_to_configuration_default",
+      "baseline_sku": "EPYC 9015",
+      "observed_as_of": "2026-10-08",
+      "raw_snapshot_sha256": null,
+      "collection_method": "public_web_page_text_extraction_not_timestamped_archive",
+      "co_requisites_verified": false,
+      "options": [
+        {
+          "sku": "EPYC 9015",
+          "delta_eur_cents": 0,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9255",
+          "delta_eur_cents": 245968,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9355",
+          "delta_eur_cents": 458989,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9555",
+          "delta_eur_cents": 889011,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9845",
+          "delta_eur_cents": 1315052,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9965",
+          "delta_eur_cents": null,
+          "availability": "unavailable"
+        }
+      ]
+    },
+    {
+      "id": "oem:dell-r7725-base9355",
+      "source_id": "src:run01:dell-r7725-b",
+      "brand": "Dell",
+      "vendor": "AMD",
+      "server_model": "PowerEdge R7725",
+      "region": "ES",
+      "currency": "EUR",
+      "tax_treatment": "undetermined_for_option_delta",
+      "price_layer": "oem_configurator_cpu_option_delta",
+      "unit": "EUR_per_displayed_option_relative_to_configuration_default",
+      "baseline_sku": "EPYC 9355",
+      "observed_as_of": "2026-10-08",
+      "raw_snapshot_sha256": null,
+      "collection_method": "public_web_page_text_extraction_not_timestamped_archive",
+      "co_requisites_verified": false,
+      "options": [
+        {
+          "sku": "EPYC 9015",
+          "delta_eur_cents": -458989,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9255",
+          "delta_eur_cents": -213021,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9355",
+          "delta_eur_cents": 0,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9555",
+          "delta_eur_cents": 430022,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9845",
+          "delta_eur_cents": 856063,
+          "availability": "listed"
+        },
+        {
+          "sku": "EPYC 9965",
+          "delta_eur_cents": 995564,
+          "availability": "listed"
+        }
+      ]
+    },
+    {
+      "id": "oem:dell-r770-base6520p",
+      "source_id": "src:run01:dell-r770-a",
+      "brand": "Dell",
+      "vendor": "Intel",
+      "server_model": "PowerEdge R770",
+      "region": "ES",
+      "currency": "EUR",
+      "tax_treatment": "undetermined_for_option_delta",
+      "price_layer": "oem_configurator_cpu_option_delta",
+      "unit": "EUR_per_displayed_option_relative_to_configuration_default",
+      "baseline_sku": "Xeon 6520P",
+      "observed_as_of": "2026-10-08",
+      "raw_snapshot_sha256": null,
+      "collection_method": "public_web_page_text_extraction_not_timestamped_archive",
+      "co_requisites_verified": false,
+      "options": [
+        {
+          "sku": "Xeon 6515P",
+          "delta_eur_cents": -117225,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6520P",
+          "delta_eur_cents": 0,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6710E",
+          "delta_eur_cents": 170501,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6740P",
+          "delta_eur_cents": 675313,
+          "availability": "listed"
+        }
+      ]
+    },
+    {
+      "id": "oem:dell-r770-base6515p",
+      "source_id": "src:run01:dell-r770-b",
+      "brand": "Dell",
+      "vendor": "Intel",
+      "server_model": "PowerEdge R770",
+      "region": "ES",
+      "currency": "EUR",
+      "tax_treatment": "undetermined_for_option_delta",
+      "price_layer": "oem_configurator_cpu_option_delta",
+      "unit": "EUR_per_displayed_option_relative_to_configuration_default",
+      "baseline_sku": "Xeon 6515P",
+      "observed_as_of": "2026-10-08",
+      "raw_snapshot_sha256": null,
+      "collection_method": "public_web_page_text_extraction_not_timestamped_archive",
+      "co_requisites_verified": false,
+      "options": [
+        {
+          "sku": "Xeon 6515P",
+          "delta_eur_cents": 0,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6520P",
+          "delta_eur_cents": 117225,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6710E",
+          "delta_eur_cents": 287726,
+          "availability": "listed"
+        },
+        {
+          "sku": "Xeon 6740P",
+          "delta_eur_cents": 792538,
+          "availability": "listed"
+        }
+      ]
+    }
+  ],
+  "unobservables": [
+    {
+      "id": "missing:actual-hyperscaler-net-asp",
+      "value": null,
+      "unit": "USD_per_CPU",
+      "reason": "No public same-SKU, same-period supplier net invoices and contracted quantity by buyer; exact hyperscaler discount unidentifiable."
+    },
+    {
+      "id": "missing:cpu-only-shipment-revenue",
+      "value": null,
+      "unit": "USD",
+      "reason": "Intel DCAI and AMD Data Center revenue include products beyond server merchant CPU; no public matched units+net revenue for buyer strata."
+    },
+    {
+      "id": "missing:dell-forced-bom-reprice",
+      "value": null,
+      "unit": "EUR_per_full_configuration",
+      "reason": "Public option display does not verify forced PSU, cooling, memory or license bundle updates in final cart."
+    },
+    {
+      "id": "missing:cpu-margin-by-sku",
+      "value": null,
+      "unit": "USD_per_CPU",
+      "reason": "Per-SKU variable silicon cost and capacity opportunity costs are not publicly identified."
+    }
+  ],
+  "lineage": {
+    "prior_packet": "research/packets/2026-10-08--server-cpu-pricing-economics.json",
+    "prior_2024_ASP_id": "m:pricing:intel-2024-asp",
+    "forbidden_use": "not a transaction-level discount dataset",
+    "snapshot_limits": "Publicly rendered page text, not immutable raw response SHA."
+  }
+}

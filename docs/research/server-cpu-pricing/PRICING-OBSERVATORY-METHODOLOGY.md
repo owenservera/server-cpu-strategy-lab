@@ -38,7 +38,8 @@ invoice/contract consideration (usually unobserved)
 |---|---:|---|
 | FY2022 vs FY2021 | **−5%** | Higher hyperscale customer-revenue mix. [2022 10-K](https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-23-000006/intc-20221231.htm), DCAI Revenue Summary |
 | FY2023 vs FY2022 | **+20%** | Lower hyperscale customer mix + higher high-core-count product mix. [2024 10-K](https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-25-000009/intc-20241228.htm); confirm historical comparative passage |
-| FY2024 vs FY2023 | **+11%** | High-core-count mix, per [Intel 2025 10-K](https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000011/intc-20251227.htm); pending separate locator audit |
+| FY2024 vs FY2023 (FY2025 comparative disclosure) | **+11%** | High-core-count mix, per [Intel 2025 10-K](https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000011/intc-20251227.htm); pending separate locator audit |
+| FY2024 vs FY2023 (original FY2024 10-K) | **+12%** | Different original vintage; see [Run 01 conflict](RUN-01-2026-10-08.md); do not chain without reconciliation |
 | FY2025 vs FY2024 | **−4%** | Pricing actions and lower-core-count mix, same 2025 10-K; pending separate locator audit |
 | H1 FY2026 vs H1 FY2025 | **+38%** | Premium mix dominates, demand pricing smaller. [Q2 2026 10-Q](https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000157/intc-20260627.htm) |
 | Q2 FY2026 vs Q2 FY2025 | **+48%** | Q2-only comparison in the same filing, **not a further +48% sequential increase** |
@@ -164,3 +165,7 @@ Evidence grades follow [project P1–P6 policy](../../EVIDENCE-STANDARDS.md), co
 “Published Xeon RCP and EPYC 1KU are useful pricing anchors, but not actual customer net prices. Intel's reported server ASP shifts reflect SKU mix, hyperscaler mix and repricing; for example, 2022's decline coincided with more hyperscale revenue, while 2026's increases were largely premium-mix driven. Public disclosures do not identify a stable hyperscaler-versus-enterprise net discount percentage. We can estimate public reference index movements, OEM CPU-option spreads and full-system procurement prices; to infer contracted semiconductor ASP rigorously requires same-SKU, period, buyer and quantity denominators. For buyers, the economically meaningful comparison is validated workload TCO, not sticker discount.”
 
 **Boundary:** Discussion strictly of public filings, public market evidence, and independently modeled assumptions; never imply private contract or client-specific knowledge.
+
+### FY2024 original-filing vintage discrepancy — 2026-10-08 addendum
+
+[Pricing Observatory Run 01](RUN-01-2026-10-08.md) confirms a source-version mismatch: Intel's original FY2024 10-K reports server ASP +12%, volume −10%, while its FY2025 comparative reports +11%, volume −8%, for 2024 versus 2023. Those are different **disclosure vintages**; preserve both, label conflict `conflict:run01:intel-fy2024` and do not settle the cause without accounting/scope review. The earlier pricing packet's +11% is correctly attributed to the later comparative; neither replaces the other. This is a reproducibility gate for all future reported-ASP series.
