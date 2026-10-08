@@ -170,7 +170,7 @@ Under existing **central 2030** demand row ($40B foundational / $55B AI host / $
 ## Source registry (public links; claim-level verification must precede promotion)
 
 - **[INTC1]** Intel Q2 2026 SEC 10-Q (published July 2026): https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm
-- **[INTC2]** Intel Xeon 6+ product catalog / Q2 2026 launch: https://www.intel.com/content/www/us/en/products/details/processors/xeon/6-plus-series.html
+- **[INTC2]** Intel Xeon 6+ official May 31 2026 launch: https://newsroom.intel.com/data-center/intel-puts-agentic-ai-xeon-6-networking-ai-systems
 - **[AMD1]** AMD Q2 2026 results, Aug 4 2026: https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results
 - **[AMD2]** AMD 2nm Venice production ramp, May 21 2026: https://newsroom.amd.com/news/amd-announces-production-ramp-of-next-generation-a/
 - **[MERC1]** Tom's Hardware, Aug 22 2026, public secondary reporting on Mercury Q2 2026: https://www.tomshardware.com/pc-components/cpus/desktop-cpu-shipments-crater-20-percent-amid-high-component-costs-but-amd-gains-record-share-despite-ugly-desktop-processor-market-intel-floods-laptop-market-with-millions-of-cpus-but-amd-still-sets-all-time-share-records
