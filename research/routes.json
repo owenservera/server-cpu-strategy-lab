@@ -23,7 +23,9 @@
     "question",
     "conflict",
     "method",
-    "product_requirement"
+    "product_requirement",
+    "financial_filing",
+    "financial_commitment"
   ],
   "routes": [
     {
@@ -177,6 +179,22 @@
       "min_evidence": "User outcome, linked domain evidence, acceptance criteria, implementer issue",
       "canonical_destination": "docs/research/... and GitHub issue",
       "caution": "An idea is not a factual source"
+    },
+    {
+      "id": "financial_filing",
+      "description": "Annual, quarterly, amended or material SEC/foreign regulator financial filing, with fiscal and source-vintage identity",
+      "packet_collection": "financial_filings",
+      "min_evidence": "Issuer ID, regulator, accession/document identifier if available, exact filing URL, fiscal period, report vs filed date, amendment chain, source ID",
+      "canonical_destination": "research/packets/{packet}.json then financial_filings after staging",
+      "caution": "Collection target or filing index is NOT an extracted verified fact; preserve source rights and fiscal vintages"
+    },
+    {
+      "id": "financial_commitment",
+      "description": "Public-company contractual/purchase/lease/RPO/backlog/financing or capacity obligation evidence",
+      "packet_collection": "financial_commitments",
+      "min_evidence": "Obligor, contract type, source filing and locator, gross currency units and reported scale or null, dates, cancellation terms, counterparty uncertainty, economic layer, non-additivity",
+      "canonical_destination": "research/packets/{packet}.json then financial_commitments after staging",
+      "caution": "Do not sum obligations with capex, cloud service, OEM/system revenue or CPU silicon sales; overlaps require linked evidence"
     }
   ],
   "examples": [
