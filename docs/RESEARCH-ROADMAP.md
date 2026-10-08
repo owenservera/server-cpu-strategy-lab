@@ -4,7 +4,7 @@ The dashboard is the visual interface for a continuously improved, evidence-cons
 
 ## Database foundation
 
-[Research database v1 architecture](database/README.md) and [implementation handoff](database/IMPLEMENTATION-HANDOFF.md) are ready. SQLite v1 uses separate evidence claims, measured facts, forecast vintages, synthetic scenario runs, hierarchical but non-additive market dimensions, additive allocation frames, source lineage and review history. The implementation source bundle and isolated 7-test suite were created separately; extraction into GitHub and real-data seed/CI validation remain explicit open gates. PostgreSQL is reserved for actual remote multi-writer requirements.
+[Research database v1 architecture](database/README.md) and [implementation handoff](database/IMPLEMENTATION-HANDOFF.md) are ready. SQLite v1 uses separate evidence claims, measured facts, forecast vintages, synthetic scenario runs, hierarchical but non-additive market dimensions, additive allocation frames, source lineage and review history. The original 12-file source bundle has been committed unchanged under [`db/`](../db/) ([commit `971a24d`](https://github.com/owenservera/server-cpu-strategy-lab/commit/971a24d3e94f03ec8a2280e07679d6e4a018ad30)). Local fixture testing has passed seven tests. **Real-repository seed results, the currently failing database CI workflow, staged-packet ingest, reviewer promotion, segmentation query planning, executable models and the UI adapter remain explicit gates.** See the [ZCode full wiring plan](database/ZCODE-FULL-WIRING-ASSESSMENT.md) and [bootstrap prompt](database/ZCODE-BOOTSTRAP-PROMPT.md). PostgreSQL is reserved for actual remote multi-writer requirements.
 
 ## Reusable research intake and cross-session handoff
 
