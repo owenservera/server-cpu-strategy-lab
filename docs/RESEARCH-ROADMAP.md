@@ -11,6 +11,12 @@ The dashboard is the visual interface for a continuously improved, evidence-cons
 - [x] Source category awareness and compliance boundary.
 - [x] Native Node local server, unit tests, Pages workflow.
 
+## Demand intelligence 2024–2030
+
+**Research corpus complete; UI execution pending.** See [demand-2030 research index](research/demand-2030/README.md). The module provides the buyer/channel/ISA taxonomy, 41 observed/reported or company-disclosed and forecast-labeled records, the TAM vintage ledger, fifty acquisition priorities, explicitly synthetic 2030 scenarios, source registry and [UI work plan](research/demand-2030/DASHBOARD-HANDOFF.md).
+
+**Critical next data work:** benchmark successful agent task CPU core-seconds and sandbox overhead, obtain actual x86/Arm buyer workload mix, verify CPU:GPU rack BOM and deployed MW, reconcile the IDC 2024-vintage discrepancy, and collect socket ASP/units without using vendor Data Center segment revenue as CPU revenue. Keep real-world data and simulations in distinct ledgers, and validate via `npm test`.
+
 ## Milestone 2 — Evidence-rich market tracker
 
 1. **Shipments and share** — find properly licensed Mercury Research / IDC / Omdia public series and validate metric definitions (units, revenue, sockets, quarter). Show gaps when series are unavailable. Never invent share percentages.
