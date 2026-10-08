@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-10-08",
+  "entry_document": "RESEARCH-ENTRY.md",
+  "domains": [
+    {
+      "id": "market-demand-2030",
+      "name": "Global server CPU demand, buyers, channels and 2030 scenarios",
+      "questions": [
+        "Which end-buyers and workloads create incremental silicon sockets?",
+        "Which architectures capture demand?",
+        "How do TAM forecasts reconcile?",
+        "Are OEM and ODM sales already counted in end-buyer spending?"
+      ],
+      "topic_keys": [
+        "hyperscaler",
+        "OEM",
+        "ODM",
+        "neocloud",
+        "TAM",
+        "market share",
+        "enterprise",
+        "server revenue",
+        "CPU ASP",
+        "Arm",
+        "Intel",
+        "AMD",
+        "forecast",
+        "agentic demand"
+      ],
+      "canonical_docs": [
+        "docs/research/demand-2030/README.md",
+        "docs/research/demand-2030/TAXONOMY-AND-ACCOUNTING.md",
+        "docs/research/demand-2030/MARKET-SYNTHESIS.md"
+      ],
+      "datasets": [
+        "data/demand-2030/historical-and-forecast-evidence.csv",
+        "data/demand-2030/tam-forecast-vintages.csv",
+        "data/demand-2030/scenario-model.json",
+        "data/demand-2030/source-registry.json",
+        "data/demand-2030/priority-data-fields.json"
+      ],
+      "routes": [
+        "measurement",
+        "market_series",
+        "forecast",
+        "scenario",
+        "buyer_demand",
+        "entity",
+        "relationship",
+        "conflict",
+        "question"
+      ],
+      "unresolved": [
+        "2024 IDC vintage discrepancy",
+        "Server CPU chip volumes and actual ASP by buyer largely unavailable",
+        "x86/Arm installed/deployed mix by workload uncertain"
+      ],
+      "related": [
+        "agent-runtime-and-sandbox",
+        "architecture-and-software",
+        "cpu-platforms-and-competitors"
+      ]
+    },
+    {
+      "id": "amd-keynote-2026",
+      "name": "AMD Advancing AI keynote historical source bundle",
+      "questions": [
+        "How does Lisa Su define the server CPU market?",
+        "Which EPYC/Instinct/Helios specs are attributable?",
+        "Which customer commitments have actually deployed?"
+      ],
+      "topic_keys": [
+        "Lisa Su",
+        "Advancing AI 2026",
+        "Venice",
+        "Helios",
+        "ROCm",
+        "EPYC",
+        "Instinct",
+        "AMD management guidance"
+      ],
+      "canonical_docs": [
+        "docs/research/AMD-ADVANCING-AI-2026-RESEARCH-PATH.md",
+        "docs/research/KEY-FIGURE-DECOMPOSITION.md"
+      ],
+      "datasets": [
+        "data/claims/amd-advancing-ai-2026-curated.json",
+        "data/claims/amd-advancing-ai-2026-strategic-signals.json",
+        "data/sources/amd-advancing-ai-2026-numeric-anchors.json"
+      ],
+      "routes": [
+        "source",
+        "claim",
+        "strategic_signal",
+        "technical_spec",
+        "forecast",
+        "conflict",
+        "question"
+      ],
+      "unresolved": [
+        "Keynote captions vs official Helios BOM",
+        "Management TAM vintage and denominator",
+        "Source-file access not guaranteed in another session"
+      ],
+      "related": [
+        "market-demand-2030",
+        "architecture-and-software",
+        "agent-runtime-and-sandbox"
+      ]
+    },
+    {
+      "id": "agent-runtime-and-sandbox",
+      "name": "Agent CPU tool execution, local/cloud placement and isolation overhead",
+      "questions": [
+        "CPU core-seconds per successful agent task?",
+        "How much work is local vs cloud?",
+        "How much isolation overhead and utilization?",
+        "What is net new server CPU demand?"
+      ],
+      "topic_keys": [
+        "agent",
+        "sandbox",
+        "Docker SBX",
+        "Windows MXC",
+        "local AI",
+        "microVM",
+        "tool calls",
+        "computer use",
+        "security",
+        "code execution",
+        "orchestration",
+        "hybrid"
+      ],
+      "canonical_docs": [
+        "docs/research/MICROSOFT-DOCKER-AGENTIC-DEMAND-SLICES.md",
+        "docs/research/demand-2030/DASHBOARD-HANDOFF.md"
+      ],
+      "datasets": [
+        "data/claims/microsoft-docker-agentic-2026.json"
+      ],
+      "routes": [
+        "source",
+        "benchmark",
+        "measurement",
+        "technical_spec",
+        "hypothesis",
+        "question",
+        "method",
+        "conflict"
+      ],
+      "unresolved": [
+        "No reproducible measured CPU overhead series",
+        "Endpoint-local vs cloud per-workflow placement not measured"
+      ],
+      "related": [
+        "market-demand-2030",
+        "architecture-and-software"
+      ]
+    },
+    {
+      "id": "architecture-and-software",
+      "name": "ROCm/HIP, x86 ISA, Arm software portability, architecture coalitions",
+      "questions": [
+        "Can ROCm/HIP execute kernels on x86 CPU cores?",
+        "When do ACE features ship in hardware/software?",
+        "Are software portability barriers changing x86/Arm purchase shares?"
+      ],
+      "topic_keys": [
+        "ROCm",
+        "HIP",
+        "x86",
+        "ACE",
+        "x86 EAG",
+        "AVX10",
+        "FRED",
+        "Arm",
+        "Qualcomm",
+        "LLVM",
+        "oneDNN",
+        "CXL",
+        "UALink",
+        "Ultra Ethernet"
+      ],
+      "canonical_docs": [
+        "docs/ROCM-X86-ROADMAP-2026-2031.md",
+        "docs/STRATEGIC-FRAMEWORK.md"
+      ],
+      "datasets": [],
+      "routes": [
+        "source",
+        "technical_spec",
+        "company_event",
+        "milestone",
+        "relationship",
+        "hypothesis",
+        "question",
+        "conflict"
+      ],
+      "unresolved": [
+        "No confirmed first-class ROCm CPU compute device roadmap",
+        "Architecture specs vs shipping/hardware adoption require tracking"
+      ],
+      "related": [
+        "amd-keynote-2026",
+        "market-demand-2030"
+      ]
+    },
+    {
+      "id": "cpu-platforms-and-competitors",
+      "name": "AMD EPYC vs Intel Xeon vs Arm CPU products and end-buyer economics",
+      "questions": [
+        "What are reproducible per-workload CPU price/performance outcomes?",
+        "Which customer classes favor high-frequency vs density variants?",
+        "How do actual CPU-only unit share, ASP and margin evolve?"
+      ],
+      "topic_keys": [
+        "EPYC",
+        "Xeon",
+        "Graviton",
+        "Cobalt",
+        "Axion",
+        "Venice",
+        "Turin",
+        "CPU performance",
+        "TCO",
+        "price",
+        "cores",
+        "sockets"
+      ],
+      "canonical_docs": [
+        "docs/STRATEGIC-FRAMEWORK.md",
+        "docs/RESEARCH-ROADMAP.md",
+        "docs/EVIDENCE-STANDARDS.md"
+      ],
+      "datasets": [
+        "data.js",
+        "data/demand-2030/historical-and-forecast-evidence.csv"
+      ],
+      "routes": [
+        "source",
+        "technical_spec",
+        "measurement",
+        "benchmark",
+        "entity",
+        "relationship",
+        "market_series",
+        "question"
+      ],
+      "unresolved": [
+        "Public CPU-only profit margin/ASP by buyer unavailable",
+        "Performance comparison requires matched workloads and platforms"
+      ],
+      "related": [
+        "market-demand-2030",
+        "architecture-and-software"
+      ]
+    },
+    {
+      "id": "visual-intelligence",
+      "name": "Dashboard and evidence visualization/product UX",
+      "questions": [
+        "Which chart improves answer accuracy and learning time?",
+        "Can any figure show attribution, denominator and forecast status?",
+        "What research process can be automated without publishing uncertain facts?"
+      ],
+      "topic_keys": [
+        "dashboard",
+        "UI",
+        "UX",
+        "visualization",
+        "chart",
+        "product",
+        "research process",
+        "interactive"
+      ],
+      "canonical_docs": [
+        "docs/BUILD-BRIEF.md",
+        "docs/research/demand-2030/DASHBOARD-HANDOFF.md"
+      ],
+      "datasets": [
+        "app.js",
+        "data.js"
+      ],
+      "routes": [
+        "product_requirement",
+        "question",
+        "method"
+      ],
+      "unresolved": [
+        "Demand research data not yet fully wired into existing UI"
+      ],
+      "related": [
+        "market-demand-2030",
+        "agent-runtime-and-sandbox"
+      ]
+    }
+  ],
+  "global_protections": [
+    "docs/COMPLIANCE.md",
+    "docs/EVIDENCE-STANDARDS.md"
+  ],
+  "tests": [
+    "tests/content.test.mjs",
+    "tests/demand-2030.test.mjs",
+    "tests/keynote-corpus.test.mjs"
+  ],
+  "inventory_policy": "This catalog indexes existing research and core data. It is not an exhaustive listing of all repository files; use GitHub repository tree to discover new additions."
+}
