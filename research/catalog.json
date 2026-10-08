@@ -226,7 +226,8 @@
         "What are reproducible per-workload CPU price/performance outcomes?",
         "Which customer classes favor high-frequency vs density variants?",
         "How do actual CPU-only unit share, ASP and margin evolve?",
-        "Does certified CPU TEE support affect EPYC versus Xeon versus Arm purchasing for secure AI factories?"
+        "Does certified CPU TEE support affect EPYC versus Xeon versus Arm purchasing for secure AI factories?",
+        "How did AMD convert the Rome product lead into multigeneration commercial server share between 2019 and 2021?"
       ],
       "topic_keys": [
         "EPYC",
@@ -240,12 +241,20 @@
         "TCO",
         "price",
         "cores",
-        "sockets"
+        "sockets",
+        "Rome",
+        "Milan",
+        "Naples",
+        "2019-2021 EPYC",
+        "historical server share",
+        "cloud EPYC adoption",
+        "data-center commercial scaling"
       ],
       "canonical_docs": [
         "docs/STRATEGIC-FRAMEWORK.md",
         "docs/RESEARCH-ROADMAP.md",
-        "docs/EVIDENCE-STANDARDS.md"
+        "docs/EVIDENCE-STANDARDS.md",
+        "docs/research/AMD-EPYC-ROME-MILAN-2019-2021.md"
       ],
       "datasets": [
         "data.js",
@@ -263,7 +272,9 @@
       ],
       "unresolved": [
         "Public CPU-only profit margin/ASP by buyer unavailable",
-        "Performance comparison requires matched workloads and platforms"
+        "Performance comparison requires matched workloads and platforms",
+        "Historical 2019-2021 Mercury broad x86 server unit-share endpoints are staged, not yet normalized into canonical market series",
+        "Historical EPYC-only revenue versus EE&SC/combined datacenter accounting requires public-source reconciliation"
       ],
       "related": [
         "market-demand-2030",
