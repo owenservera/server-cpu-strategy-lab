@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Compositional research routes for a source or whole conversation; choose ALL relevant routes. This is a routing policy, not a prediction classifier.",
+  "first_read": "RESEARCH-ENTRY.md",
+  "packet_template": "research/templates/packet.example.json",
+  "record_contract": "research/schema/packet.schema.json",
+  "route_ids": [
+    "source",
+    "claim",
+    "measurement",
+    "market_series",
+    "technical_spec",
+    "benchmark",
+    "forecast",
+    "scenario",
+    "entity",
+    "relationship",
+    "company_event",
+    "buyer_demand",
+    "strategic_signal",
+    "milestone",
+    "hypothesis",
+    "question",
+    "conflict",
+    "method",
+    "product_requirement"
+  ],
+  "routes": [
+    {
+      "id": "source",
+      "description": "A source document, keynote, press release, filing, PDF, video or dataset",
+      "packet_collection": "sources",
+      "min_evidence": "Original publisher, date, URL, license/access, digest or version, exact evidence locator",
+      "canonical_destination": "research/packets/{packet}.json",
+      "caution": "Required for all sourced records"
+    },
+    {
+      "id": "claim",
+      "description": "A quote, statement, assertion, reported number or vendor benchmark",
+      "packet_collection": "claims",
+      "min_evidence": "Speaker/publisher, what was claimed, date, source locator, qualifier, claim class and verification status",
+      "canonical_destination": "research/packets/{packet}.json",
+      "caution": "Claims are not by default observations"
+    },
+    {
+      "id": "measurement",
+      "description": "A numerical fact or reproducible observation with fixed metric population",
+      "packet_collection": "measurements",
+      "min_evidence": "Metric, unit, time, population/denominator, observed/estimated, source and method",
+      "canonical_destination": "domain dataset after review",
+      "caution": "Never infer missing denominator"
+    },
+    {
+      "id": "market_series",
+      "description": "A series of comparable quarterly/annual numerical observations",
+      "packet_collection": "measurements",
+      "min_evidence": "Stable population, exact time scope, series ID, method/version and source IDs",
+      "canonical_destination": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "caution": "Reject incompatible source-vintage splices"
+    },
+    {
+      "id": "technical_spec",
+      "description": "Hardware, software, OS, ISA or API feature, capability or compatibility",
+      "packet_collection": "claims",
+      "min_evidence": "Exact product version, availability status, platform, specification source",
+      "canonical_destination": "domain technical module",
+      "caution": "Distinguish announced, preview, shipping and measured"
+    },
+    {
+      "id": "benchmark",
+      "description": "Task-performance or power measurement",
+      "packet_collection": "measurements",
+      "min_evidence": "Hardware/config, code/workload, sample size, duration, baseline, success, method, confidence",
+      "canonical_destination": "domain workload/benchmark module",
+      "caution": "Vendor benchmark not independent repeatability"
+    },
+    {
+      "id": "forecast",
+      "description": "TAM, growth, ASP, unit or capacity projections by management/analysts",
+      "packet_collection": "forecasts",
+      "min_evidence": "Publisher, issue date, target date, market definition, value, qualifier, scenario label",
+      "canonical_destination": "data/demand-2030/tam-forecast-vintages.csv",
+      "caution": "New vintage, never overwrite old estimate"
+    },
+    {
+      "id": "scenario",
+      "description": "Our own user-adjustable calculations and stress cases",
+      "packet_collection": "scenarios",
+      "min_evidence": "Inputs, units, sensitivity range, formula, unknowns, scope, model date",
+      "canonical_destination": "data/demand-2030/scenario-model.json or topic model",
+      "caution": "Always synthetic and visually separated"
+    },
+    {
+      "id": "entity",
+      "description": "New company, product, standards body, buyer, channel, workload or architecture",
+      "packet_collection": "entities",
+      "min_evidence": "Entity type, canonical name, aliases, sources, stable ID, scope",
+      "canonical_destination": "domain taxonomy or entity catalog",
+      "caution": "Avoid duplicate aliases; never infer ownership"
+    },
+    {
+      "id": "relationship",
+      "description": "Customer/supplier, competition, interoperability, ownership, coalition, platform dependence",
+      "packet_collection": "relationships",
+      "min_evidence": "Subject, relation, object, date, evidence, announced vs executed, status",
+      "canonical_destination": "domain network graph or packet",
+      "caution": "Membership not equivalent to product deployment"
+    },
+    {
+      "id": "company_event",
+      "description": "Earnings, product launch, financing, deployment commitment, supply update",
+      "packet_collection": "events",
+      "min_evidence": "Entity, event date, reported status, scope, evidence, consequences",
+      "canonical_destination": "company tracker/domain timelines",
+      "caution": "Commitment is not shipment"
+    },
+    {
+      "id": "buyer_demand",
+      "description": "End-buyer/ODM/OEM purchase signals and procurement route",
+      "packet_collection": "relationships",
+      "min_evidence": "Hardware owner vs operator vs service consumer, vendor, channel, unit and denominator",
+      "canonical_destination": "docs/research/demand-2030/ + datasets",
+      "caution": "Never double-count buyer and reseller"
+    },
+    {
+      "id": "strategic_signal",
+      "description": "Management intent, roadmap orientation, product positioning or demand thesis",
+      "packet_collection": "signals",
+      "min_evidence": "Actor, concrete action/statement, timing, direction, evidence, alternate reading",
+      "canonical_destination": "domain strategic analysis",
+      "caution": "Interpretation not independently verified fact"
+    },
+    {
+      "id": "milestone",
+      "description": "Roadmap and standards maturation events",
+      "packet_collection": "events",
+      "min_evidence": "Spec vs software implementation vs product shipping vs adoption stage",
+      "canonical_destination": "standards/roadmap domain",
+      "caution": "Draft spec does not imply shipping silicon"
+    },
+    {
+      "id": "hypothesis",
+      "description": "An explanatory theory with uncertain causal mechanism",
+      "packet_collection": "hypotheses",
+      "min_evidence": "Claim, why it matters, alternate hypotheses, proof and falsification metrics",
+      "canonical_destination": "research packet + relevant research path",
+      "caution": "Never hard-code as market datum"
+    },
+    {
+      "id": "question",
+      "description": "An unresolved question or high-value missing evidence",
+      "packet_collection": "questions",
+      "min_evidence": "What missing, expected decision impact, how obtainable, priority, affected domains",
+      "canonical_destination": "research backlog/domain gaps",
+      "caution": "Preserve missing evidence and next test"
+    },
+    {
+      "id": "conflict",
+      "description": "Differing comparable claims, denominator conflicts or revisions",
+      "packet_collection": "conflicts",
+      "min_evidence": "Refs for both sides, comparison basis, open vs resolved vs noncomparable",
+      "canonical_destination": "packet + domain contradiction register",
+      "caution": "No silent cherry-picking of preferred value"
+    },
+    {
+      "id": "method",
+      "description": "Data derivation, benchmark protocol, market model or analytical equation",
+      "packet_collection": "methods",
+      "min_evidence": "Inputs, calculation, boundary conditions, reproducibility, version, output target",
+      "canonical_destination": "scripts or domain model docs",
+      "caution": "Must not invent synthetic data as observed"
+    },
+    {
+      "id": "product_requirement",
+      "description": "New UI/UX/research automation feature or data workflow",
+      "packet_collection": "requirements",
+      "min_evidence": "User outcome, linked domain evidence, acceptance criteria, implementer issue",
+      "canonical_destination": "docs/research/... and GitHub issue",
+      "caution": "An idea is not a factual source"
+    }
+  ],
+  "examples": [
+    {
+      "input": "Lisa Su / AMD Advancing AI keynote",
+      "routes": [
+        "source",
+        "claim",
+        "measurement",
+        "market_series",
+        "technical_spec",
+        "forecast",
+        "strategic_signal",
+        "entity",
+        "relationship",
+        "company_event",
+        "milestone",
+        "question",
+        "conflict"
+      ],
+      "existing_corpus": [
+        "data/claims/amd-advancing-ai-2026-curated.json",
+        "docs/research/AMD-ADVANCING-AI-2026-RESEARCH-PATH.md"
+      ],
+      "avoid": "Do not publish raw transcript or call vendor forecasts observed."
+    },
+    {
+      "input": "Microsoft Windows agentic launch + Docker sandbox talk",
+      "routes": [
+        "source",
+        "claim",
+        "technical_spec",
+        "benchmark",
+        "strategic_signal",
+        "entity",
+        "relationship",
+        "method",
+        "hypothesis",
+        "question",
+        "product_requirement"
+      ],
+      "existing_corpus": [
+        "data/claims/microsoft-docker-agentic-2026.json",
+        "docs/research/MICROSOFT-DOCKER-AGENTIC-DEMAND-SLICES.md"
+      ],
+      "avoid": "Do not treat a demo as measured cloud TAM."
+    },
+    {
+      "input": "New AMD Intel x86 unit-share report",
+      "routes": [
+        "source",
+        "claim",
+        "measurement",
+        "market_series",
+        "conflict"
+      ],
+      "existing_corpus": [
+        "data/demand-2030/historical-and-forecast-evidence.csv"
+      ],
+      "avoid": "Check denominator and market-universe compatibility."
+    },
+    {
+      "input": "ROCm on x86 CPU proposal",
+      "routes": [
+        "source",
+        "technical_spec",
+        "hypothesis",
+        "relationship",
+        "milestone",
+        "question",
+        "conflict"
+      ],
+      "existing_corpus": [
+        "docs/ROCM-X86-ROADMAP-2026-2031.md"
+      ],
+      "avoid": "CPU host ≠ CPU execution backend."
+    },
+    {
+      "input": "All-in-one mixed research request",
+      "routes": [
+        "source",
+        "claim",
+        "measurement",
+        "entity",
+        "relationship",
+        "strategic_signal",
+        "forecast",
+        "hypothesis",
+        "question",
+        "conflict",
+        "product_requirement"
+      ],
+      "existing_corpus": [
+        "research/catalog.json"
+      ],
+      "avoid": "One research packet can have many relevant routes."
+    }
+  ]
+}
