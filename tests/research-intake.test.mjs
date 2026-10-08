@@ -43,6 +43,31 @@ test('packet validator detects denominator loss, unsourced claim, invented route
   assert.ok(errors.some(x=>x.includes('Null measurement missing reason')));
 });
 
+test('financial filing packets preserve public provenance and reject additive obligations',()=>{
+  const pkt=clone(template);
+  pkt.domains.push('corporate-financial-filings');
+  pkt.routes.push('financial_filing','financial_commitment');
+  const src=pkt.sources[0];
+  pkt.financial_filings=[{
+    id:'filing:synthetic-001',source_id:src.id,issuer_id:'fin:synthetic',
+    regulator:'SEC',filing_type:'10-K',filed_at:src.published_at,
+    url:src.url,status:'needs_review'
+  }];
+  pkt.financial_commitments=[{
+    id:'commitment:synthetic-001',source_id:src.id,filing_id:'filing:synthetic-001',
+    commitment_kind:'cloud_capacity',amount_decimal:'1234.50',currency:'USD',
+    qualifier:'equal',amount_basis:'Synthetic absolute USD only',
+    economic_layer:'corporate_financial',source_locator:'note on obligations',
+    verification:'attributed_unverified',non_additive:true
+  }];
+  assert.deepEqual(validatePacket(pkt,catalog,routes),[]);
+  pkt.financial_commitments[0].non_additive=false;
+  pkt.financial_commitments[0].amount_decimal='-7';
+  const bad=validatePacket(pkt,catalog,routes);
+  assert.ok(bad.some(x=>x.includes('explicitly non_additive')));
+  assert.ok(bad.some(x=>x.includes('nonnegative absolute decimal')));
+});
+
 test('routing helper finds existing ROCm and server demand modules without network access',()=>{
   const out=execFileSync(process.execPath,['scripts/research-route.mjs','AMD ROCm x86','--json'],{cwd:repoRoot,encoding:'utf8'});
   const d=JSON.parse(out);
