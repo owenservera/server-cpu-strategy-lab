@@ -1,0 +1,693 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--server-cpu-pricing-economics",
+  "created_at": "2026-10-08",
+  "title": "Server CPU semiconductor and buyer pricing economics: reproducible public-evidence estimators",
+  "status": "needs_review",
+  "public_only": true,
+  "scope": "x86 Intel Xeon/AMD EPYC public reference pricing, Intel ASP disclosure, negotiated price identification limits, supplier strategy, OEM and enterprise procurement, workload TCO, implications for all-ISA server CPU silicon forecasting. No client/NDA screenshots, private information, or unsupported realized hyperscaler discounts.",
+  "domains": [
+    "cpu-platforms-and-competitors",
+    "market-demand-2030",
+    "visual-intelligence"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "measurement",
+    "market_series",
+    "buyer_demand",
+    "relationship",
+    "strategic_signal",
+    "hypothesis",
+    "question",
+    "method",
+    "product_requirement"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "research/catalog.json",
+      "data/demand-2030/priority-data-fields.json",
+      "docs/research/demand-2030/README.md",
+      "docs/database/SEGMENTATION-AND-MODELS.md",
+      "docs/EVIDENCE-STANDARDS.md",
+      "research/packets/2026-10-08--closed-model-hosting-confidential-inference.json"
+    ],
+    "prior_ids": [
+      "D006",
+      "D003",
+      "D007",
+      "D009"
+    ],
+    "dedupe_notes": "Reuses D006 net CPU ASP, D003 architecture by buyer/workload, D007 shipment counts, and D009 cores/socket gaps. No preexisting pricing economics packet or canonical price series found; do not duplicate TAM/forecast series or infer AMD EPYC CPU revenue from combined Data Center revenue."
+  },
+  "sources": [
+    {
+      "id": "src:pricing:intel-fy2022",
+      "title": "Intel 2022 Form 10-K",
+      "publisher": "Intel",
+      "published_at": "2023-01-26",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-23-000006/intc-20221231.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "DCAI Revenue Summary, 2022 vs 2021: Server ASPs decreased 5%"
+    },
+    {
+      "id": "src:pricing:intel-fy2023",
+      "title": "Intel 2023 Form 10-K",
+      "publisher": "Intel",
+      "published_at": "2024-01-25",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-24-000010/intc-20231230.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "DCAI Revenue Summary, server ASP"
+    },
+    {
+      "id": "src:pricing:intel-fy2024",
+      "title": "Intel 2024 Form 10-K",
+      "publisher": "Intel",
+      "published_at": "2025-01-31",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-25-000009/intc-20241228.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "DCAI Revenue Summary: FY2023 and FY2024 ASP changes"
+    },
+    {
+      "id": "src:pricing:intel-fy2025",
+      "title": "Intel 2025 Form 10-K",
+      "publisher": "Intel",
+      "published_at": "2026-01-22",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000011/intc-20251227.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "DCAI 2025 server ASP and sales channels"
+    },
+    {
+      "id": "src:pricing:intel-q2-2026",
+      "title": "Intel Q2 2026 Form 10-Q",
+      "publisher": "Intel",
+      "published_at": "2026-07-23",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000157/intc-20260627.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "MD&A DCAI segment: Q2 and YTD 2026 vs 2025 ASP, volume, supply"
+    },
+    {
+      "id": "src:pricing:amd-fy2025",
+      "title": "AMD 2025 Form 10-K",
+      "publisher": "AMD",
+      "published_at": "2026-02-04",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000018/amd-20251227.htm",
+      "kind": "public_financial_filing",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Revenue Recognition; variable consideration and customer incentive programs"
+    },
+    {
+      "id": "src:pricing:amd-epyc-2024",
+      "title": "AMD EPYC 9005 launch and 1KU price table",
+      "publisher": "AMD",
+      "published_at": "2024-10-10",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2024-10-10-amd-launches-5th-gen-amd-epyc-cpus-maintaining-le.html",
+      "kind": "public_product_launch",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "AMD EPYC model/core count/TDP/Price (1 KU USD) table"
+    },
+    {
+      "id": "src:pricing:amd-9965-current",
+      "title": "AMD EPYC 9965 current SKU page",
+      "publisher": "AMD",
+      "published_at": "2026-10-08",
+      "url": "https://www.amd.com/es/products/processors/server/epyc/9005-series/amd-epyc-9965.html",
+      "kind": "undated_public_product_page",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Displayed price field; capture timestamp required",
+      "notes": "Original publication date unknown. published_at is as-of date used by intake validator, NOT product launch date."
+    },
+    {
+      "id": "src:pricing:dell-r770",
+      "title": "Dell PowerEdge R770 configurator Spain",
+      "publisher": "Dell",
+      "published_at": "2026-10-08",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r770/spd/poweredge-r770/promo_r770_2?view=configurations",
+      "kind": "undated_public_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Processor selector incremental option pricing",
+      "notes": "Original publication date unknown; date is first studied as-of date. No independently archived raw snapshot."
+    },
+    {
+      "id": "src:pricing:dell-r7725",
+      "title": "Dell PowerEdge R7725 configurator Spain",
+      "publisher": "Dell",
+      "published_at": "2026-10-08",
+      "url": "https://www.dell.com/es-es/shop/servidores-almacenamiento-y-redes/poweredge-r7725/spd/poweredge-r7725/gl_promo_per7725_1",
+      "kind": "undated_public_oem_configurator",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Processor selector relative option pricing",
+      "notes": "Original publication date unknown; date is first studied as-of date. No independently archived raw snapshot."
+    },
+    {
+      "id": "src:pricing:ted-api",
+      "title": "Tenders Electronic Daily Search API documentation",
+      "publisher": "EU Publications Office",
+      "published_at": "2026-10-08",
+      "url": "https://docs.ted.europa.eu/api/latest/search.html",
+      "kind": "undated_public_api_documentation",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Public contract notice query/export endpoints",
+      "notes": "Undated evolving API: published_at represents research capture date, not official first publication."
+    },
+    {
+      "id": "src:pricing:spain-procurement",
+      "title": "Spain public procurement open data portal",
+      "publisher": "Ministerio de Hacienda, Spain",
+      "published_at": "2026-10-08",
+      "url": "https://contrataciondelestado.es/wps/portal/DatosAbiertos",
+      "kind": "undated_public_data_portal",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Public procurement machine-readable datasets and OpenPLACSP",
+      "notes": "Undated evolving page: published_at represents research capture date, not official first publication."
+    },
+    {
+      "id": "src:pricing:spec-cpu2026",
+      "title": "SPEC CPU 2026 benchmark release",
+      "publisher": "SPEC",
+      "published_at": "2026-05-05",
+      "url": "https://www.spec.org/pressreleases/2026/20260505-spec-releases-cpu-2026-benchmark-suite/",
+      "kind": "public_benchmark_release",
+      "access": "public",
+      "rights": "link_and_extract",
+      "as_of": "2026-10-08",
+      "source_locator": "Release announcement / standardized compute-intensive suite"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:pricing:mix-2022",
+      "source_id": "src:pricing:intel-fy2022",
+      "statement": "Intel attributed its FY2022 server ASP decline of 5% to a higher mix of hyperscale revenue.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "DCAI Revenue Summary, 2022 vs. 2021",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:pricing:mix-2023",
+      "source_id": "src:pricing:intel-fy2024",
+      "statement": "Intel reported FY2023 server ASP growth of 20% driven by lower hyperscale mix and higher high-core-count mix.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "DCAI Revenue Summary, 2023 vs 2022",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:mix-2024",
+      "source_id": "src:pricing:intel-fy2025",
+      "statement": "Intel reported FY2024 server ASP growth of 11%, principally associated with increased high-core-count mix.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "DCAI Revenue Summary, 2024 vs 2023",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:mix-2025",
+      "source_id": "src:pricing:intel-fy2025",
+      "statement": "Intel reported FY2025 server ASP decline of 4%, including pricing actions and increased lower-core-count mix.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "DCAI Revenue Summary, 2025 vs 2024",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:mix-2026",
+      "source_id": "src:pricing:intel-q2-2026",
+      "statement": "Intel reported server ASP growth of 48% in Q2 2026 and 38% YTD vs corresponding 2025 periods; premium mix was the majority driver; demand-based pricing was smaller.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "MD&A DCAI, Q2/YTD 2026 discussion",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:pricing:supply-2026",
+      "source_id": "src:pricing:intel-q2-2026",
+      "statement": "Intel reported server volume growth of 9% Q2 and 2% YTD, mainly due to hyperscaler demand, and demand exceeding its available supply owing to internal constraints.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "MD&A DCAI, adjacent paragraph to ASP explanation",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:pricing:rebates",
+      "source_id": "src:pricing:amd-fy2025",
+      "statement": "AMD revenue-recognition disclosures include OEM/ODM rebates, distributor rebates, price protection, certain marketing programs and customer incentives; price list less invoice discount is not necessarily net realized semiconductor revenue.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "Revenue Recognition / variable consideration",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:launch-anchor",
+      "source_id": "src:pricing:amd-epyc-2024",
+      "statement": "AMD published an EPYC 9965 reference price of USD 14,813 per CPU on a 1,000-unit basis at its October 2024 launch.",
+      "claim_class": "product_spec",
+      "source_locator": "EPYC 9005 launch model/cores/TDP/1 KU price table",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:pricing:current-anchor",
+      "source_id": "src:pricing:amd-9965-current",
+      "statement": "AMD's later EPYC 9965 public SKU page was reported to show USD 11,988; requires an immutable HTML snapshot, date and region confirmation before use in a historical matched-SKU index.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Current displayed price field",
+      "verification": "attributed_unverified",
+      "notes": "Changing web page; lower current reference price alone does not prove transaction-price erosion."
+    },
+    {
+      "id": "claim:pricing:oem-proxy",
+      "source_id": "src:pricing:dell-r770",
+      "statement": "Dell publishes incremental CPU option prices in a PowerEdge configurator, but selecting a CPU may force other BOM changes; an option delta is not the chip acquisition cost paid by Dell.",
+      "claim_class": "vendor_claim",
+      "source_locator": "R770 CPU selector and compatibility notices",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:procurement-source",
+      "source_id": "src:pricing:ted-api",
+      "statement": "TED provides public procurement notice search/export, from which server awards with clear BOM and quantities may sometimes be derived.",
+      "claim_class": "other",
+      "source_locator": "Search API documentation",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:pricing:spec-workload",
+      "source_id": "src:pricing:spec-cpu2026",
+      "statement": "SPEC CPU 2026 provides a standardized CPU-intensive test suite; cross-generation real workload TCO analysis requires matched configurations and workload-appropriate metrics.",
+      "claim_class": "other",
+      "source_locator": "SPEC CPU 2026 release announcement",
+      "verification": "checked_against_original"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "m:pricing:intel-2022-asp",
+      "source_id": "src:pricing:intel-fy2022",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": -5,
+      "unit": "percent_change_yoy",
+      "period": "FY2022 vs FY2021",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "Attributed to greater hyperscale revenue mix."
+    },
+    {
+      "id": "m:pricing:intel-2023-asp",
+      "source_id": "src:pricing:intel-fy2024",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": 20,
+      "unit": "percent_change_yoy",
+      "period": "FY2023 vs FY2022",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "attributed_unverified",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "Attributed to lower hyperscale mix plus high-core-count mix; recheck exact FY section."
+    },
+    {
+      "id": "m:pricing:intel-2024-asp",
+      "source_id": "src:pricing:intel-fy2025",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": 11,
+      "unit": "percent_change_yoy",
+      "period": "FY2024 vs FY2023",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "attributed_unverified",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "Higher high-core-count mix; recheck exact filing passage."
+    },
+    {
+      "id": "m:pricing:intel-2025-asp",
+      "source_id": "src:pricing:intel-fy2025",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": -4,
+      "unit": "percent_change_yoy",
+      "period": "FY2025 vs FY2024",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "attributed_unverified",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "Mix and pricing; recheck exact filing passage."
+    },
+    {
+      "id": "m:pricing:intel-h1-2026-asp",
+      "source_id": "src:pricing:intel-q2-2026",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": 38,
+      "unit": "percent_change_yoy",
+      "period": "H1 FY2026 vs H1 FY2025",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "YTD YoY; DO NOT CHAIN with FY2025 percentage."
+    },
+    {
+      "id": "m:pricing:intel-q2-2026-asp",
+      "source_id": "src:pricing:intel-q2-2026",
+      "metric_id": "intel_reported_server_ASP_yoy_pct_change",
+      "value": 48,
+      "unit": "percent_change_yoy",
+      "period": "Q2 FY2026 vs Q2 FY2025",
+      "population": "Intel reported server product ASP (not all DCAI revenue, and not a fixed-SKU price index)",
+      "denominator": "Intel reported prior corresponding period server ASP",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "DCAI server ASP discussion in linked filing",
+      "notes": "Quarterly YoY; DO NOT CHAIN with annual percentages."
+    },
+    {
+      "id": "m:pricing:amd-9965-launch-reference",
+      "source_id": "src:pricing:amd-epyc-2024",
+      "metric_id": "AMD_EPYC_9965_published_1KU_reference_price",
+      "value": 14813,
+      "unit": "USD_per_cpu_at_1KU",
+      "period": "2024-10-10 published launch",
+      "population": "AMD EPYC 9965 SKU, published launch list/reference table, global USD",
+      "denominator": "one AMD EPYC 9965 processor (price based on 1000-unit quantity); not actual sold quantity",
+      "measurement_kind": "reported_company",
+      "verification": "checked_against_original",
+      "source_locator": "EPYC 9005 table Price (1 KU, USD)",
+      "notes": "No 2026 current-SKU observation until source page is archived and rechecked."
+    }
+  ],
+  "forecasts": [],
+  "scenarios": [],
+  "entities": [],
+  "relationships": [
+    {
+      "id": "rel:pricing:intel-csp-direct",
+      "subject_id": "Intel",
+      "relation": "sells_server_products_to_direct_customer_class",
+      "object_id": "cloud_service_providers_and_hyperscalers",
+      "evidence_ids": [
+        "claim:pricing:mix-2022",
+        "claim:pricing:supply-2026"
+      ],
+      "status": "filed_channel_characterization",
+      "counting_rule": "One silicon shipment; CSP as end buyer, OEM/ODM as separate channel axis"
+    },
+    {
+      "id": "rel:pricing:intel-oem",
+      "subject_id": "Intel",
+      "relation": "supplies_cpu_products_to_oem_channel",
+      "object_id": "OEMs_and_ODMs",
+      "evidence_ids": [
+        "claim:pricing:oem-proxy"
+      ],
+      "status": "public_channel_practice",
+      "counting_rule": "No addition of OEM sale plus enterprise/hyperscaler end-buyer acquisition"
+    }
+  ],
+  "events": [],
+  "signals": [
+    {
+      "id": "signal:pricing:mix-is-not-price",
+      "actor": "Intel",
+      "statement": "Reported ASP and hyperscale customer mix moved in different directions across 2022 and 2026.",
+      "inference": "Buyer volume may have bargaining power but premium SKU mix and supply constraints can reverse aggregate ASP. A single universal hyperscaler discount is indefensible.",
+      "evidence_ids": [
+        "claim:pricing:mix-2022",
+        "claim:pricing:mix-2026",
+        "claim:pricing:supply-2026"
+      ],
+      "alternative": "Some matched-SKU net prices may have risen even faster than public aggregates; undisclosed mix prevents disentangling."
+    },
+    {
+      "id": "signal:pricing:price-ladder",
+      "actor": "AMD",
+      "statement": "The EPYC 9965 2024 launch 1KU anchor offers a dated reference baseline; the current live SKU page is mutable.",
+      "inference": "Model lifecycle repricing separately from next-generation flagship public anchors; do not apply web-current price retroactively.",
+      "evidence_ids": [
+        "claim:pricing:launch-anchor",
+        "claim:pricing:current-anchor"
+      ],
+      "alternative": "Changing regional pages/price program and noncaptured timestamp could explain differences."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:pricing:volume-discount",
+      "thesis": "For a matched SKU and period, higher committed qualified purchase volume predicts lower manufacturer net realized price, but the conditional effect varies with supply scarcity and outside options.",
+      "evidence_ids": [
+        "claim:pricing:mix-2022",
+        "claim:pricing:supply-2026"
+      ],
+      "alternative": "Observed ASP gap mainly SKU and customer mix; constrained capacity, custom products and rebates change apparent discount.",
+      "falsification_test": "Acquire legally publishable same-SKU/time buyer-class net-price samples with quantities and terms; test conditional volume effect, sample selection and temporal holdout."
+    },
+    {
+      "id": "hyp:pricing:oem-pass-through",
+      "thesis": "OEM CPU upgrade option delta responds less than one-for-one or with lags to semiconductor reference repricing.",
+      "evidence_ids": [
+        "claim:pricing:oem-proxy",
+        "claim:pricing:launch-anchor"
+      ],
+      "alternative": "Bundled forced co-requisites and configurator merchandising fully explain observed spreads.",
+      "falsification_test": "Capture matched baseline CPU options and BOM changes across OEMs/time; estimate pass-through with co-requisite controls and compare procurement awards."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:pricing:net-silicon",
+      "question": "Can any public CPU-only server net realized revenue and shipped unit denominator be reconciled by vendor, generation and buyer?",
+      "priority": "P0",
+      "method": "Audit annual/quarterly filings and legally usable shipment/revenue research by exact x86/Arm scope; keep null if segment includes GPU/ASICs.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Calibrate D006 and silicon TAM bridge."
+    },
+    {
+      "id": "q:pricing:hyper-identification",
+      "question": "What public comparable same-SKU net semiconductor transactions reveal hyperscaler-versus-OEM or enterprise-equivalent differences?",
+      "priority": "P0",
+      "method": "Systematic government/OEM public award search, same-SKU quote trails, publication rights review, controls for contracts and volumes; if absent no discount point estimate.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Avoid spurious customer-tier ASP allocations."
+    },
+    {
+      "id": "q:pricing:oem-snapshots",
+      "question": "Can OEM configurable price spreads and co-requisite system changes be captured as stable repeatable snapshots?",
+      "priority": "P0",
+      "method": "Sample Dell R770/R7725 across fixed region/tax/model/baseline then HPE/Lenovo, 2+ time points; preserve raw html/hash and normalization.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "OEM pass-through and enterprise shadow prices."
+    },
+    {
+      "id": "q:pricing:benchmark-tco",
+      "question": "Which production workload/SLA and licensing choices change Intel-versus-AMD-versus-Arm economic ranking most?",
+      "priority": "P1",
+      "method": "Use matching server BOM, validated SPEC/DB/VM/sandbox measures, power draw at load, license core metrics, and 3-5-year TCO sensitivity.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "agent-runtime-and-sandbox"
+      ],
+      "decision_impacted": "Value-based procurement and resilient pricing ceiling."
+    },
+    {
+      "id": "q:pricing:cost-floor",
+      "question": "Which public silicon area/yield/packaging constraints bound marginal supplier costs without treating corporate gross margin as SKU margin?",
+      "priority": "P1",
+      "method": "Teardown estimates with sensitivity, audited vendor segment sanity checks and packaging/wafer constraint scenarios.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Supplier contribution and constrained-capacity pricing power."
+    }
+  ],
+  "conflicts": [],
+  "methods": [
+    {
+      "id": "method:pricing:price-waterfall",
+      "name": "Reconcile five noninterchangeable price layers",
+      "inputs": [
+        "vendor SKU/date/reference RCP or 1KU",
+        "invoice concessions and rebates if disclosed",
+        "OEM baseline/configuration option delta",
+        "enterprise contract/award BOM and quantity",
+        "benchmark capacity and operating costs"
+      ],
+      "procedure": "Classify and store reference, invoice/contract, net realized semiconductor, OEM embedded option/shadow, and buyer cost per validated unit of work. Net supplier realization = invoiced consideration minus revenue-reducing rebates/credits/price protection, not simply list minus nominal discount. Never infer undocumented components.",
+      "output": "Comparability-safe price layers with evidence-specific missing values",
+      "identification_boundary": "Actual hyperscaler net paid CPU prices are generally unobservable from published reference prices and enterprise server awards.",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:matched-sku-index",
+      "name": "Same-SKU reference repricing index",
+      "inputs": [
+        "multiple dated public snapshots for identical SKU",
+        "same region, currency, tax and 1KU/RCP basis"
+      ],
+      "procedure": "For each SKU with at least two comparable snapshots calculate log(P_t/P_t-1); form a weighted geometric index with explicitly chosen constant weights. Separately compute hedonic log(P_s,t) with SKU quality controls (cores, clocks, cache, TDP, channels, generation, positioning) for changing mix. Publish coverage and extrapolation intervals.",
+      "output": "Public reference price index; never net ASP",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:asp-decomposition",
+      "name": "Reported ASP versus mix and price decomposition",
+      "inputs": [
+        "volume-weighted SKU and customer shares where known",
+        "estimated matched SKU net prices",
+        "Intel reported ASP moves"
+      ],
+      "procedure": "ASP_t = sum_{SKU,customer} shipment_share_t * net_unit_price_t. Separate SKU, generation, buyer-class, price/rebate and interaction changes using a symmetric Shapley attribution only where joint weights and prices are identified. Where weights absent report underidentified and scenario ranges, not a causal share split.",
+      "output": "Aggregate movement bridge and explicitly nonidentified components",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:oem-pass-through",
+      "name": "Configured-server CPU option-delta proxy",
+      "inputs": [
+        "identical OEM server model, baseline, geography, date, tax status",
+        "selected CPU option prices",
+        "forced dependent PSU/heatsink/memory changes"
+      ],
+      "procedure": "Record raw option delta; replay matched configuration and subtract priced required co-requisites if observable; collect repeated variants across SKUs/dates and test cross-model reference-price changes versus adjusted OEM spreads. Treat OEM delta as channel shadow price, not supplier transaction cost.",
+      "output": "OEM adjusted CPU-option shadow spread and pass-through coefficient with interval",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:hyper-gap",
+      "name": "Buyer-class net-price model with nonidentification gate",
+      "inputs": [
+        "same SKU/date net semiconductor contract observations",
+        "true purchase quantities",
+        "terms, region, channel, customer class, product age"
+      ],
+      "procedure": "Only when comparable net transaction observations exist, estimate log(net_price/reference) on customer class, volume, SKU/date fixed effects, geography and terms; use hierarchical shrinkage if sparse, and leave-one-buyer-out validation. Otherwise declare exact hyperscaler vs enterprise discount unidentified and provide clearly synthetic range sensitivities.",
+      "output": "Conditional buyer-class net price gap if identified; otherwise null with missing_reason",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:tco-frontier",
+      "name": "Buyer workload 3–5-year cost-per-work unit",
+      "inputs": [
+        "server prices, RAM/storage/network, software licensing, power and PUE, utilization",
+        "comparable measured throughput/success/SLA",
+        "depreciation/refresh/resale assumptions"
+      ],
+      "procedure": "For each competing validated topology calculate TCO = acquisition + paid license + support + rack/facility + energy + deployment - residual; work = successful validated tasks or SLA-qualified throughput*runtime; rank by TCO/work. Solve break-even CPU discount needed to flip ranking and Monte Carlo correlated power/utilization/performance/license scenarios.",
+      "output": "Break-even procurement price, TCO/work, sensitivity bands",
+      "version": "v1.0"
+    },
+    {
+      "id": "method:pricing:source-audit",
+      "name": "Evidence-to-DB reproducibility contract",
+      "inputs": [
+        "source URL, publisher, filing/version, locator, as_of/capture timestamp, region and unit",
+        "raw original or rights-compatible cryptographic digest",
+        "extraction/parser/model version"
+      ],
+      "procedure": "Keep immutable source snapshots when permitted; normalize FX by ECB as-of date, taxes separately, canonical SKU, seller/buyer channel, market boundary and price layer. Preserve no-quote and unknown values as null+reason. Quarterly refresh, audit sampled extraction, holdout backtests, filing reconciliation and independent cross-channel checks. Stage packets before any database seed promotion.",
+      "output": "Versioned provenance record and evidence grading; no overwrite of vintages",
+      "version": "v1.0"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req:pricing:observatory",
+      "name": "Public CPU pricing observatory ingestion and quality gates",
+      "user_outcome": "Compare observed reference price trends, vendor reported ASP, OEM option shadow price, inferred net transaction bounds and TCO without confusing market boundaries.",
+      "acceptance_criteria": [
+        "Each observed price has SKU/region/currency/quantity basis/snapshot timestamp/price_layer/source evidence",
+        "Unknown negotiated prices render missing/unidentifiable, not zero or made-up discount",
+        "Store yearly and quarterly reported ASP indices in separate comparable series",
+        "No promotion until reviewed source locators and automated research checks pass",
+        "Separate observed, sourced vendor assertions, modeled and scenarios in UI"
+      ],
+      "dependencies": [
+        "D006",
+        "docs/database/ARCHITECTURE-V1.md",
+        "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md"
+      ],
+      "status": "design_only"
+    }
+  ],
+  "promotions": [
+    {
+      "record_id": "m:pricing:intel-2022-asp",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Staged only; review series metric ID, FY vs CY accounting and canonical row uniqueness before promotion."
+    },
+    {
+      "record_id": "m:pricing:intel-h1-2026-asp",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Staged only; separate half-year YoY metric, never chain with annual ASP index."
+    },
+    {
+      "record_id": "m:pricing:amd-9965-launch-reference",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "not_applicable",
+      "decision_note": "A per-SKU 1KU reference belongs in future price_snapshots table, not macro server CPU shipments/revenue actuals."
+    },
+    {
+      "record_id": "method:pricing:source-audit",
+      "target_path": "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md",
+      "review_status": "not_applicable",
+      "decision_note": "Methodology is a research design, not verified observed data; linked technical design published separately."
+    }
+  ],
+  "handoff": {
+    "summary": "Multi-route 2026 pricing intake anchored to public Intel ASP disclosures, AMD 1KU launch prices, OEM configurator and public procurement source classes. No transaction-level semiconductor prices established. Implementation design, no production seed or dashboard changes.",
+    "next_actions": [
+      "P0: Verify individual Intel FY2023–FY2025 ASP passages and snapshot source locators.",
+      "P0: Capture immutable Intel/AMD SKU anchors and Dell same-config CPU deltas with source hashes, region, currency and co-requisites.",
+      "P0: Find 10–20 public BOM-rich awarded server contracts to estimate enterprise system prices; do not equate to CPU procurement cost.",
+      "P0: Obtain legally accessible CPU-only units and revenue denominator before estimating net ASP.",
+      "P1: Implement matched-SKU index, OEM pass-through and workload-level TCO model, then backtest on holdout quarter."
+    ],
+    "changed_decisions": [
+      "Do not transform reported ASP YoY into price inflation without separating SKU/customer mix.",
+      "Treat hyperscaler transaction discounts as currently underidentified and explicit nulls.",
+      "Add price-layer dimension and OEM BOM adjustment to D006 / bottom-up CPU-silicon TAM estimation."
+    ],
+    "limits": [
+      "Deep-research synthesis is an analytical input, not an independent raw price snapshot.",
+      "FY2023–FY2025 Intel ASP details and mutable OEM/current SKU pages remain staged awaiting full locator/snapshot checks.",
+      "No public CPU-only hyperscaler price distribution, supplier SKU COGS or causal OEM pass-through has been identified.",
+      "No code pipeline, historical price index or TCO outputs are claimed implemented."
+    ]
+  }
+}

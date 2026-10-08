@@ -252,7 +252,8 @@
         "Which customer classes favor high-frequency vs density variants?",
         "How do actual CPU-only unit share, ASP and margin evolve?",
         "Does certified CPU TEE support affect EPYC versus Xeon versus Arm purchasing for secure AI factories?",
-        "How did AMD convert the Rome product lead into multigeneration commercial server share between 2019 and 2021?"
+        "How did AMD convert the Rome product lead into multigeneration commercial server share between 2019 and 2021?",
+        "How do reference CPU prices, Intel reported ASP movements, negotiated net price and OEM/buyer TCO diverge by workload and channel?"
       ],
       "topic_keys": [
         "EPYC",
@@ -273,13 +274,23 @@
         "2019-2021 EPYC",
         "historical server share",
         "cloud EPYC adoption",
-        "data-center commercial scaling"
+        "data-center commercial scaling",
+        "reference price",
+        "1KU",
+        "Intel RCP",
+        "net realized CPU ASP",
+        "hyperscaler discount identification",
+        "OEM pass-through",
+        "price waterfall",
+        "procurement awards",
+        "CPU supplier contribution margin"
       ],
       "canonical_docs": [
         "docs/STRATEGIC-FRAMEWORK.md",
         "docs/RESEARCH-ROADMAP.md",
         "docs/EVIDENCE-STANDARDS.md",
-        "docs/research/AMD-EPYC-ROME-MILAN-2019-2021.md"
+        "docs/research/AMD-EPYC-ROME-MILAN-2019-2021.md",
+        "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md"
       ],
       "datasets": [
         "data.js",
@@ -299,7 +310,9 @@
         "Public CPU-only profit margin/ASP by buyer unavailable",
         "Performance comparison requires matched workloads and platforms",
         "Historical 2019-2021 Mercury broad x86 server unit-share endpoints are staged, not yet normalized into canonical market series",
-        "Historical EPYC-only revenue versus EE&SC/combined datacenter accounting requires public-source reconciliation"
+        "Historical EPYC-only revenue versus EE&SC/combined datacenter accounting requires public-source reconciliation",
+        "No public same-SKU, time/volume-controlled net hyperscaler-versus-enterprise CPU price distribution; negotiated discount remains underidentified.",
+        "No archived cross-OEM CPU-option delta/BOM-adjustment price panel or audited observed supplier per-SKU variable cost."
       ],
       "related": [
         "market-demand-2030",
