@@ -1,0 +1,1129 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--amd-epyc-rome-milan-commercial-inflection",
+  "created_at": "2026-10-08",
+  "title": "Historical AMD EPYC commercial inflection: Rome to Milan, 2019-2021 (with 2017-2022 context)",
+  "status": "needs_review",
+  "public_only": true,
+  "scope": "Public-source 360-degree chronology of AMD's early server scale-up, cloud/OEM/HPC routes to market, financial and market share semantics. Firsthand biography and former-employer operating details are deliberately excluded.",
+  "domains": [
+    "cpu-platforms-and-competitors",
+    "market-demand-2030",
+    "architecture-and-software"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "measurement",
+    "market_series",
+    "technical_spec",
+    "entity",
+    "relationship",
+    "company_event",
+    "buyer_demand",
+    "strategic_signal",
+    "milestone",
+    "hypothesis",
+    "question",
+    "conflict",
+    "method"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "RESEARCH-ENTRY.md",
+      "AGENTS.md",
+      "research/README.md",
+      "research/catalog.json",
+      "research/routes.json",
+      "research/schema/packet.schema.json",
+      "data/demand-2030/historical-and-forecast-evidence.csv",
+      "data/demand-2030/source-registry.json",
+      "docs/STRATEGIC-FRAMEWORK.md",
+      "docs/COMPLIANCE.md",
+      "data/claims/amd-advancing-ai-2026-curated.json"
+    ],
+    "prior_ids": [
+      "H012",
+      "H013",
+      "H014",
+      "H015",
+      "H016",
+      "H017",
+      "H018",
+      "A011"
+    ],
+    "dedupe_notes": "Existing dataset begins mainly 2024, and 2026 keynote has unrelated later-vintage claims. The new 2019/2021 Mercury scope-aligned historical endpoints are distinct and staged, not appended to 2024-26 live market series. Retain modern 2026 forecasts and IDs unchanged."
+  },
+  "sources": [
+    {
+      "id": "src:epyc19:naples",
+      "title": "AMD EPYC datacenter processor launch",
+      "publisher": "AMD",
+      "published_at": "2017-06-20",
+      "kind": "product_launch",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/773/amd-epyc-datacenter-processor-launches-with-record-setting-performance-optimized-platforms-and-global-server-ecosystem-support",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:rome",
+      "title": "AMD 2nd Gen EPYC 7002 Rome launch",
+      "publisher": "AMD",
+      "published_at": "2019-08-07",
+      "kind": "product_launch",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/904/2nd-gen-amd-epyc-processors-set-new-standard-for-the-modern-datacenter-with-record-breaking-performance-and-significant-tco-savings",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "architecture, ecosystem, benchmark footnotes, product table",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q319",
+      "title": "AMD Q3 2019 earnings slides",
+      "publisher": "AMD",
+      "published_at": "2019-10-29",
+      "kind": "earnings_presentation",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-19-000157/amdq319earningsslides4b2.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Enterprise/Embedded/Semi-Custom and strategic news slides",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:mercury19",
+      "title": "Mercury broad x86 server unit share history reprinted",
+      "publisher": "Tom's Hardware / Mercury Research",
+      "published_at": "2019-11-07",
+      "kind": "secondary_market_tracker",
+      "url": "https://www.tomshardware.com/news/amd-vs-intel-cpu-market-share-7nm-makes-landfall-as-price-war-begins",
+      "access": "public_secondary",
+      "rights": "quote_with_limits",
+      "source_locator": "AMD Server Unit Market Share table, Q3 2019",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:mercury22",
+      "title": "Mercury broad x86 server unit share history reprinted through Q2 2022",
+      "publisher": "Tom's Hardware / Mercury Research",
+      "published_at": "2022-08-12",
+      "kind": "secondary_market_tracker",
+      "url": "https://www.tomshardware.com/news/lowest-cpu-shipments-in-30-years-amd-intel-q2-2022-cpu-market-share",
+      "access": "public_secondary",
+      "rights": "quote_with_limits",
+      "source_locator": "AMD vs Intel Server Unit Market Share Q2 2022 table, Q2 2021 and Q3 2019; Mercury source not directly licensed",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:leadership",
+      "title": "AMD strengthens senior leadership team",
+      "publisher": "AMD",
+      "published_at": "2020-01-16",
+      "kind": "leadership_announcement",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/929/amd-strengthens-senior-leadership-team",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "appointments of Dan McNamara, Jane Roney and peers",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:fad20",
+      "title": "AMD 2020 Financial Analyst Day strategy",
+      "publisher": "AMD",
+      "published_at": "2020-03-05",
+      "kind": "investor_event",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/937/amd-details-strategy-to-deliver-best-in-class-growth-and-strong-shareholder-returns-at-2020-financial-analyst-day",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q120",
+      "title": "AMD Q1 2020 earnings slides",
+      "publisher": "AMD",
+      "published_at": "2020-04-28",
+      "kind": "earnings_presentation",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-20-000048/q120earningsslides.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Server unit shipments and cloud demand context",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q220",
+      "title": "AMD Q2 2020 earnings slides",
+      "publisher": "AMD",
+      "published_at": "2020-07-28",
+      "kind": "earnings_presentation",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-20-000101/amdq2fy20slidesfinal.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:intel20",
+      "title": "Intel Q2 2020 financial results and manufacturing roadmap update",
+      "publisher": "Intel",
+      "published_at": "2020-07-23",
+      "kind": "earnings_release",
+      "url": "https://www.intc.com/news-events/press-releases/detail/1402/intel-reports-second-quarter-2020-financial-results",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "manufacturing/7nm timing statement; contemporaneous Intel disclosure",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q320",
+      "title": "AMD Q3 2020 earnings call transcript filed as EX-99.3",
+      "publisher": "AMD",
+      "published_at": "2020-10-27",
+      "kind": "primary_filed_transcript",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0001193125-20-278572/d40046dex993.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "server processor revenue sequential/yoy growth; Milan early shipment",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:xilinx",
+      "title": "AMD announces plan to acquire Xilinx",
+      "publisher": "AMD",
+      "published_at": "2020-10-27",
+      "kind": "company_strategy",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/977/amd-to-acquire-xilinx-creating-the-industrys-high-performance-computing-leader",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:fy20",
+      "title": "AMD FY2020 earnings results",
+      "publisher": "AMD",
+      "published_at": "2021-01-26",
+      "kind": "earnings_release",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/988/amd-reports-fourth-quarter-and-full-year-2020-financial-results",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "FY2020 total and EE&SC segment results",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:milan",
+      "title": "AMD 3rd Gen EPYC 7003 Milan launch",
+      "publisher": "AMD",
+      "published_at": "2021-03-15",
+      "kind": "product_launch",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2021-3-15-amd-epyc-7003-series-cpus-set-new-standard-as-hig.html",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Zen 3 IPC; partner availability vs future commitments; footnotes",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q121",
+      "title": "AMD Q1 2021 earnings call as reproduced",
+      "publisher": "Motley Fool / AMD management",
+      "published_at": "2021-04-27",
+      "kind": "secondary_transcript",
+      "url": "https://www.fool.com/earnings/call-transcripts/2021/04/27/advanced-micro-devices-amd-q1-2021-earnings-call-t/",
+      "access": "public_secondary",
+      "rights": "quote_with_limits",
+      "source_locator": "CEO remarks on >2x data center revenue and high-teens total share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q221",
+      "title": "AMD Q2 2021 earnings call as reproduced",
+      "publisher": "Motley Fool / AMD management",
+      "published_at": "2021-07-27",
+      "kind": "secondary_transcript",
+      "url": "https://www.fool.com/earnings/call-transcripts/2021/07/27/advanced-micro-devices-amd-q2-2021-earnings-call-t/",
+      "access": "public_secondary",
+      "rights": "quote_with_limits",
+      "source_locator": "CEO data center >20% mix; fifth record server CPU revenue",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:q221report",
+      "title": "AMD Q2 2021 financial result presentation filed as EX-99.2",
+      "publisher": "AMD",
+      "published_at": "2021-07-27",
+      "kind": "earnings_presentation",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-21-000114/amdq221financialresultss.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:sec21",
+      "title": "AMD FY2021 Form 10-K",
+      "publisher": "AMD",
+      "published_at": "2022-02-03",
+      "kind": "sec_filing",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000016/amd-20211225.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "historic segment definitions: Enterprise Embedded and Semi-Custom includes game-console SoCs",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:frontier",
+      "title": "AMD EPYC and Radeon Instinct selected for Frontier",
+      "publisher": "AMD",
+      "published_at": "2019-05-07",
+      "kind": "hpc_announcement",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2019-5-7--amd-epyc-cpus-amd-radeon-instinct-gpus-and-rocm-.html",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:elcap",
+      "title": "El Capitan supercomputer AMD CPU/GPU selection",
+      "publisher": "AMD",
+      "published_at": "2020-03-04",
+      "kind": "hpc_announcement",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/936/next-generation-amd-epyc-cpus-and-radeon-instinct-gpus-enable-el-capitan-supercomputer-at-lawrence-livermore-national-laboratory-to-break-2-exaflops-barrier",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "src:epyc19:google",
+      "title": "AMD EPYC cloud adoption grows with Google Cloud N2D",
+      "publisher": "AMD",
+      "published_at": "2020-02-18",
+      "kind": "cloud_partnership",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/934/amd-epyc-cloud-adoption-grows-with-google-cloud",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "release overview",
+      "as_of": "2026-10-08"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:epyc19:naples",
+      "source_id": "src:epyc19:naples",
+      "statement": "First generation EPYC 7001 commercial launch preceded the 2019-2021 scale period by more than two years.",
+      "claim_class": "product_launch",
+      "source_locator": "EPYC 7001 press release",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:rome",
+      "source_id": "src:epyc19:rome",
+      "statement": "2nd Gen EPYC 7002 Rome launched on August 7, 2019, with up to 64 Zen 2 cores and a 7nm CPU core design.",
+      "claim_class": "technical_spec",
+      "source_locator": "launch introduction; architecture section",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:tco",
+      "source_id": "src:epyc19:rome",
+      "statement": "AMD marketed selected Rome configurations as offering estimated 25-50% lower TCO than competing products; this is methodology-dependent, not a universal measured advantage.",
+      "claim_class": "vendor_marketing",
+      "source_locator": "headlines and workload-specific methodology footnotes",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:rome_partners",
+      "source_id": "src:epyc19:rome",
+      "statement": "At Rome launch AMD reported Google internal deployments and public commitments or plans involving Twitter, HPE, Lenovo, Microsoft, Dell and VMware; deployment state differs by partner.",
+      "claim_class": "ecosystem_announcement",
+      "source_locator": "launch partner bullets",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:q319growth",
+      "source_id": "src:epyc19:q319",
+      "statement": "AMD reported that EPYC processor revenue and units grew more than 50% sequentially in Q3 2019.",
+      "claim_class": "company_reported_growth",
+      "source_locator": "Enterprise/Embedded/Semi-Custom strategic news slide",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:leadership",
+      "source_id": "src:epyc19:leadership",
+      "statement": "AMD announced Dan McNamara as SVP/GM of its Server Business Unit with an explicit cloud, enterprise and ecosystem adoption mandate.",
+      "claim_class": "organizational_event",
+      "source_locator": "Dan McNamara appointment",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:fad",
+      "source_id": "src:epyc19:fad20",
+      "statement": "AMD positioned datacenter and multigenerational high-performance computing roadmap execution as strategic growth opportunities.",
+      "claim_class": "management_strategy",
+      "source_locator": "Financial Analyst Day summary",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:covidcloud",
+      "source_id": "src:epyc19:q120",
+      "statement": "AMD reported elevated cloud demand to support remote work/education and double-digit sequential growth in server CPU unit shipments in Q1 2020.",
+      "claim_class": "company_reported_growth",
+      "source_locator": "server strategic news slide",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:inteldelay",
+      "source_id": "src:epyc19:intel20",
+      "statement": "Intel disclosed 7nm CPU product roadmap timing delays in its July 2020 earnings communications; distinguish this from shipping 10nm Ice Lake Xeon in 2021.",
+      "claim_class": "competitor_roadmap",
+      "source_locator": "manufacturing update",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:q320rev",
+      "source_id": "src:epyc19:q320",
+      "statement": "AMD said quarterly server processor revenue reached a record in Q3 2020 and more than doubled year-over-year; this is CPU revenue growth rather than EE&SC segment growth.",
+      "claim_class": "company_reported_growth",
+      "source_locator": "transcript, server remarks",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:xilinx",
+      "source_id": "src:epyc19:xilinx",
+      "statement": "AMD announced a planned $35B all-stock Xilinx acquisition in October 2020 as part of expanding its high-performance/adaptive computing strategy; completion followed in 2022.",
+      "claim_class": "corporate_strategy",
+      "source_locator": "transaction announcement",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:fy20",
+      "source_id": "src:epyc19:fy20",
+      "statement": "AMD reported total company revenue of $9.763B in FY2020, which is not the revenue of EPYC or the datacenter business.",
+      "claim_class": "financial_disclosure",
+      "source_locator": "FY2020 GAAP annual table",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:milan",
+      "source_id": "src:epyc19:milan",
+      "statement": "3rd Gen EPYC 7003 Milan launched March 15, 2021 with up to 64 Zen 3 cores, up to 19% higher IPC and SEV-SNP capabilities.",
+      "claim_class": "technical_spec",
+      "source_locator": "March 15 launch, product architecture",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:milanpartners",
+      "source_id": "src:epyc19:milan",
+      "statement": "Milan announcement named AWS, Cisco, Dell, Google Cloud, HPE, Lenovo, Azure, Oracle, Supermicro and Tencent; some offers were launch availability, others future planned deployments.",
+      "claim_class": "ecosystem_announcement",
+      "source_locator": "partner section (availability qualifier)",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:q121",
+      "source_id": "src:epyc19:q121",
+      "statement": "In Q1 2021 AMD management stated datacenter product revenue more than doubled year over year and represented a high-teens share of company revenue.",
+      "claim_class": "management_reported_growth",
+      "source_locator": "Lisa Su opening prepared remarks",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:q221records",
+      "source_id": "src:epyc19:q221",
+      "statement": "In Q2 2021 AMD management described its fifth consecutive quarterly record for server processor revenue; Rome revenue rose as Milan more than doubled sequentially.",
+      "claim_class": "management_reported_growth",
+      "source_locator": "Lisa Su remarks on server CPUs",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:q221mix",
+      "source_id": "src:epyc19:q221",
+      "statement": "AMD management stated datacenter products generated more than 20% of total AMD revenue in Q2 2021; this includes multiple product categories and is not EPYC-only.",
+      "claim_class": "management_reported_mix",
+      "source_locator": "Lisa Su response to analyst on datacenter percent",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:share_definition",
+      "source_id": "src:epyc19:mercury22",
+      "statement": "Mercury Research's broad x86-server-class unit shipment denominator includes networking and storage placements, whereas AMD sometimes cited a narrower IDC-based 1P/2P traditional-server addressable market.",
+      "claim_class": "market_measurement_definition",
+      "source_locator": "market share table and adjacent AMD methodology explanation",
+      "verification": "checked_against_original"
+    },
+    {
+      "id": "claim:epyc19:consoles",
+      "source_id": "src:epyc19:sec21",
+      "statement": "AMD's legacy Enterprise Embedded and Semi-Custom reporting segment mixed EPYC products with semi-custom console SoCs; segment revenue cannot stand in for EPYC silicon revenue.",
+      "claim_class": "accounting_definition",
+      "source_locator": "segment disclosures",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:frontier",
+      "source_id": "src:epyc19:frontier",
+      "statement": "Frontier EPYC/AMD GPU exascale partnership was announced before the research focus period; it is a design-win announcement, not the 2022 installed system result.",
+      "claim_class": "hpc_partner_announcement",
+      "source_locator": "press release",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:elcap",
+      "source_id": "src:epyc19:elcap",
+      "statement": "AMD, HPE and Lawrence Livermore announced a future AMD-powered El Capitan HPC system in March 2020; projected exaflops at announcement were not measured deployed performance.",
+      "claim_class": "hpc_partner_announcement",
+      "source_locator": "press release",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:google",
+      "source_id": "src:epyc19:google",
+      "statement": "Google Cloud announced EPYC 7002-based N2D compute instances in February 2020.",
+      "claim_class": "cloud_product_announcement",
+      "source_locator": "cloud instance announcement",
+      "verification": "attributed_unverified"
+    },
+    {
+      "id": "claim:epyc19:marketcaveat",
+      "source_id": "src:epyc19:mercury22",
+      "statement": "The broad Mercury x86 server CPU unit share reported in press should not be compared to combined server CPU revenue share, Arm-inclusive market share, or AMD's IDC-based narrow 1P/2P target without explicit reconciliation.",
+      "claim_class": "market_measurement_definition",
+      "source_locator": "Mercury table and methodology paragraph",
+      "verification": "checked_against_original"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "m:epyc19:amd_server_share_q319",
+      "source_id": "src:epyc19:mercury19",
+      "metric_id": "amd_server_x86_unit_share",
+      "value": 4.3,
+      "unit": "percent",
+      "period": "2019-Q3",
+      "population": "AMD x86 server-class CPU units",
+      "denominator": "all x86 server-class CPU units including network and storage (Mercury broad)",
+      "measurement_kind": "secondary_market_estimate",
+      "verification": "checked_against_original",
+      "qualifier": "equal",
+      "source_locator": "AMD Server Unit Share table Q3 2019",
+      "notes": "Mercury reprinted by Tom's Hardware; does not mean revenue share"
+    },
+    {
+      "id": "m:epyc19:amd_server_share_q221",
+      "source_id": "src:epyc19:mercury22",
+      "metric_id": "amd_server_x86_unit_share",
+      "value": 9.5,
+      "unit": "percent",
+      "period": "2021-Q2",
+      "population": "AMD x86 server-class CPU units",
+      "denominator": "all x86 server-class CPU units including network and storage (Mercury broad)",
+      "measurement_kind": "secondary_market_estimate",
+      "verification": "checked_against_original",
+      "qualifier": "equal",
+      "source_locator": "AMD vs Intel Server Unit Market Share table Q2 2022, column Q2 2021",
+      "notes": "Mercury reprinted by Tom's Hardware; not independently licensed tracker data"
+    },
+    {
+      "id": "m:epyc19:amd_company_fy20",
+      "source_id": "src:epyc19:fy20",
+      "metric_id": "amd_total_company_revenue",
+      "value": 9.763,
+      "unit": "USD_billion",
+      "period": "2020",
+      "population": "AMD consolidated revenue",
+      "denominator": "all AMD products and services, GAAP fiscal year",
+      "measurement_kind": "company_reported_financial",
+      "verification": "checked_against_original",
+      "qualifier": "equal",
+      "source_locator": "annual GAAP table",
+      "notes": "NOT datacenter or EPYC revenue"
+    },
+    {
+      "id": "m:epyc19:amd_company_q221",
+      "source_id": "src:epyc19:q221report",
+      "metric_id": "amd_total_company_revenue",
+      "value": 3.85,
+      "unit": "USD_billion",
+      "period": "2021-Q2",
+      "population": "AMD consolidated revenue",
+      "denominator": "all AMD products, fiscal quarter rounded to two decimal billion",
+      "measurement_kind": "company_reported_financial",
+      "verification": "checked_against_original",
+      "qualifier": "approximately",
+      "source_locator": "Q2 2021 revenue slide",
+      "notes": "NOT datacenter or EPYC revenue; approximately $3.85B as presented"
+    },
+    {
+      "id": "m:epyc19:amd_dc_mix_q221",
+      "source_id": "src:epyc19:q221",
+      "metric_id": "amd_data_center_pct_consolidated_revenue",
+      "value": 20,
+      "unit": "percent",
+      "period": "2021-Q2",
+      "population": "AMD data center products (including EPYC and accelerator products)",
+      "denominator": "AMD total quarterly company revenue",
+      "measurement_kind": "management_attributed_lower_bound",
+      "verification": "checked_against_original",
+      "qualifier": "greater_than",
+      "source_locator": "Lisa Su Q2 2021 earnings call Q&A",
+      "notes": "Strict >20% lower bound. Do not label 20% exact or EPYC-only"
+    }
+  ],
+  "forecasts": [],
+  "scenarios": [],
+  "entities": [
+    {
+      "id": "ent:epyc19:amd",
+      "name": "AMD",
+      "entity_type": "company"
+    },
+    {
+      "id": "ent:epyc19:intel",
+      "name": "Intel",
+      "entity_type": "company"
+    },
+    {
+      "id": "ent:epyc19:epycrome",
+      "name": "EPYC 7002 Rome",
+      "entity_type": "server_cpu_product_family"
+    },
+    {
+      "id": "ent:epyc19:epycmilan",
+      "name": "EPYC 7003 Milan",
+      "entity_type": "server_cpu_product_family"
+    },
+    {
+      "id": "ent:epyc19:microsoft",
+      "name": "Microsoft Azure",
+      "entity_type": "cloud_service"
+    },
+    {
+      "id": "ent:epyc19:google",
+      "name": "Google Cloud",
+      "entity_type": "cloud_service"
+    },
+    {
+      "id": "ent:epyc19:hpe",
+      "name": "HPE",
+      "entity_type": "oem"
+    },
+    {
+      "id": "ent:epyc19:dell",
+      "name": "Dell Technologies",
+      "entity_type": "oem"
+    },
+    {
+      "id": "ent:epyc19:lenovo",
+      "name": "Lenovo",
+      "entity_type": "oem"
+    },
+    {
+      "id": "ent:epyc19:xilinx",
+      "name": "Xilinx",
+      "entity_type": "company"
+    },
+    {
+      "id": "ent:epyc19:mercury",
+      "name": "Mercury Research",
+      "entity_type": "market_research_firm"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:epyc19:amd_rome",
+      "subject_id": "ent:epyc19:amd",
+      "relation": "launched",
+      "object_id": "ent:epyc19:epycrome",
+      "evidence_ids": [
+        "src:epyc19:rome"
+      ],
+      "status": "shipped"
+    },
+    {
+      "id": "rel:epyc19:amd_milan",
+      "subject_id": "ent:epyc19:amd",
+      "relation": "launched",
+      "object_id": "ent:epyc19:epycmilan",
+      "evidence_ids": [
+        "src:epyc19:milan"
+      ],
+      "status": "shipped"
+    },
+    {
+      "id": "rel:epyc19:google_rome",
+      "subject_id": "ent:epyc19:google",
+      "relation": "deployed_or_announced_instances_using",
+      "object_id": "ent:epyc19:epycrome",
+      "evidence_ids": [
+        "src:epyc19:rome",
+        "src:epyc19:google"
+      ],
+      "status": "announced_and_available_by_source"
+    },
+    {
+      "id": "rel:epyc19:ms_rome",
+      "subject_id": "ent:epyc19:microsoft",
+      "relation": "announced_cloud_vm_support_for",
+      "object_id": "ent:epyc19:epycrome",
+      "evidence_ids": [
+        "src:epyc19:rome"
+      ],
+      "status": "announcement_at_launch"
+    },
+    {
+      "id": "rel:epyc19:hpe_milan",
+      "subject_id": "ent:epyc19:hpe",
+      "relation": "announced_platforms_using",
+      "object_id": "ent:epyc19:epycmilan",
+      "evidence_ids": [
+        "src:epyc19:milan"
+      ],
+      "status": "announced"
+    },
+    {
+      "id": "rel:epyc19:dell_milan",
+      "subject_id": "ent:epyc19:dell",
+      "relation": "announced_platforms_using",
+      "object_id": "ent:epyc19:epycmilan",
+      "evidence_ids": [
+        "src:epyc19:milan"
+      ],
+      "status": "announced"
+    },
+    {
+      "id": "rel:epyc19:lenovo_milan",
+      "subject_id": "ent:epyc19:lenovo",
+      "relation": "announced_platforms_using",
+      "object_id": "ent:epyc19:epycmilan",
+      "evidence_ids": [
+        "src:epyc19:milan"
+      ],
+      "status": "announced"
+    },
+    {
+      "id": "rel:epyc19:amd_xilinx",
+      "subject_id": "ent:epyc19:amd",
+      "relation": "announced_acquisition_of",
+      "object_id": "ent:epyc19:xilinx",
+      "evidence_ids": [
+        "src:epyc19:xilinx"
+      ],
+      "status": "proposed_as_of_2020"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:epyc19:naples",
+      "name": "First-generation AMD EPYC Naples launch",
+      "event_date": "2017-06-20",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:naples"
+      ],
+      "notes": "pre-tenure context"
+    },
+    {
+      "id": "event:epyc19:frontier",
+      "name": "Frontier exascale CPU/GPU design-win announcement",
+      "event_date": "2019-05-07",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:frontier"
+      ],
+      "notes": "announcement before focus period"
+    },
+    {
+      "id": "event:epyc19:rome",
+      "name": "Rome 2nd Gen EPYC product introduction",
+      "event_date": "2019-08-07",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:rome"
+      ],
+      "notes": "immediately before focus period"
+    },
+    {
+      "id": "event:epyc19:q3_19",
+      "name": "Q3 2019 AMD earnings indicate accelerating EPYC adoption",
+      "event_date": "2019-10-29",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:q319"
+      ],
+      "notes": "period overlaps start of focus window"
+    },
+    {
+      "id": "event:epyc19:mcnamara",
+      "name": "Dan McNamara server business leadership appointment",
+      "event_date": "2020-01-16",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:leadership"
+      ],
+      "notes": "organization scaling signal, does not establish individual roles"
+    },
+    {
+      "id": "event:epyc19:google_n2d",
+      "name": "Google Cloud N2D Rome-based instances announced",
+      "event_date": "2020-02-18",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:google"
+      ],
+      "notes": "cloud rollout"
+    },
+    {
+      "id": "event:epyc19:fad",
+      "name": "AMD 2020 Financial Analyst Day",
+      "event_date": "2020-03-05",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:fad20"
+      ],
+      "notes": "strategy and 2020 roadmap"
+    },
+    {
+      "id": "event:epyc19:elcap",
+      "name": "El Capitan design-win announcement",
+      "event_date": "2020-03-04",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:elcap"
+      ],
+      "notes": "not deployment date"
+    },
+    {
+      "id": "event:epyc19:covidq1",
+      "name": "Q1 2020 cloud demand changes reported",
+      "event_date": "2020-04-28",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:q120"
+      ],
+      "notes": "pandemic context"
+    },
+    {
+      "id": "event:epyc19:intelroadmap",
+      "name": "Intel discloses 7nm CPU roadmap delay",
+      "event_date": "2020-07-23",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:intel20"
+      ],
+      "notes": "competitor context"
+    },
+    {
+      "id": "event:epyc19:q320",
+      "name": "Record AMD Q3 2020 server CPU revenue reported",
+      "event_date": "2020-10-27",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:q320"
+      ],
+      "notes": "not combined-segment total"
+    },
+    {
+      "id": "event:epyc19:xilinx",
+      "name": "Xilinx acquisition announced",
+      "event_date": "2020-10-27",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:xilinx"
+      ],
+      "notes": "announced not closed"
+    },
+    {
+      "id": "event:epyc19:fy20",
+      "name": "AMD FY2020 earnings results",
+      "event_date": "2021-01-26",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:fy20"
+      ],
+      "notes": "consolidated figures"
+    },
+    {
+      "id": "event:epyc19:milan",
+      "name": "Milan 3rd Gen EPYC launch",
+      "event_date": "2021-03-15",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:milan"
+      ],
+      "notes": "multiple ecosystem announcements; status differs"
+    },
+    {
+      "id": "event:epyc19:q121",
+      "name": "AMD reports Q1 2021 datacenter growth",
+      "event_date": "2021-04-27",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:q121"
+      ],
+      "notes": "company management estimate"
+    },
+    {
+      "id": "event:epyc19:q221",
+      "name": "Q2 2021 server records and datacenter mix disclosed",
+      "event_date": "2021-07-27",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:q221",
+        "src:epyc19:q221report"
+      ],
+      "notes": "early-to-mid 2021 inflection"
+    },
+    {
+      "id": "event:epyc19:tenk2021",
+      "name": "FY2021 report documents historic segment mix",
+      "event_date": "2022-02-03",
+      "status": "historical_announcement",
+      "evidence_ids": [
+        "src:epyc19:sec21"
+      ],
+      "notes": "later official retrospective"
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal:epyc19:platform_to_adoption",
+      "actor": "AMD",
+      "statement": "Rome's launch combined technical advantages with a growing platform and ISV ecosystem.",
+      "inference": "Strategy at 2019-21 inflection was not a silicon-only contest: manufacturing, software certification, platform volume and customer roadmaps mattered.",
+      "evidence_ids": [
+        "src:epyc19:rome",
+        "src:epyc19:milan"
+      ]
+    },
+    {
+      "id": "signal:epyc19:cadence",
+      "actor": "AMD",
+      "statement": "Server BU executive leadership expanded in early 2020 and Milan launch followed Rome's ramp.",
+      "inference": "Organizational process, GTM segmentation and parallel generational transitions are strong publicly supported operating-model research hypotheses, NOT evidence of any particular employee's private meetings.",
+      "evidence_ids": [
+        "src:epyc19:leadership",
+        "src:epyc19:q320",
+        "src:epyc19:milan"
+      ]
+    },
+    {
+      "id": "signal:epyc19:cloud_vs_enterprise",
+      "actor": "AMD",
+      "statement": "Cloud customer offerings broadened, while major OEM partners added EPYC platforms.",
+      "inference": "Cloud may adopt new generations sooner than enterprise; deployment, public instance count and billings must remain separate measures.",
+      "evidence_ids": [
+        "src:epyc19:google",
+        "src:epyc19:rome",
+        "src:epyc19:milan",
+        "src:epyc19:q221"
+      ]
+    },
+    {
+      "id": "signal:epyc19:intel_window",
+      "actor": "Intel / AMD",
+      "statement": "AMD Rome arrived with 64-core Zen 2 while Intel faced server product/process timing constraints.",
+      "inference": "The strategic advantage reflected AMD execution plus competitor timing; it cannot be reduced solely to Intel missteps.",
+      "evidence_ids": [
+        "src:epyc19:rome",
+        "src:epyc19:intel20",
+        "src:epyc19:milan"
+      ]
+    },
+    {
+      "id": "signal:epyc19:hpc_credibility",
+      "actor": "AMD/HPE",
+      "statement": "Frontier and El Capitan announcements publicly signaled future exascale partnerships.",
+      "inference": "HPC partnership headlines provide long-horizon platform validation, but their contract value is not equivalent to EPYC CPU silicon revenue.",
+      "evidence_ids": [
+        "src:epyc19:frontier",
+        "src:epyc19:elcap"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:epyc19:commercial_conversion",
+      "thesis": "Rome's technical and TCO advantages translated to durable server share only when cloud qualification, OEM platform breadth, software compatibility, manufacturing supply and sales execution advanced together.",
+      "evidence_ids": [
+        "claim:epyc19:rome",
+        "claim:epyc19:rome_partners",
+        "claim:epyc19:milanpartners",
+        "m:epyc19:amd_server_share_q319",
+        "m:epyc19:amd_server_share_q221"
+      ],
+      "alternative": "Competitive Intel supply/timing setbacks alone explain much of AMD's share gain, independent of AMD operating systems and GTM.",
+      "falsification_test": "Compare matched quarterly EPYC server share, public OEM general availability, cloud instance launches, Intel platform releases and lead-time constraints."
+    },
+    {
+      "id": "hyp:epyc19:multi_gen",
+      "thesis": "Rome revenue growing while Milan ramped shows a commercially additive product transition rather than a single-generation success.",
+      "evidence_ids": [
+        "claim:epyc19:q221records",
+        "claim:epyc19:milan"
+      ],
+      "alternative": "Inventory/channel mix and seasonality can produce transient simultaneous revenue growth without durable multigeneration franchise strength.",
+      "falsification_test": "Trace 2021-2022 generation-specific availability, enterprise qualification, shipments and later revenue contribution as publicly disclosed."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:epyc19:server_revenue",
+      "question": "Which 2019-21 public filings or SEC exhibits directly estimate annual EPYC-only server CPU revenue vs combined datacenter product revenue?",
+      "priority": "P0",
+      "method": "Audit each original annual earnings transcript and its definition; reconcile with old EE&SC and Computing/Graphics categories.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Avoid misleading $2.5B server-revenue claim"
+    },
+    {
+      "id": "q:epyc19:mercury_denominator",
+      "question": "Can an accessible contemporaneous Mercury Research series independently corroborate 4.3% Q3 2019 and 9.5% Q2 2021 broad server x86 share?",
+      "priority": "P0",
+      "method": "Acquire rights-cleared Mercury publication or independent contemporary full table, preserve market denominator.",
+      "domains": [
+        "market-demand-2030",
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Confidence in historical growth comparison"
+    },
+    {
+      "id": "q:epyc19:rome_milan_mix",
+      "question": "How quickly did Milan replace Rome among hyperscalers and enterprise OEMs in 2021, rather than simply being announced?",
+      "priority": "P1",
+      "method": "Date-stamp cloud general availability, OEM configurators, and quantified company disclosures.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Quantify product-to-scale latency"
+    },
+    {
+      "id": "q:epyc19:gtm_workflows",
+      "question": "What were the publicly documented blockers to EPYC GTM beyond benchmarks: ISV certification, OEM SKU availability, Intel bundling, platform risk and software performance?",
+      "priority": "P1",
+      "method": "Cross-check ISV/OEM public launch material and contemporary enterprise buyer reporting.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Understand how challengers convert CPU leadership into enterprise share"
+    },
+    {
+      "id": "q:epyc19:hpc_contract",
+      "question": "Which HPC wins represented actual CPU shipment revenue in 2019-21 vs forward-looking contracts or announced systems?",
+      "priority": "P1",
+      "method": "Compare DoE/Oak Ridge/LLNL award notices and deployment timelines; avoid whole-system revenue proxy.",
+      "domains": [
+        "cpu-platforms-and-competitors"
+      ],
+      "decision_impacted": "Map strategic validation versus realized CPU TAM"
+    },
+    {
+      "id": "q:epyc19:supply",
+      "question": "How did TSMC 7nm wafer capacity, packaging/substrate allocation and new console SoCs constrain EPYC shipment mix during the pandemic?",
+      "priority": "P1",
+      "method": "Use contemporaneous public AMD/TSMC 10-Ks and supply interviews, no internal data.",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Disentangle demand and supply causes of observed share"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "conf:epyc19:share_scope",
+      "left_ref": "m:epyc19:amd_server_share_q221",
+      "right_ref": "claim:epyc19:share_definition",
+      "issue": "Reported 2020 AMD double-digit share milestone is from a different narrow 1P/2P target universe than broad Mercury x86 shipment share; presenting them as directly contradictory or comparable is wrong.",
+      "status": "not_comparable",
+      "resolution_plan": "Retain both market definitions and dates; retrieve original AMD statement and its IDC denominator before additional quantitative use."
+    },
+    {
+      "id": "conf:epyc19:segment_accounting",
+      "left_ref": "claim:epyc19:consoles",
+      "right_ref": "claim:epyc19:q221mix",
+      "issue": "EE&SC segment totals, AMD datacenter product mix and EPYC-only silicon revenue have overlapping but distinct populations.",
+      "status": "not_comparable",
+      "resolution_plan": "Do not substitute EE&SC or company total for EPYC-only revenue; locate management-derived datacenter definition and consistent quarterly unit."
+    }
+  ],
+  "methods": [
+    {
+      "id": "method:epyc19:share_bridge",
+      "name": "Mercury broad-server unit share comparison",
+      "procedure": "Use 2019-Q3 4.3 and 2021-Q2 9.5 from the same Mercury broad x86 server CPU unit-share denominator as reproduced by Tom's Hardware; calculate pp and ratio, disclose that these are shipment-based market estimates, not revenue or installed base.",
+      "assumptions": [
+        "secondary Mercury reprint is an accurate rendering of methodology",
+        "AMD share reflects broad x86 server-class units incl network/storage",
+        "2019-Q3 to 2021-Q2 endpoints do not match exact employment dates"
+      ],
+      "notes": "Derived increase +5.2 percentage points and ratio ~2.21x; keep derived figures out of raw measurements."
+    },
+    {
+      "id": "method:epyc19:mix_lower_bound",
+      "name": "Datacenter share of consolidated revenue lower bound",
+      "procedure": "Multiply the AMD Q2 2021 consolidated revenue (~$3.85B) by the stated datacenter mix lower bound (>20%); infer only that implied quarterly data center product revenue was > approximately $0.77B; do not annualize to an observed amount.",
+      "assumptions": [
+        "consolidated revenue rounding is acceptable for scale only",
+        "management phrase 'greater than' is literal",
+        "datacenter mix includes CPU and accelerator products"
+      ],
+      "notes": "Analytical bound only, not disclosed GAAP segment revenue nor EPYC-only sales."
+    }
+  ],
+  "promotions": [
+    {
+      "record_id": "m:epyc19:amd_server_share_q319",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Staged secondary market share reprint; require direct/rights-cleared Mercury or editorial acceptance and historical-series backfill before promotion."
+    },
+    {
+      "record_id": "m:epyc19:amd_server_share_q221",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Staged secondary Mercury endpoint, same denominator; do not add isolated 2019/2021 points to 2024-26 dataset without period/gap policy."
+    },
+    {
+      "record_id": "m:epyc19:amd_dc_mix_q221",
+      "target_path": "data/demand-2030/historical-and-forecast-evidence.csv",
+      "review_status": "pending",
+      "decision_note": "Management mix lower bound; use 'greater than' qualifier and reconcile CPU vs combined data center product revenue first."
+    },
+    {
+      "record_id": "claim:epyc19:rome",
+      "target_path": "docs/STRATEGIC-FRAMEWORK.md",
+      "review_status": "not_applicable",
+      "decision_note": "Historical architecture evidence retained in packet and indexed narrative; no change to modern hardware comparison."
+    },
+    {
+      "record_id": "claim:epyc19:consoles",
+      "target_path": "docs/STRATEGIC-FRAMEWORK.md",
+      "review_status": "not_applicable",
+      "decision_note": "Already consistent with strategy's existing CPU-only vs system and combined revenue boundary."
+    }
+  ],
+  "handoff": {
+    "summary": "Historical EPYC commercial scale period reconstructed from independently accessible public releases, earnings and secondary Mercury tables. Complements 2024-2030 demand research without polluting its baseline.",
+    "changed_decisions": [
+      "Use Rome-to-Milan commercialization rather than 'inception of EPYC' when framing 2019-2021.",
+      "Never equate EA&SC mixed segment dollars, combined data center products, 2021 run-rate or personal reported figure with audited EPYC-only annual revenue.",
+      "Use Mercury 4.3% vs 9.5% only for matched broad x86 server unit market share."
+    ],
+    "next_actions": [
+      "Editorially verify secondary Mercury market share denominator and original access rights.",
+      "Source generation-specific OEM and hyperscaler GA/live-deployment dates rather than only press-release intentions.",
+      "Check exact historical EPYC revenue disclosures if publicly available; reject unverified $2.5B attribution.",
+      "Use separate private approved environment for any first-person career recollections or former-employer internal material."
+    ],
+    "limits": [
+      "The accompanying user-provided screenshot and claims about staffing, CEO QBRs, internal revenue and personal actions are NOT public source proof and have NOT been copied into this public packet.",
+      "Earnings transcript reproductions are secondary; underlying SEC-filed call excerpts should be substituted when possible.",
+      "No internal operating documents, confidential consultation identities, or unpublished employer knowledge published.",
+      "Only packet staging, no automatic dashboard promotion."
+    ]
+  }
+}
