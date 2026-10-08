@@ -50,6 +50,21 @@ db/
   runtime/          generated only; ignored by Git
 ```
 
+## Financial filing extension (additive migration 0003)
+
+[Corporate filing program](../docs/research/financial-filings/README.md) defines 35 company acquisition targets, fiscal XBRL fact context, public contract/lease/RPO commitments and counterparty overlap. These extend the existing canonical source/measurement/model tables without changing historical TAM assumptions. The issuer watchlist is seeded as target metadata only, **not as a set of retrieved or verified financial filings**.
+
+To discover and stage **SEC filing metadata** for an issuer, configure a real SEC contact user agent (do not commit your email or credentials):
+
+```powershell
+$env:SEC_USER_AGENT = 'CORE SIGNAL contact@example.com'
+python db/scripts/sec_filing_discovery.py --issuer-id fin:amd --from-year 2019
+python db/scripts/research_db.py ingest-financial --input db/runtime/sec-fin-amd.json
+python db/scripts/research_db.py query --sql "SELECT issuer_id,filing_type,filed_at FROM financial_filings ORDER BY filed_at DESC LIMIT 20"
+```
+
+Numeric extraction and source-located financial commitments require a separately reviewed data capture; any `ingest-financial` facts are staged as `attributed_unverified`, and proposed model mappings do not alter the scenario engine. The SEC helper does not fetch full document bodies or solve international filings. Financial views appear under `financial_facts` and `financial_commitments` in `export`.
+
 ## Current seed lineage
 
 | Existing repo data | v1 destination | Treatment |
