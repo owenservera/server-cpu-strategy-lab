@@ -451,7 +451,9 @@
         "strategic_signal",
         "method",
         "conflict",
-        "question"
+        "question",
+        "financial_filing",
+        "financial_commitment"
       ],
       "unresolved": [
         "No actual 2019-2026 financial filing corpus has been fully retrieved, extracted, reviewed or promoted yet",
