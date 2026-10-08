@@ -46,3 +46,8 @@ All hypotheses above are analytic questions, **not measured conclusions**.
 4. Test power/economic sensitivity, then explicitly list missing TCO variables.
 5. Map which AI layer is driving CPU consumption.
 6. Read the five questions and open corresponding public sources.
+## Historical commercialization case: EPYC Rome → Milan (2019–2021)
+
+A public-source historical case study tracks AMD's shift from 2nd Gen EPYC Rome product launch (Aug 2019) through 3rd Gen EPYC Milan (Mar 2021) and the 2021 market-share inflection. See [the indexed historical briefing](research/AMD-EPYC-ROME-MILAN-2019-2021.md) and its [source-attributed intake packet](../research/packets/2026-10-08--amd-epyc-rome-milan-commercial-inflection.json).
+
+It separates x86 server CPU **unit** share (Mercury broad scope) from AMD's historical IDC-based narrow 1P/2P definition, audited company revenue from combined datacenter products, CPU-only silicon from EE&SC/game-console revenues, announced cloud/OEM wins from deployments, and HPC system awards from CPU chip sales. As staged evidence, its unreviewed historical datapoints must not silently drive the 2024–2030 dashboard.
