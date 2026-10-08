@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-10-08",
+  "status": "synthetic_sensitivity_not_observed",
+  "canonical_unchanged_input": "data/demand-2030/scenario-model.json",
+  "boundary": "annual global server CPU silicon value-equivalent exposure; merchant invoice economics tracked separately",
+  "locked_demand_2030_usd_b": {
+    "downside": {
+      "foundational": 30,
+      "ai_host": 25,
+      "agent_execution": 45,
+      "total": 100
+    },
+    "central": {
+      "foundational": 40,
+      "ai_host": 55,
+      "agent_execution": 105,
+      "total": 200
+    },
+    "upside": {
+      "foundational": 44,
+      "ai_host": 70,
+      "agent_execution": 121,
+      "total": 235
+    }
+  },
+  "illustrative_stress_transfer": {
+    "share_points": 10,
+    "basis": "one workload bucket at a time, exact donor/recipient transfer within that bucket",
+    "central_2030_redistributed_value_usd_b": {
+      "foundational": 4,
+      "ai_host": 5.5,
+      "agent_execution": 10.5
+    },
+    "applicability_note": "Only if donor actually owns at least 10 percentage points in same buyer/bucket and the candidate platform has reached the required dated commercial stage. No baseline vendor shares asserted."
+  },
+  "validation_requirements": [
+    "year_total_and_workload_buckets_immutable",
+    "allocation_weights_sum_1_per_exclusive_partition",
+    "explicit_unknown_when_no_buyershare",
+    "merchant_external_invoices_separate_from_captive_equivalent",
+    "royalty_and_cloud_dollars_nonadditive",
+    "no_2026_shipment_for_qualcomm_dragonfly_c1000"
+  ],
+  "metadata": {
+    "published_market_share_forecast": false,
+    "owner": "analyst_hypothesis",
+    "source": "repo_existing_synthetic_demand_model_only"
+  }
+}
