@@ -7,6 +7,11 @@ on:
       - "data/**"
       - "docs/research/**"
       - "docs/ROCM-X86-ROADMAP-2026-2031.md"
+      - "research/**"
+      - "scripts/validate-research.mjs"
+      - "scripts/research-route.mjs"
+      - "AGENTS.md"
+      - "RESEARCH-ENTRY.md"
       - "tests/**"
       - "package.json"
       - ".github/workflows/research-tests.yml"
@@ -14,6 +19,11 @@ on:
     paths:
       - "data/**"
       - "docs/research/**"
+      - "research/**"
+      - "scripts/validate-research.mjs"
+      - "scripts/research-route.mjs"
+      - "AGENTS.md"
+      - "RESEARCH-ENTRY.md"
       - "tests/**"
       - "package.json"
 
@@ -30,3 +40,4 @@ jobs:
         with:
           node-version: "22"
       - run: npm test
+      - run: npm run check:research
