@@ -8,3 +8,9 @@ dist/
 private/
 local/
 notes-private/
+
+# Generated public research database state: keep only migrations and source code in Git.
+db/runtime/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
