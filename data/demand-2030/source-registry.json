@@ -350,6 +350,18 @@
       "quality": "press_report",
       "checked_as_of": "2026-10-08",
       "recheck_required": true
+    },
+    {
+      "id": "CITI_OCT2026",
+      "origin": "Citi via public reporting",
+      "published_at": "2026-10-07",
+      "kind": "secondary_analyst_summary",
+      "url": "https://www.investopedia.com/market-update-amd-stock-hit-a-fresh-high-meta-muse-ai-agent-is-a-win-for-the-chipmaker-says-citi-12161248",
+      "scope": "Citi reportedly raises 2030 server CPU TAM to around $300B in Oct 2026; original licensed note not reviewed",
+      "access": "public_secondary",
+      "quality": "unverified_analyst_summary",
+      "checked_as_of": "2026-10-08",
+      "recheck_required": true
     }
   ]
 }
