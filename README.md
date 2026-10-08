@@ -6,6 +6,12 @@ Intended for fast strategic orientation: x86 competition, Arm's adjacent pressur
 
 ![Status](https://img.shields.io/badge/status-working%20starter-c3f68d) ![Data](https://img.shields.io/badge/data-public%20only-blue)
 
+## Research database v1
+
+The evidence warehouse has been designed as a **SQLite-first, PostgreSQL-ready** backend. Read [database architecture and seed handoff](docs/database/README.md), the [relational schema specification](docs/database/ARCHITECTURE-V1.md), and [segmentation/modeling rules](docs/database/SEGMENTATION-AND-MODELS.md). A runnable Python+SQLite v1 source bundle was generated in the associated ChatGPT session; **the repository currently contains its implementation handoff, not yet the extracted source bundle**. See [the exact integration instructions](docs/database/IMPLEMENTATION-HANDOFF.md).
+
+The DB is deliberately a reproducible **mirror of the Git evidence corpus** at this stage. It maintains separate tables for sources, claims, observed/reported measurements, forecast vintages, and synthetic models. The current static dashboard does not depend on a database server. Never promote unreviewed transcript claims or estimated market splits to observed data.
+
 ## Researcher / AI agent entry point
 
 **New research, keynote, filing, dataset, technical concept or strategic question? Start at [RESEARCH-ENTRY.md](RESEARCH-ENTRY.md).** AI research sessions should also read [AGENTS.md](AGENTS.md), [research/README.md](research/README.md), and the machine-readable [domain catalog](research/catalog.json) and [multi-route taxonomy](research/routes.json).
