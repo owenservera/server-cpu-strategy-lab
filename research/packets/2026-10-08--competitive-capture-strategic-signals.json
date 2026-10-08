@@ -1,0 +1,1068 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "2026-10-08--competitive-capture-strategic-signals",
+  "created_at": "2026-10-08",
+  "title": "Server CPU competitive capture: competing strategies, buyer choice and fixed-TAM allocation signals",
+  "status": "staged",
+  "public_only": true,
+  "scope": "Worldwide server CPU silicon and its buyer/workload vendor capture; no change to existing 2025–2030 demand market model",
+  "domains": [
+    "cpu-platforms-and-competitors",
+    "market-demand-2030",
+    "architecture-and-software",
+    "agent-runtime-and-sandbox",
+    "visual-intelligence"
+  ],
+  "routes": [
+    "source",
+    "claim",
+    "entity",
+    "relationship",
+    "company_event",
+    "buyer_demand",
+    "strategic_signal",
+    "scenario",
+    "hypothesis",
+    "question",
+    "conflict",
+    "method",
+    "product_requirement"
+  ],
+  "search_before_write": {
+    "checked_paths": [
+      "AGENTS.md",
+      "RESEARCH-ENTRY.md",
+      "research/catalog.json",
+      "research/routes.json",
+      "research/schema/packet.schema.json",
+      "docs/STRATEGIC-FRAMEWORK.md",
+      "docs/research/demand-2030/README.md",
+      "docs/research/demand-2030/MARKET-SYNTHESIS.md",
+      "data/demand-2030/scenario-model.json",
+      "docs/research/server-cpu-pricing/PRICING-OBSERVATORY-METHODOLOGY.md"
+    ],
+    "prior_ids": [],
+    "dedupe_notes": "Reuses demand frame, AMD/x86 share and pricing domain; new vendor moves cross-referenced, source-level overlap review required. No duplicated historical measurement or TAM forecast added."
+  },
+  "sources": [
+    {
+      "id": "src:comp:intc1",
+      "title": "Intel Q2 2026 10-Q disclosure",
+      "publisher": "Intel",
+      "published_at": "2026-07-24",
+      "kind": "regulatory_filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:intc2",
+      "title": "Intel Xeon 6+ launch and catalog",
+      "publisher": "Intel",
+      "published_at": "2026-Q2",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://www.intel.com/content/www/us/en/products/details/processors/xeon/6-plus-series.html",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:amd1",
+      "title": "AMD Q2 2026 financial results",
+      "publisher": "AMD",
+      "published_at": "2026-08-04",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:amd2",
+      "title": "AMD Venice 2nm production ramp",
+      "publisher": "AMD",
+      "published_at": "2026-05-21",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://newsroom.amd.com/news/amd-announces-production-ramp-of-next-generation-a/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:merc1",
+      "title": "Public secondary reporting of Mercury Research Q2 2026 x86 market share",
+      "publisher": "Tom's Hardware",
+      "published_at": "2026-08-22",
+      "kind": "public_secondary_reporting",
+      "url": "https://www.tomshardware.com/pc-components/cpus/desktop-cpu-shipments-crater-20-percent-amid-high-component-costs-but-amd-gains-record-share-despite-ugly-desktop-processor-market-intel-floods-laptop-market-with-millions-of-cpus-but-amd-still-sets-all-time-share-records",
+      "access": "public_secondary",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:aws1",
+      "title": "Graviton5 M9g GA",
+      "publisher": "AWS",
+      "published_at": "2026-06-10",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://aws.amazon.com/blogs/aws/now-available-amazon-ec2-m9g-and-m9gd-instances-powered-by-new-aws-graviton5-processors/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:aws2",
+      "title": "Graviton5 C9g GA",
+      "publisher": "AWS",
+      "published_at": "2026-06-30",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://aws.amazon.com/blogs/aws/amazon-ec2-c9g-and-c9gd-instances-powered-by-aws-graviton5-processors-are-now-available/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:aws3",
+      "title": "Graviton5 R9g GA",
+      "publisher": "AWS",
+      "published_at": "2026-08-31",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://aws.amazon.com/blogs/aws/amazon-ec2-r9g-and-r9gd-instances-powered-by-aws-graviton5-processors-are-now-generally-available/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:goog1",
+      "title": "Axion N4A GA",
+      "publisher": "Google Cloud",
+      "published_at": "2026-01-27",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://cloud.google.com/blog/products/compute/axion-based-n4a-vms-now-in-preview",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:goog2",
+      "title": "GKE agent sandbox and Axion compute announcements",
+      "publisher": "Google Cloud",
+      "published_at": "2026-04",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://cloud.google.com/blog/products/compute/whats-new-in-compute-at-next26",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:msft1",
+      "title": "Cobalt 200 VM preview",
+      "publisher": "Microsoft",
+      "published_at": "2026-06",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://azure.microsoft.com/en-us/blog/new-azure-cobalt-200-vms-deliver-50-performance-improvement-fully-optimized-for-modern-agentic-ai-workloads/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:arm1",
+      "title": "Arm AGI CPU announcement",
+      "publisher": "Arm",
+      "published_at": "2026-03-24",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://newsroom.arm.com/news/arm-agi-cpu-launch",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:arm2",
+      "title": "OCI participates in Arm AGI CPU ecosystem",
+      "publisher": "Arm",
+      "published_at": "2026-06-02",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://newsroom.arm.com/news/arm-agi-cpu-oracle-cloud-infrastructure-agentic-ai",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:nvda1",
+      "title": "NVIDIA Vera launch and platform design",
+      "publisher": "NVIDIA",
+      "published_at": "2026-03-16",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:qcom1",
+      "title": "Qualcomm Meta agreement and C1000 production plan",
+      "publisher": "Nasdaq / Qualcomm",
+      "published_at": "2026-06-24",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://www.nasdaq.com/press-release/qualcomm-and-meta-announce-strategic-multi-generation-agreement-data-center-cpus-2026",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:qcom2",
+      "title": "Qualcomm data center strategy",
+      "publisher": "Qualcomm",
+      "published_at": "2026-06-24",
+      "kind": "public_press_release_or_product_blog",
+      "url": "https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-Accelerates-Diversification-with-Comprehensive-Strategy-for-Data-Center-and-Sees-Multiple-Inflection-Points-Over-the-Next-3-to-5-Years/default.aspx",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    },
+    {
+      "id": "src:comp:spec1",
+      "title": "SPEC CPU 2026 benchmark announcement",
+      "publisher": "SPEC",
+      "published_at": "2026-05-05",
+      "kind": "public_benchmark_announcement",
+      "url": "https://www.spec.org/pressreleases/2026/20260505-spec-releases-cpu-2026-benchmark-suite/",
+      "access": "public",
+      "rights": "link_and_extract",
+      "source_locator": "Named announcement, documented scope and dated text; see full accompanying research report",
+      "notes": "Staged; a source does not prove the associated strategic inference."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:comp:intc1",
+      "source_id": "src:comp:intc1",
+      "statement": "Intel Q2 2026 reported +9% server CPU volume YoY and +48% server ASP YoY, with mix a larger contributor than repricing and internal supply constraints.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:intc2",
+      "source_id": "src:comp:intc2",
+      "statement": "Intel Xeon 6+ Clearwater Forest positioning emphasizes dense scale-out and up to 288 E-cores.",
+      "claim_class": "product_spec",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:amd1",
+      "source_id": "src:comp:amd1",
+      "statement": "AMD Q2 2026 Data Center segment includes both EPYC CPUs and Instinct accelerators and is not CPU-only revenue.",
+      "claim_class": "filing_disclosure",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:amd2",
+      "source_id": "src:comp:amd2",
+      "statement": "AMD publicly announced a ramp of next-generation 2nm Venice CPUs in May 2026; physical customer shipment mix remains to be established.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:merc1",
+      "source_id": "src:comp:merc1",
+      "statement": "Public secondary reporting attributes Q2 2026 broad x86 server CPU unit share of 34.5% to AMD; Intel complement 65.5% is for the x86 unit universe, not all-ISA CPU dollars.",
+      "claim_class": "other",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": "Mercury underlying licensed report not independently obtained; quoted share is secondary and narrow denominator."
+    },
+    {
+      "id": "claim:comp:aws1",
+      "source_id": "src:comp:aws1",
+      "statement": "AWS announced Graviton5 M9g general-purpose EC2 availability.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:aws2",
+      "source_id": "src:comp:aws2",
+      "statement": "AWS announced Graviton5 C9g compute-optimized EC2 availability.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:aws3",
+      "source_id": "src:comp:aws3",
+      "statement": "AWS announced Graviton5 R9g memory-optimized EC2 availability.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:goog1",
+      "source_id": "src:comp:goog1",
+      "statement": "Google Cloud announced generally available Axion N4A VM family in January 2026.",
+      "claim_class": "product_spec",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:goog2",
+      "source_id": "src:comp:goog2",
+      "statement": "Google Cloud positioned generally available GKE Agent Sandbox with Axion N4A as an agentic workload platform.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:msft1",
+      "source_id": "src:comp:msft1",
+      "statement": "Microsoft introduced Cobalt 200 VM family in preview with agentic AI performance positioning; do not infer global GA.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:arm1",
+      "source_id": "src:comp:arm1",
+      "statement": "Arm announced its AGI CPU in March 2026 as its first directly marketed production silicon CPU product with Meta a lead partner.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:arm2",
+      "source_id": "src:comp:arm2",
+      "statement": "Arm announced OCI joined its AGI CPU ecosystem, which does not by itself prove deployed chip purchases.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:nvda1",
+      "source_id": "src:comp:nvda1",
+      "statement": "NVIDIA launched Vera as a standalone agentic CPU rack and in integrated Vera Rubin GPU systems; vendor benchmark claims are not independent results.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "checked_against_original",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:qcom1",
+      "source_id": "src:comp:qcom1",
+      "statement": "Qualcomm and Meta announced a multi-generation data-center CPU agreement; C1000 production was targeted for H2 2028, not 2026.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:qcom2",
+      "source_id": "src:comp:qcom2",
+      "statement": "Qualcomm described a broader data-center diversification strategy that remains future-dated for CPU market share.",
+      "claim_class": "vendor_claim",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    },
+    {
+      "id": "claim:comp:spec1",
+      "source_id": "src:comp:spec1",
+      "statement": "SPEC introduced CPU 2026 as a benchmarking suite; standardized CPU tests are not equivalent to end-to-end successful agent throughput.",
+      "claim_class": "independent_benchmark",
+      "source_locator": "Source article body and announced product/financial result; page and paragraph confirmation required in editorial pass",
+      "verification": "attributed_unverified",
+      "notes": ""
+    }
+  ],
+  "measurements": [],
+  "forecasts": [],
+  "scenarios": [
+    {
+      "id": "scenario:comp:intel-recovery",
+      "hypothesis": "Intel recovers x86 share",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Xeon density, price, supply and enterprise software qualification",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "Intel positive versus other qualified x86 suppliers; check all-ISA risk",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:amd-extension",
+      "hypothesis": "AMD extends EPYC capture",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Venice execution, OEM qualification and workload TCO",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "AMD positive within eligible x86 and independent AI host segments",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:captive-arm",
+      "hypothesis": "Custom hyperscaler Arm accelerates",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "AWS/Google/Microsoft qualifying more production workloads",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "Internal Arm economics positive; external x86 silicon invoices pressured",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:nvidia-host",
+      "hypothesis": "NVIDIA CPU platform attachment expands",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Vera CPU required in GPU rack designs and standalone agent servers",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "NVIDIA positive in attached AI host CPU and agent workloads",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:merchant-arm",
+      "hypothesis": "Merchant Arm breaks through",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Arm AGI/Ampere win independent paid deployments",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "Merchant Arm silicon positive; do not sum IP royalties",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:enterprise-sovereign",
+      "hypothesis": "Enterprise software and sovereignty favor qualified ecosystems",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Certification, data policy and switching hurdles dominate",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "Intel/AMD defensible; qualified Arm pockets",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    },
+    {
+      "id": "scenario:comp:supply-shock",
+      "hypothesis": "Supply constrains economic winner",
+      "inputs": {
+        "canonical_market_model": "data/demand-2030/scenario-model.json",
+        "market_total_locked": true,
+        "driver": "Foundry, packaging, memory and allocation shocks",
+        "buyer_workload_scope": "unknown_until_qualified",
+        "baseline_vendor_share": null
+      },
+      "outputs": {
+        "tam_delta_usd_b": 0,
+        "competitive_direction": "Vendor availability can dominate theoretical performance",
+        "vendor_share_percent": null
+      },
+      "model_status": "synthetic_not_observed"
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity:comp:intel",
+      "name": "Intel",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:amd",
+      "name": "AMD",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:arm",
+      "name": "Arm",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:amazon-web-services",
+      "name": "Amazon Web Services",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:microsoft",
+      "name": "Microsoft",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:google",
+      "name": "Google",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:nvidia",
+      "name": "NVIDIA",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:qualcomm",
+      "name": "Qualcomm",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:meta",
+      "name": "Meta",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:oracle-cloud-infrastructure",
+      "name": "Oracle Cloud Infrastructure",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:ampere",
+      "name": "Ampere",
+      "entity_type": "corporate_entity"
+    },
+    {
+      "id": "entity:comp:softbank",
+      "name": "SoftBank",
+      "entity_type": "corporate_entity"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:comp:01",
+      "subject_id": "entity:comp:meta",
+      "relation": "lead_partner_for",
+      "object_id": "entity:comp:arm",
+      "evidence_ids": [
+        "claim:comp:arm1"
+      ],
+      "status": "announced"
+    },
+    {
+      "id": "rel:comp:02",
+      "subject_id": "entity:comp:meta",
+      "relation": "strategic_cpu_partner",
+      "object_id": "entity:comp:qualcomm",
+      "evidence_ids": [
+        "claim:comp:qcom1"
+      ],
+      "status": "announced_H2_2028_cpu_production"
+    },
+    {
+      "id": "rel:comp:03",
+      "subject_id": "entity:comp:oracle-cloud-infrastructure",
+      "relation": "joined_agi_cpu_ecosystem",
+      "object_id": "entity:comp:arm",
+      "evidence_ids": [
+        "claim:comp:arm2"
+      ],
+      "status": "announced"
+    },
+    {
+      "id": "rel:comp:04",
+      "subject_id": "entity:comp:amazon-web-services",
+      "relation": "designs_and_operates_custom_cpu",
+      "object_id": "entity:comp:amazon-web-services",
+      "evidence_ids": [
+        "claim:comp:aws1",
+        "claim:comp:aws2",
+        "claim:comp:aws3"
+      ],
+      "status": "instances_generally_available"
+    },
+    {
+      "id": "rel:comp:05",
+      "subject_id": "entity:comp:google",
+      "relation": "designs_and_operates_custom_cpu",
+      "object_id": "entity:comp:google",
+      "evidence_ids": [
+        "claim:comp:goog1",
+        "claim:comp:goog2"
+      ],
+      "status": "instances_generally_available"
+    },
+    {
+      "id": "rel:comp:06",
+      "subject_id": "entity:comp:nvidia",
+      "relation": "offers_integrated_cpu_gpu_platform",
+      "object_id": "entity:comp:nvidia",
+      "evidence_ids": [
+        "claim:comp:nvda1"
+      ],
+      "status": "product_announced"
+    },
+    {
+      "id": "rel:comp:07",
+      "subject_id": "entity:comp:softbank",
+      "relation": "owns",
+      "object_id": "entity:comp:ampere",
+      "evidence_ids": [],
+      "status": "prior_research_needs_linked_primary_confirmation"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:comp:intel6plus",
+      "name": "Intel Xeon 6+ Clearwater Forest launch",
+      "event_date": "2026-Q2",
+      "status": "launched",
+      "evidence_ids": [
+        "claim:comp:intc2"
+      ]
+    },
+    {
+      "id": "event:comp:amdvenice",
+      "name": "AMD Venice 2nm ramp announcement",
+      "event_date": "2026-05-21",
+      "status": "ramp_announced",
+      "evidence_ids": [
+        "claim:comp:amd2"
+      ]
+    },
+    {
+      "id": "event:comp:armagi",
+      "name": "Arm AGI CPU launch",
+      "event_date": "2026-03-24",
+      "status": "launched",
+      "evidence_ids": [
+        "claim:comp:arm1"
+      ]
+    },
+    {
+      "id": "event:comp:nvidiavera",
+      "name": "NVIDIA Vera announced",
+      "event_date": "2026-03-16",
+      "status": "launched",
+      "evidence_ids": [
+        "claim:comp:nvda1"
+      ]
+    },
+    {
+      "id": "event:comp:qualcomm",
+      "name": "Qualcomm Meta Dragonfly C1000 future plan",
+      "event_date": "2026-06-24",
+      "status": "production_target_H2_2028",
+      "evidence_ids": [
+        "claim:comp:qcom1"
+      ]
+    },
+    {
+      "id": "event:comp:aws",
+      "name": "Graviton5 R9g GA",
+      "event_date": "2026-08-31",
+      "status": "GA",
+      "evidence_ids": [
+        "claim:comp:aws3"
+      ]
+    },
+    {
+      "id": "event:comp:google",
+      "name": "Axion N4A GA",
+      "event_date": "2026-01-27",
+      "status": "GA",
+      "evidence_ids": [
+        "claim:comp:goog1"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal:comp:intel_mix",
+      "actor": "Intel",
+      "statement": "Q2 2026 server volume +9%, ASP +48%",
+      "inference": "Do not equate ASP mix gain with unit share gain",
+      "evidence_ids": [
+        "claim:comp:intc1"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "signal:comp:graviton",
+      "actor": "AWS",
+      "statement": "M9g, C9g and R9g became generally available",
+      "inference": "Custom Arm can be qualified for several large workload families",
+      "evidence_ids": [
+        "claim:comp:aws1",
+        "claim:comp:aws2",
+        "claim:comp:aws3"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "signal:comp:sandbox",
+      "actor": "Google",
+      "statement": "GKE Agent Sandbox runs on Axion N4A",
+      "inference": "Cloud provider vertically positions custom Arm for agent runtimes",
+      "evidence_ids": [
+        "claim:comp:goog2"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "signal:comp:armmerchant",
+      "actor": "Arm",
+      "statement": "Arm AGI CPU launched with Meta lead partner",
+      "inference": "Arm may capture merchant silicon economics, distinct from IP royalties",
+      "evidence_ids": [
+        "claim:comp:arm1"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "signal:comp:nvidiarack",
+      "actor": "NVIDIA",
+      "statement": "Vera standalone and Vera Rubin CPU/GPU platforms",
+      "inference": "A rack-level system decision may predetermine CPU supplier",
+      "evidence_ids": [
+        "claim:comp:nvda1"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    },
+    {
+      "id": "signal:comp:qualcomm",
+      "actor": "Qualcomm",
+      "statement": "Meta multi-generation agreement and C1000 H2 2028 roadmap",
+      "inference": "Monitor future merchant alternatives, not current 2026 share",
+      "evidence_ids": [
+        "claim:comp:qcom1"
+      ],
+      "alternative_reading": "Public announced intent, limited availability or price/mix shifts may fail to translate to repeatable paid installed share",
+      "as_of": "2026-10-08"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp:comp:intel-recovery",
+      "thesis": "Intel recovers x86 share conditional on Xeon density, price, supply and enterprise software qualification",
+      "evidence_ids": [
+        "claim:comp:intc1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:amd-extension",
+      "thesis": "AMD extends EPYC capture conditional on Venice execution, OEM qualification and workload TCO",
+      "evidence_ids": [
+        "claim:comp:aws1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:captive-arm",
+      "thesis": "Custom hyperscaler Arm accelerates conditional on AWS/Google/Microsoft qualifying more production workloads",
+      "evidence_ids": [
+        "claim:comp:goog2"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:nvidia-host",
+      "thesis": "NVIDIA CPU platform attachment expands conditional on Vera CPU required in GPU rack designs and standalone agent servers",
+      "evidence_ids": [
+        "claim:comp:arm1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:merchant-arm",
+      "thesis": "Merchant Arm breaks through conditional on Arm AGI/Ampere win independent paid deployments",
+      "evidence_ids": [
+        "claim:comp:nvda1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:enterprise-sovereign",
+      "thesis": "Enterprise software and sovereignty favor qualified ecosystems conditional on Certification, data policy and switching hurdles dominate",
+      "evidence_ids": [
+        "claim:comp:qcom1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    },
+    {
+      "id": "hyp:comp:supply-shock",
+      "thesis": "Supply constrains economic winner conditional on Foundry, packaging, memory and allocation shocks",
+      "evidence_ids": [
+        "claim:comp:qcom1"
+      ],
+      "alternative": "Allocation may instead favor incumbents or stay in existing installed capacity; announced platforms do not imply shipments.",
+      "falsification_test": "Match buyer/workload eligible choice sets; check independent task TCO and observed customer rollout/quarterly comparable shipments; reject if no sustained deployment.",
+      "status": "staged_unverified"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:comp:buyer-choice",
+      "question": "Which platforms are production-qualified for each buyer, region and workload?",
+      "priority": "P0",
+      "method": "Reproducible cloud instance/OEM SKU catalog, availability stage and public deployment evidence",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:commercial-ownership",
+      "question": "What is merchant invoiced CPU revenue versus captive value-equivalent and IP royalties?",
+      "priority": "P0",
+      "method": "Commercial buyer, ownership and transfer-pricing boundary audit; prevent additive overlap",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:host-bom",
+      "question": "Which GPU rack architectures require specified host CPU vendors?",
+      "priority": "P0",
+      "method": "Source-verified BOM, physical packages/rack, interchangeability and shipment evidence",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:workload-benchmark",
+      "question": "Which CPU wins on successful agent task/core-second, GiB-hour, energy and TCO?",
+      "priority": "P0",
+      "method": "Matched, replicable workload harness and measurable successful outcome SLA",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:global-share",
+      "question": "How do x86 Mercury series relate to all-ISA physical server CPU unit/revenue share?",
+      "priority": "P0",
+      "method": "Definition and licensed source crosswalk; explicitly unknown missing all-ISA denominator",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:commercial-readiness",
+      "question": "When does Arm AGI or Qualcomm C1000 reach actual paid delivery?",
+      "priority": "P0",
+      "method": "Announce→sample→GA→contract→paid ship→deployment dated funnel",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:enterprise-switch",
+      "question": "How much do enterprise certification and migration cost affect choice?",
+      "priority": "P1",
+      "method": "Audited OS/app certifications and migration time/cost sample",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:supply-signal",
+      "question": "What supply constraints are actually inducing purchase choices?",
+      "priority": "P1",
+      "method": "Company filings, product lead times, OEM GA and availability telemetry",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:price-waterfall",
+      "question": "How do vendor ASP mix and buyer-specific relative TCO alter capture?",
+      "priority": "P1",
+      "method": "Use existing pricing observatory; no fabricated net price",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    },
+    {
+      "id": "q:comp:predictive-backtest",
+      "question": "Which signals predict actual subsequent qualified share gains?",
+      "priority": "P1",
+      "method": "Freeze vintages, events and forward predictions; compare later outcomes",
+      "domains": [
+        "cpu-platforms-and-competitors",
+        "market-demand-2030"
+      ],
+      "decision_impacted": "Fixed-TAM competitive allocation and buyer share attribution"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "conflict:comp:share-denominator",
+      "left_ref": "claim:comp:merc1",
+      "right_ref": "data/demand-2030/scenario-model.json#architecture_share_by_workload_assumptions_for_2026_2030",
+      "issue": "Mercury broad x86 server CPU unit share cannot represent global all-ISA silicon dollar mix or custom cloud silicon",
+      "status": "not_comparable",
+      "resolution_plan": "Constrain to same fiscal period, ISA coverage, units and buyer; hold other denominators unknown"
+    },
+    {
+      "id": "conflict:comp:amd-revenue-boundary",
+      "left_ref": "claim:comp:amd1",
+      "right_ref": "data/demand-2030/scenario-model.json#root_measure",
+      "issue": "AMD Data Center segment combines CPU and GPU revenue; not comparable to CPU-only silicon TAM",
+      "status": "not_comparable",
+      "resolution_plan": "Do not promote to CPU-only market series without independently sourced EPYC-only numerator"
+    }
+  ],
+  "methods": [
+    {
+      "id": "method:comp:fixed-tam",
+      "name": "Fixed TAM transfer and conservation",
+      "procedure": "For scenario/year/workload, retain canonical demand subtotal; allocate only among mutually exclusive qualified CPU silicon economic owners. Set receiving delta = -donor delta, never add demand. Mark unsupported vendor shares null. Separate invoiced merchant sales, captive equivalent and royalty economics.",
+      "assumptions": [
+        "Existing TAM and workload buckets are immutable synthetic inputs",
+        "No speculative realized 2026 vendor share",
+        "Weights sum to 1 only within an explicitly qualified exclusive allocation frame"
+      ]
+    },
+    {
+      "id": "method:comp:signals",
+      "name": "Evidence-based share-shift signal inference",
+      "procedure": "Track source vintage, qualification stage, workload, buyer and counterevidence. Order announced, sampled, verified, GA, contracted, delivered and deployed without conflation. Prefer reproducible successful-task TCO and later shipment validation; record falsifiers.",
+      "assumptions": [
+        "Marketing statements are not independent benchmarks",
+        "All-ISA unit share and net buyer ASP largely unknown",
+        "Future roadmaps have no observed shipment allocation"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req:comp:workbench",
+      "outcome": "Dashboard overlays competitive allocation while existing demand TAM remains frozen",
+      "acceptance_criteria": [
+        "Do not modify canonical scenario-model.json or historical/forecast CSV",
+        "Show unknown shares as null not zero",
+        "Show vendor/ISA/buyer/workload provenance and status",
+        "Prevent allocation double counts; disallow current shipment share for 2028 hardware",
+        "Transfer weights sum exactly to zero across donor and recipient"
+      ]
+    },
+    {
+      "id": "req:comp:tracker",
+      "outcome": "Continuously review competitive moves from launch to deployed revenue capture",
+      "acceptance_criteria": [
+        "Every signal has source and date",
+        "Qualification states visible and reversible with lineage",
+        "Negative/disconfirming signals shown alongside positives",
+        "No unreviewed packet input displayed as observed market data"
+      ]
+    }
+  ],
+  "promotions": [],
+  "handoff": {
+    "summary": "Conditional competitor-capture overlay on fixed existing CPU silicon TAM. Multi-provider moves are staged evidence; no numeric market share promoted.",
+    "next_actions": [
+      "P0 buyer-workload qualified choice sets",
+      "P0 custom silicon economic boundary",
+      "P0 CPU/GPU rack BOM",
+      "P0 matched task TCO benchmark and all-ISA share crosswalk",
+      "P0 future entrant commercial phase tracking"
+    ],
+    "changed_decisions": [
+      "Treat Arm architecture, Arm CPU silicon, royalties and captive cloud savings as separate nonadditive economics",
+      "Treat NVIDIA bundled host CPU supplier as independent competitive control point"
+    ],
+    "limits": [
+      "No audited global all-ISA vendor CPU silicon share",
+      "No net CPU contract ASP",
+      "No validated agent runtime benchmark or commercial transfer price"
+    ]
+  }
+}
