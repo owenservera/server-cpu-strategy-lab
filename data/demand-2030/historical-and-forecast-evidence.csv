@@ -1,0 +1,42 @@
+id,period,frequency,metric,segment,value,unit,measurement_basis,evidence_status,source_id,source_year,caution
+H001,2025,annual,server_system_spending,world_all_server_systems,453.531,USD_billion,system_revenue,tracker_reported,IDC_SERVER_2026,2026,IDC July 2026 vintage; complete servers incl GPUs; NOT CPU silicon
+H002,2025,annual,server_system_spending,x86_server_systems,298.56,USD_billion,system_revenue,tracker_reported,IDC_SERVER_2026,2026,Complete server systems based on IDC x86 classification
+H003,2025,annual,server_system_spending,non_x86_server_systems,154.971,USD_billion,system_revenue,tracker_reported,IDC_SERVER_2026,2026,May include non-x86 accelerator racks; NOT ARM CPU silicon share
+H004,2026,annual,server_system_spending,world_all_server_systems,646.998,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,IDC forecast as of July 28 2026; 2026 not a full-year actual
+H005,2026,annual,server_system_spending,x86_server_systems,335.925,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,IDC forecast not x86 CPU chip revenue
+H006,2026,annual,server_system_spending,non_x86_server_systems,311.072,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,Rounding yields 646.997 vs 646.998 total
+H007,2027,annual,server_system_spending,world_all_server_systems,930.562,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,IDC forecast for all server systems
+H008,2027,annual,server_system_spending,x86_server_systems,485.922,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,System spending; architecture segment not CPU TAM
+H009,2027,annual,server_system_spending,non_x86_server_systems,444.64,USD_billion,system_revenue,forecast,IDC_SERVER_2026,2026,System spending; not Arm chip TAM
+H010,2026-Q1,quarter,server_system_revenue_yoy_growth,world_all_server_systems,30.7,percent,system_revenue_growth,tracker_reported,IDC_SERVER_2026,2026,Worldwide Q1 server systems
+H011,2026-Q1,quarter,server_system_units_yoy_growth,world_all_server_systems,3.3,percent,system_units_growth,tracker_reported,IDC_SERVER_2026,2026,Not CPU units
+H012,2024-Q4,quarter,amd_server_x86_unit_share,broad_server_x86_cpus,25.1,percent,share_of_x86_server_cpu_units,secondary_market_estimate,MERCURY_2024Q4,2025,Public Mercury reprint; exact scope must match other rows
+H013,2025-Q4,quarter,amd_server_x86_unit_share,broad_server_x86_cpus,28.8,percent,share_of_x86_server_cpu_units,secondary_market_estimate,MERCURY_2025Q4,2026,Secondary Mercury reporting
+H014,2026-Q1,quarter,amd_server_x86_unit_share,broad_server_x86_cpus,33.2,percent,share_of_x86_server_cpu_units,secondary_market_estimate,MERCURY_2026Q1,2026,Compare only matched broad-server definition
+H015,2026-Q2,quarter,amd_server_x86_unit_share,broad_server_x86_cpus,34.5,percent,share_of_x86_server_cpu_units,secondary_market_estimate,MERCURY_2026Q2,2026,Broad server x86 estimate; core EPYC vs Xeon SP share is different
+H016,2024-Q4,quarter,amd_server_x86_revenue_share,broad_server_x86_cpus,35.5,percent,share_of_x86_server_cpu_revenue,secondary_market_estimate,MERCURY_2024Q4,2025,Different denominator from unit share
+H017,2025-Q4,quarter,amd_server_x86_revenue_share,broad_server_x86_cpus,41.3,percent,share_of_x86_server_cpu_revenue,secondary_market_estimate,MERCURY_2025Q4,2026,Different denominator from unit share
+H018,2026-Q1,quarter,amd_server_x86_revenue_share,broad_server_x86_cpus,46.2,percent,share_of_x86_server_cpu_revenue,secondary_market_estimate,MERCURY_2026Q1,2026,Secondary reporting: check original Mercury paid category
+H019,2026-Q2,quarter,intel_server_cpu_units_yoy_growth,intel_disclosed_server_cpus,9,percent,cpu_chip_shipments,company_disclosed,INTEL_10Q_2026Q2,2026,Intel filing; driven primarily by hyperscaler demand
+H020,2026-Q2,quarter,intel_server_cpu_asp_yoy_growth,intel_disclosed_server_cpus,48,percent,cpu_realized_asp,company_disclosed,INTEL_10Q_2026Q2,2026,Premium SKU mix major driver; some demand-based pricing
+H021,2026-Q2,quarter,amd_epyc_revenue_yoy_growth,amd_epyc_server_cpus,70,percent,company_reported_cpu_revenue_growth_lower_bound,company_claim_lower_bound,AMD_Q2_2026,2026,Reported greater than 70%; do not treat as exact 70%
+H022,2026-Q2,quarter,amd_cloud_epyc_revenue_yoy_growth,amd_cloud_server_cpus,70,percent,cpu_revenue_growth_lower_bound,company_claim_lower_bound,AMD_Q2_2026,2026,Reported above 70%; segment within AMD EPYC
+H023,2026-Q2,quarter,amd_enterprise_epyc_revenue_yoy_growth,amd_enterprise_server_cpus,70,percent,cpu_revenue_growth_lower_bound,company_claim_lower_bound,AMD_Q2_2026,2026,Reported above 70%; no absolute buyer segmentation
+H024,2026-FYQ2,fiscal_quarter,dell_isg_revenue,dell_infrastructure_solutions,31.8,USD_billion,segment_revenue,company_disclosed,DELL_Q2FY27,2026,Dell FY27 Q2 fiscal; not CPU silicon; server+storage/net
+H025,2026-FYQ2,fiscal_quarter,dell_isg_revenue_yoy_growth,dell_infrastructure_solutions,89,percent,segment_revenue_growth,company_disclosed,DELL_Q2FY27,2026,Fiscal quarter; mix of AI/other equipment
+H026,2026-FYQ2,fiscal_quarter,dell_ai_server_revenue,dell_ai_server_systems,16.4,USD_billion,ai_server_system_revenue,company_disclosed,DELL_Q2FY27,2026,Cannot count again as end-customer CPU buying and/or add separately to ISG
+H027,2026-FYQ2,fiscal_quarter,dell_traditional_server_network_revenue,dell_traditional_server_and_network,10.5,USD_billion,product_line_revenue,company_disclosed,DELL_Q2FY27,2026,Includes networking; cannot label CPU-only or server-only
+H028,2026-FYQ2,fiscal_quarter,dell_traditional_server_network_yoy_growth,dell_traditional_server_and_network,122,percent,product_line_revenue_growth,company_disclosed,DELL_Q2FY27,2026,Growth of system/network category not proof of agent demand
+H029,2026-FYQ3,fiscal_quarter,hpe_server_revenue,hpe_server_segment,6.8,USD_billion,segment_revenue,company_disclosed,HPE_Q3FY26,2026,Q3 FY26; segment definitions differ from Dell
+H030,2026-FYQ3,fiscal_quarter,hpe_server_yoy_growth,hpe_server_segment,35,percent,segment_revenue_growth,company_disclosed,HPE_Q3FY26,2026,Not CPU silicon revenue
+H031,2026-FYQ3,fiscal_quarter,hpe_traditional_server_order_growth,hpe_traditional_server_orders,75,percent,order_growth,company_disclosed,HPE_Q3FY26,2026,"Orders not revenue, no comparable base disclosed"
+H032,2026-FY,fiscal_year,supermicro_total_revenue,supermicro_company,39.1,USD_billion,company_revenue,company_disclosed,SMCI_FY26,2026,FY26 totals include GPU and server systems
+H033,2025-FY,fiscal_year,supermicro_total_revenue,supermicro_company,22,USD_billion,company_revenue,company_disclosed,SMCI_FY26,2026,FY25 comparison
+H034,2026-FY,fiscal_year,supermicro_gross_margin,supermicro_company,10.8,percent,company_gross_margin,company_disclosed,SMCI_FY26,2026,Not CPU industry or ODM-specific margin
+H035,2025,annual,coreweave_total_revenue,coreweave_company,5.1,USD_billion,company_revenue,company_disclosed,COREWEAVE_2025_10K,2026,GPU cloud company's revenue not CPU revenue
+H036,2024,annual,coreweave_total_revenue,coreweave_company,1.9,USD_billion,company_revenue,company_disclosed,COREWEAVE_2025_10K,2026,Company revenue not CPU TAM
+H037,2023,annual,coreweave_total_revenue,coreweave_company,0.229,USD_billion,company_revenue,company_disclosed,COREWEAVE_2025_10K,2026,Historical comparator only
+H038,2026-FYQ1,fiscal_quarter,oracle_iaas_revenue_yoy_growth,oracle_cloud_infrastructure_iaas,121,percent,cloud_service_revenue_growth,company_disclosed,ORACLE_Q1FY27,2026,Fiscal Q1 FY27; growth is not CPU shipment growth
+H039,2025,annual,meta_capex,meta_company,72.2,USD_billion,corporate_capex,company_disclosed,META_2026Q2,2026,"Hardware, data centers and other capex; not CPU spend"
+H040,2026,annual,meta_capex_guidance_low,meta_company,130,USD_billion,corporate_capex_guidance,company_forecast,META_2026Q2,2026,Range low; not realized
+H041,2026,annual,meta_capex_guidance_high,meta_company,145,USD_billion,corporate_capex_guidance,company_forecast,META_2026Q2,2026,Range high; not realized
