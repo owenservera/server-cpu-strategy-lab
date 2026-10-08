@@ -1,0 +1,419 @@
+{
+  "schema": "research-corpus-v1",
+  "date": "2026-10-08",
+  "sources": [
+    {
+      "id": "microsoft-windows-agentic-keynote",
+      "transcript_lines": 1973,
+      "reference": "turn57file1"
+    },
+    {
+      "id": "docker-sbx-microvm-talk",
+      "transcript_lines": 276,
+      "reference": "turn57file2"
+    }
+  ],
+  "warning": "Auto-caption transcript: numbers and names require verification; some line ranges are broad discovery anchors, not pinpointed proof. Claims are not independently verified.",
+  "claims": [
+    {
+      "id": "MS01",
+      "metric": "windows_users",
+      "value": 1000000000,
+      "unit": "users",
+      "qualifier": "over",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        168,
+        171
+      ],
+      "status": "installed_base",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS02",
+      "metric": "local_coding_model_precision",
+      "value": 3,
+      "unit": "bits",
+      "qualifier": "exact",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        383,
+        386
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS03",
+      "metric": "local_coding_model_size_reduction",
+      "value": 80,
+      "unit": "percent",
+      "qualifier": "nearly",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        383,
+        387
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS04",
+      "metric": "local_context",
+      "value": 256000,
+      "unit": "tokens",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        392,
+        394
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS05",
+      "metric": "compact_model_memory",
+      "value": 20,
+      "unit": "GB",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        403,
+        407
+      ],
+      "status": "transcript_uncertain",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS06",
+      "metric": "deepseek_v4_precision",
+      "value": 1.6,
+      "unit": "bits",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        411,
+        417
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS07",
+      "metric": "deepseek_v4_memory",
+      "value": 60,
+      "unit": "GB",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        411,
+        417
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS08",
+      "metric": "local_session_input_tokens",
+      "value": 1600000,
+      "unit": "tokens",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        517,
+        524
+      ],
+      "status": "demonstration",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS09",
+      "metric": "local_session_output_tokens",
+      "value": 10500,
+      "unit": "tokens",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        517,
+        524
+      ],
+      "status": "demonstration",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS10",
+      "metric": "copilot_plus_business_laptop_share",
+      "value": 40,
+      "unit": "percent",
+      "qualifier": "over",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        925,
+        970
+      ],
+      "status": "transcript_uncertain",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS11",
+      "metric": "surface_unified_memory",
+      "value": 128,
+      "unit": "GB",
+      "qualifier": "up to",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        950,
+        1180
+      ],
+      "status": "product_claim",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS12",
+      "metric": "surface_compute",
+      "value": 1,
+      "unit": "PFLOPS",
+      "qualifier": "up to",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        950,
+        1180
+      ],
+      "status": "product_claim",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS13",
+      "metric": "surface_thermal_capacity",
+      "value": 2.5,
+      "unit": "x",
+      "qualifier": "claimed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        950,
+        1180
+      ],
+      "status": "product_claim",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS14",
+      "metric": "surface_battery_performance_retention",
+      "value": 99,
+      "unit": "percent",
+      "qualifier": "over",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        950,
+        1180
+      ],
+      "status": "product_claim",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS15",
+      "metric": "dgx_local_agent_concurrency",
+      "value": 32,
+      "unit": "agents",
+      "qualifier": "demonstrated",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        1100,
+        1370
+      ],
+      "status": "product_demo",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "MS16",
+      "metric": "tested_applications",
+      "value": 1200,
+      "unit": "applications",
+      "qualifier": "over",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        1600,
+        1850
+      ],
+      "status": "partner_claim",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "DK01",
+      "metric": "security_detection_score",
+      "value": 9,
+      "unit": "of 10",
+      "qualifier": "self_report",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        65,
+        73
+      ],
+      "status": "anecdote",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "DK02",
+      "metric": "prompts_to_expose_sensitive_information",
+      "value": 5,
+      "unit": "prompts",
+      "qualifier": "self_report",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        79,
+        87
+      ],
+      "status": "anecdote",
+      "verification": "unverified_transcript_claim"
+    },
+    {
+      "id": "DK03",
+      "metric": "additional_sandbox_command_keystrokes",
+      "value": 7,
+      "unit": "keystrokes",
+      "qualifier": "self_report",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        123,
+        147
+      ],
+      "status": "anecdote",
+      "verification": "unverified_transcript_claim"
+    }
+  ],
+  "strategic": [
+    {
+      "id": "MS-S1",
+      "title": "OS agent identity distinct from human identity",
+      "detail": "Windows containment/attribution and Agent 365 policy",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        190,
+        325
+      ],
+      "research_axis": "sandbox security",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "MS-S2",
+      "title": "Hybrid model routing chooses local vs cloud",
+      "detail": "GitHub Copilot auto efficiency, local subagents and automation",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        336,
+        575
+      ],
+      "research_axis": "local inference displacement",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "MS-S3",
+      "title": "Windows ML uses CPU GPU NPU execution",
+      "detail": "llama.cpp integration proposed",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        424,
+        445
+      ],
+      "research_axis": "x86 direct inference",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "MS-S4",
+      "title": "Agent has local file/action authority",
+      "detail": "Copilot permissioned file access and local operations",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        649,
+        721
+      ],
+      "research_axis": "agent CPU workloads",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "MS-S5",
+      "title": "Local endpoint hardware tiering",
+      "detail": "RTX Spark unified memory and DGX station",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        900,
+        1370
+      ],
+      "research_axis": "endpoint substitution",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "MS-S6",
+      "title": "Agent identity and observability are OS primitives",
+      "detail": "Satya and Jensen discussion of governance",
+      "source": "microsoft-windows-agentic-keynote",
+      "source_lines": [
+        1400,
+        1580
+      ],
+      "research_axis": "CPU security overhead",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "DK-S7",
+      "title": "Agent can access host private data without isolation",
+      "detail": "Speaker's controlled Claude Code desktop demonstration",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        34,
+        87
+      ],
+      "research_axis": "security risk",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "DK-S8",
+      "title": "MicroVM runs isolated kernel and filesystem",
+      "detail": "SBX VM containment and secret substitution",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        88,
+        113
+      ],
+      "research_axis": "CPU memory overhead",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "DK-S9",
+      "title": "Default sandbox prevents host browser history access",
+      "detail": "Speaker's side by side demo",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        123,
+        147
+      ],
+      "research_axis": "isolation effectiveness",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "DK-S10",
+      "title": "Network and MCP governance",
+      "detail": "Network egress policy, filesystem mounts and MCP catalog",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        148,
+        240
+      ],
+      "research_axis": "policy processing",
+      "status": "attributed_unverified"
+    },
+    {
+      "id": "DK-S11",
+      "title": "Identity chains and Cedar policy are prospective",
+      "detail": "Speaker distinguishes current controls from future roadmap",
+      "source": "docker-sbx-microvm-talk",
+      "source_lines": [
+        180,
+        237
+      ],
+      "research_axis": "future governance",
+      "status": "attributed_unverified"
+    }
+  ]
+}
