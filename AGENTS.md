@@ -16,6 +16,10 @@
 8. Run `npm test` and `npm run check:research` where available. Report new evidence, unresolved contradictions, what was reused, what was explicitly *not* verified, and commit SHA.
 9. Preserve the single `main` integration model. Short-lived worktrees are acceptable; avoid permanent departmental branches. Don't change app hosting or deployment without a separate user request.
 
+## Financial disclosure research route
+
+For SEC/IR financial documents, obligations, CPU ASP/volume, hyperscaler infrastructure capex and value-chain financing, read [financial filings protocol](docs/research/financial-filings/README.md) and its [issuer acquisition register](data/financial-filings/issuer-watchlist.json). Database migration `0003_financial_filings.sql` is additive, and staged local JSON intake is never automatic promotion. Keep CPU silicon, server systems, financial obligations and cloud service sales in distinct boundaries. The existence of a watchlist entry is not evidence that a filing has been collected.
+
 **If you have read only this file, the task is not yet ready to implement. Start with [RESEARCH-ENTRY.md](RESEARCH-ENTRY.md).**
 
 This is a light governance contract, not an instruction to bulk-migrate all legacy datasets or build a new database. Existing source sets and research docs remain authoritative in their own definitions until explicitly reconciled.
