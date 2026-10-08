@@ -1,0 +1,10 @@
+id,issued_at,publisher,market,year_horizon,amount_usd_b,qualifier,scope,source_id,access_status,evidence_type,note
+T001,2025-11,AMD,world_server_cpu_silicon_TAM,2030,60,approximately,all_architectures,AMD_CITI_SEP2026,public_company_retrospective,management_forecast,Historical Nov 2025 forecast recalled by AMD Sep 2026
+T002,2026-05-07,AMD,world_server_cpu_silicon_TAM,2030,120,greater_than,all_architectures,AMD_MAY2026,public_primary,management_forecast,Original May 2026 company blog
+T003,2026-05,Citi,world_server_cpu_silicon_TAM,2030,131.5,approximately,all_architectures,CITI_MAY2026,public_secondary_only,analyst_forecast,Analyst publication not licensed or directly reviewed
+T004,2026-06,Bank_of_America,world_server_cpu_silicon_TAM,2030,170,greater_than,all_architectures,BOFA_AUG2026,secondary_recap_unverified,analyst_forecast,Earlier BofA vintage referenced by subsequent article; verify original date
+T005,2026-06,Bernstein,world_server_cpu_silicon_TAM,2030,223.4,approximately,all_architectures,BERNSTEIN_JUN2026,paywalled_not_accessed,analyst_forecast,Unlicensed report not independently reviewed
+T006,2026-07-23,AMD,world_server_cpu_silicon_TAM,2030,200,greater_than,all_architectures,AMD_CITI_SEP2026,keynote_derived,management_forecast,Keynote >200B; source video and local transcript already indexed
+T007,2026-08,Bank_of_America,world_server_cpu_silicon_TAM,2030,210.6,approximately,all_architectures,BOFA_AUG2026,public_secondary_only,analyst_forecast,Latest public reporting; original licensed analyst note not reviewed
+T008,2026-09-08,AMD,world_server_cpu_silicon_TAM,2030,220,greater_than,all_architectures,AMD_CITI_SEP2026,public_transcript,management_forecast,AMD CFO described more than 220B not 220B exact; agentic >50 percent
+T009,2026-10-07,Citi,world_server_cpu_silicon_TAM,2030,300,approximately,all_architectures,CITI_OCT2026,public_secondary_only,analyst_forecast,Newly reported analyst estimate as of Oct 7; original note unverified; exceeds older AMD >220B
