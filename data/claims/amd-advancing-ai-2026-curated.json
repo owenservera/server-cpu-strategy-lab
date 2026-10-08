@@ -1,0 +1,1570 @@
+{
+  "schema_version": "1.0",
+  "source_id": "amd-advancing-ai-2026-keynote-transcript",
+  "event_date": "2026-07-23",
+  "prepared_as_of": "2026-10-08",
+  "source_url": "https://www.youtube.com/watch?v=crEztVjfAPM",
+  "original_sha256": "1e5f2be84eff6c3ff81b71564d44f7c4ac0b355141782859e7686e72b866a058",
+  "method": "Human-normalized data-point extraction from the uploaded 3,189-line auto-generated transcript. Every assertion carries source line range; all claims are attributed to speakers/AMD, not verified independent facts. Full numeric-token index stored separately. This corpus does not republish transcript text.",
+  "independent_evidence": [
+    "https://ir.amd.com/news-events/press-releases/detail/1294/aai-2026-amd-delivers-full-stack-compute-for-the-agentic-ai-era",
+    "https://www.amd.com/en/blogs/2026/agentic-ai-amd-epyc-9005-cpus-wins-today-epyc-9006.html",
+    "https://www.amd.com/content/dam/amd/en/documents/solutions/ai/methodology-description.pdf",
+    "https://newsroom.amd.com/news/rocm-10-software-ai-native-developer-experiences/"
+  ],
+  "record_count": 97,
+  "records": [
+    {
+      "id": "A001",
+      "theme": "AI demand",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        47,
+        53
+      ],
+      "metric": "AI monthly token consumption",
+      "value": 35,
+      "unit": "quadrillion tokens/month",
+      "statement_class": "management_estimate",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Define measured universe, tokens counted and independent tracking."
+    },
+    {
+      "id": "A002",
+      "theme": "AI demand",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        50,
+        54
+      ],
+      "metric": "Two-year token volume multiple",
+      "value": 160,
+      "unit": "x",
+      "statement_class": "management_estimate",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Nearly; no base volumes or publisher specified."
+    },
+    {
+      "id": "A003",
+      "theme": "AI demand",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        57,
+        65
+      ],
+      "metric": "Frontier training compute annual growth",
+      "value": 5,
+      "unit": "x/year",
+      "statement_class": "management_estimate",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Roughly; measure is undefined."
+    },
+    {
+      "id": "A004",
+      "theme": "AI demand",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        74,
+        85
+      ],
+      "metric": "Inference share of AI compute capacity in 2026",
+      "value": 60,
+      "unit": "%",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Global capacity denominator (FLOPs, hours, spending or utilization) unspecified."
+    },
+    {
+      "id": "A005",
+      "theme": "AI market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        126,
+        143
+      ],
+      "metric": "Previous 2028 AI accelerator TAM",
+      "value": 500,
+      "unit": "USD billion",
+      "statement_class": "past_management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Vintage matters; prior forecast not current."
+    },
+    {
+      "id": "A006",
+      "theme": "AI market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        136,
+        152
+      ],
+      "metric": "2030 AI accelerator TAM",
+      "value": 1.4,
+      "unit": "USD trillion",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Accelerators only, not server CPU market."
+    },
+    {
+      "id": "A007",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        161,
+        178
+      ],
+      "metric": "Previous server CPU market long-term forecast",
+      "value": 60,
+      "unit": "USD billion",
+      "statement_class": "past_management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Original time horizon requires slide confirmation."
+    },
+    {
+      "id": "A008",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        169,
+        180
+      ],
+      "metric": "Previous server CPU market CAGR",
+      "value": 18,
+      "unit": "percent/year",
+      "statement_class": "past_management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Transcript says 18–20%; stored here lower bound."
+    },
+    {
+      "id": "A009",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        169,
+        180
+      ],
+      "metric": "Previous server CPU market CAGR upper bound",
+      "value": 20,
+      "unit": "percent/year",
+      "statement_class": "past_management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Transcript says 18–20%."
+    },
+    {
+      "id": "A010",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        189,
+        197
+      ],
+      "metric": "2026 starting server CPU market estimate",
+      "value": 25,
+      "unit": "USD billion",
+      "statement_class": "management_estimate",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Verify whether 2025 actual or 2026 baseline, revenue vs TAM."
+    },
+    {
+      "id": "A011",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        189,
+        197
+      ],
+      "metric": "2030 new server CPU TAM lower bound",
+      "value": 200,
+      "unit": "USD billion",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Over 200B, not exact; later AMD mentions approximately 220B."
+    },
+    {
+      "id": "A012",
+      "theme": "CPU market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        189,
+        196
+      ],
+      "metric": "CPU market claimed annual growth threshold",
+      "value": 50,
+      "unit": "percent/year",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Over 50%; reconcile base year with 25B to 200B."
+    },
+    {
+      "id": "A013",
+      "theme": "AMD total market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        213,
+        222
+      ],
+      "metric": "AMD high-performance and adaptive products TAM",
+      "value": 2,
+      "unit": "USD trillion by 2030",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Much broader than servers or GPUs; no additive sum with categories."
+    },
+    {
+      "id": "A014",
+      "theme": "AMD total market",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        213,
+        220
+      ],
+      "metric": "Broad portfolio TAM growth",
+      "value": 40,
+      "unit": "percent/year",
+      "statement_class": "management_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Roughly; vintage, base, and overlap needed."
+    },
+    {
+      "id": "A015",
+      "theme": "EPYC share",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        278,
+        290
+      ],
+      "metric": "Fortune 100 usage penetration",
+      "value": 60,
+      "unit": "% of companies (lower bound)",
+      "statement_class": "management_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Over 60%; does not indicate percentage of CPU spending."
+    },
+    {
+      "id": "A016",
+      "theme": "EPYC share",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        285,
+        291
+      ],
+      "metric": "EPYC server revenue share latest quarter",
+      "value": 46,
+      "unit": "%",
+      "statement_class": "management_estimate",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Define Mercury vs AMD self-estimate, server scope and quarter."
+    },
+    {
+      "id": "A017",
+      "theme": "Helios product",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        360,
+        369
+      ],
+      "metric": "MI455 package transistors",
+      "value": 320,
+      "unit": "billion transistors",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Transcription product nomenclature and counts need launch kit."
+    },
+    {
+      "id": "A018",
+      "theme": "Helios product",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        364,
+        369
+      ],
+      "metric": "MI455 chiplets",
+      "value": 12,
+      "unit": "compute and I/O chiplets",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Transcription says 'triplets', verify packaging split."
+    },
+    {
+      "id": "A019",
+      "theme": "Helios product",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        366,
+        370
+      ],
+      "metric": "MI455 HBM memory capacity",
+      "value": 432,
+      "unit": "GB",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Check whether usable HBM4 and per accelerator."
+    },
+    {
+      "id": "A020",
+      "theme": "Helios product",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        365,
+        368
+      ],
+      "metric": "MI455 process nodes",
+      "value": "2nm and 3nm",
+      "unit": "TSMC technology",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Need mapping to particular dies."
+    },
+    {
+      "id": "A021",
+      "theme": "Helios CPU",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        375,
+        382
+      ],
+      "metric": "Helios CPU board cores",
+      "value": 96,
+      "unit": "CPU cores",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Conflicts arithmetically with 4,600+ cores /18 CPU rack claim: investigate variant."
+    },
+    {
+      "id": "A022",
+      "theme": "Helios networking",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        397,
+        405
+      ],
+      "metric": "Helios transcript GPU rack count",
+      "value": 75,
+      "unit": "GPUs",
+      "statement_class": "transcript_ambiguous",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Official AMD July press release says 72 GPU /18 CPU; transcript likely 75 transcription error."
+    },
+    {
+      "id": "A023",
+      "theme": "Helios networking",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        389,
+        402
+      ],
+      "metric": "Volcano network cards per tray board",
+      "value": 6,
+      "unit": "network cards (up to)",
+      "statement_class": "transcript_ambiguous",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Pensando Vulcano, not Volcano; confirm per-board/tray."
+    },
+    {
+      "id": "A024",
+      "theme": "Helios benchmarking",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        408,
+        415
+      ],
+      "metric": "Helios competitor compute advantage",
+      "value": 15,
+      "unit": "%",
+      "statement_class": "marketing_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Comparator/workload unspecified in transcript."
+    },
+    {
+      "id": "A025",
+      "theme": "Helios benchmarking",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        408,
+        420
+      ],
+      "metric": "Helios HBM4 capacity and bandwidth advantage",
+      "value": 50,
+      "unit": "%",
+      "statement_class": "marketing_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Verify comparison configuration and scope."
+    },
+    {
+      "id": "A026",
+      "theme": "Helios benchmarking",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        408,
+        415
+      ],
+      "metric": "Helios scaleout bandwidth advantage",
+      "value": 50,
+      "unit": "%",
+      "statement_class": "marketing_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Verify networking topology, competitor."
+    },
+    {
+      "id": "A027",
+      "theme": "Helios hardware",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        430,
+        439
+      ],
+      "metric": "Helios rack CDNA5 compute units",
+      "value": 18000,
+      "unit": "compute units (more than)",
+      "statement_class": "marketing_product_spec",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Potential GPU count or CU count ambiguity."
+    },
+    {
+      "id": "A028",
+      "theme": "Helios hardware",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        434,
+        438
+      ],
+      "metric": "Helios rack Zen6 CPU cores",
+      "value": 4600,
+      "unit": "cores (more than)",
+      "statement_class": "marketing_product_spec",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Compare official 18 CPUs and 96-core Venice HF; likely mismatched variants."
+    },
+    {
+      "id": "A029",
+      "theme": "Helios hardware",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        434,
+        437
+      ],
+      "metric": "Helios rack HBM4",
+      "value": 31,
+      "unit": "TB",
+      "statement_class": "marketing_product_spec",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "72 × 432GB nearly 31TB; confirm decimal/binary."
+    },
+    {
+      "id": "A030",
+      "theme": "Helios delivery",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        439,
+        447
+      ],
+      "metric": "Helios shipments expected",
+      "value": "late Q3 2026",
+      "unit": "quarter",
+      "statement_class": "company_schedule",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Full production claim vs actual volume shipments to validate."
+    },
+    {
+      "id": "A031",
+      "theme": "Anthropic",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        485,
+        491
+      ],
+      "metric": "Anthropic Helios deployment agreement",
+      "value": 2,
+      "unit": "GW (up to)",
+      "statement_class": "partner_announcement",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Capacity commitment is not installed or deployed capacity."
+    },
+    {
+      "id": "A032",
+      "theme": "OpenAI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        746,
+        752
+      ],
+      "metric": "OpenAI AMD infrastructure agreement",
+      "value": 6,
+      "unit": "GW (up to)",
+      "statement_class": "partner_announcement",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Not yet delivered; requires staged MW/GPU/CPU BOM timeline."
+    },
+    {
+      "id": "A033",
+      "theme": "Helios perf",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        616,
+        629
+      ],
+      "metric": "MI455 vs MI355 inference at low concurrency",
+      "value": 4,
+      "unit": "x throughput",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Specific DeepSeek model and concurrency; not blanket."
+    },
+    {
+      "id": "A034",
+      "theme": "Helios perf",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        629,
+        638
+      ],
+      "metric": "MI455 vs MI355 at highest concurrency",
+      "value": 34,
+      "unit": "x throughput (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Specific model/precision and concurrency, compare common conditions."
+    },
+    {
+      "id": "A035",
+      "theme": "Helios perf",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        641,
+        655
+      ],
+      "metric": "MI455 versus predecessor token economics",
+      "value": 18,
+      "unit": "x tokens/USD (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Pricing denominator and power assumptions unspecified."
+    },
+    {
+      "id": "A036",
+      "theme": "Helios perf",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        658,
+        668
+      ],
+      "metric": "Helios rack power-constrained performance",
+      "value": "10–15",
+      "unit": "% advantage on average",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "AMD selected workloads, matching rack power."
+    },
+    {
+      "id": "A037",
+      "theme": "Helios perf",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        672,
+        678
+      ],
+      "metric": "Helios tokens/dollar advantage vs competing rack",
+      "value": 30,
+      "unit": "% more (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Official AMD footnote: Kimi K2 Thinking 32K/8K, cost projections."
+    },
+    {
+      "id": "A038",
+      "theme": "Venice baseline",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        924,
+        933
+      ],
+      "metric": "Turin cores",
+      "value": 192,
+      "unit": "cores (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Turin 5th Gen EPYC peak model."
+    },
+    {
+      "id": "A039",
+      "theme": "Venice baseline",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        926,
+        930
+      ],
+      "metric": "Turin threads",
+      "value": 384,
+      "unit": "threads (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "SMT enabled."
+    },
+    {
+      "id": "A040",
+      "theme": "Venice launch",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        981,
+        989
+      ],
+      "metric": "Venice performance vs Turin",
+      "value": 1.8,
+      "unit": "x (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Workload/benchmark unspecified."
+    },
+    {
+      "id": "A041",
+      "theme": "Venice launch",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        988,
+        997
+      ],
+      "metric": "Venice transistors",
+      "value": 203,
+      "unit": "billion",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Check whether package/die particular variant."
+    },
+    {
+      "id": "A042",
+      "theme": "Venice launch",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        995,
+        1002
+      ],
+      "metric": "Venice threads/socket",
+      "value": 512,
+      "unit": "threads (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "256-core variant SMT."
+    },
+    {
+      "id": "A043",
+      "theme": "Venice launch",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        999,
+        1003
+      ],
+      "metric": "Venice memory and I/O bandwidth",
+      "value": 2,
+      "unit": "x vs prior generation",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Separately measure memory throughput and I/O capability."
+    },
+    {
+      "id": "A044",
+      "theme": "Venice HF",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1012,
+        1020
+      ],
+      "metric": "Venice HF host CPU cores",
+      "value": 96,
+      "unit": "cores",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "8 × 12 cores; design goal high-frequency GPU feed."
+    },
+    {
+      "id": "A045",
+      "theme": "Venice HF",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1014,
+        1018
+      ],
+      "metric": "Venice HF boost clock",
+      "value": 5,
+      "unit": "GHz (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Maximum clock not sustained fleet clock."
+    },
+    {
+      "id": "A046",
+      "theme": "Venice agent CPU",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1023,
+        1031
+      ],
+      "metric": "Venice sandbox CPU cores",
+      "value": 256,
+      "unit": "cores",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Designed for density, not proof of agent throughput."
+    },
+    {
+      "id": "A047",
+      "theme": "Venice agent CPU",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1025,
+        1030
+      ],
+      "metric": "Venice sandbox CPU threads",
+      "value": 512,
+      "unit": "threads",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "SMT thread proxy shouldn't be called agent count."
+    },
+    {
+      "id": "A048",
+      "theme": "Venice enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1034,
+        1044
+      ],
+      "metric": "Venice enterprise variant cores",
+      "value": 128,
+      "unit": "cores",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Different power/price optimization."
+    },
+    {
+      "id": "A049",
+      "theme": "Venice future",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1046,
+        1060
+      ],
+      "metric": "Verano next generation host CPU",
+      "value": "2027",
+      "unit": "expected year",
+      "statement_class": "roadmap_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Transcribed as 'Verono'; official AMD roadmap spells Verano."
+    },
+    {
+      "id": "A050",
+      "theme": "Venice future",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1052,
+        1059
+      ],
+      "metric": "Venice X 3D V-cache variant",
+      "value": "2027",
+      "unit": "expected year",
+      "statement_class": "roadmap_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Confirm timing and SKU features."
+    },
+    {
+      "id": "A051",
+      "theme": "Venice claims",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1077,
+        1084
+      ],
+      "metric": "Venice AI host tokens/sec versus competitive x86",
+      "value": 1.8,
+      "unit": "x (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Host CPU affects GPU feed; hold GPU/system constant."
+    },
+    {
+      "id": "A052",
+      "theme": "Venice claims",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1083,
+        1092
+      ],
+      "metric": "Venice agent sandbox agents/watt versus competitor",
+      "value": 2,
+      "unit": "x (over)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Agent may be SMT thread proxy, not full end-to-end benchmark."
+    },
+    {
+      "id": "A053",
+      "theme": "Venice claims",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1087,
+        1092
+      ],
+      "metric": "Venice general workload performance/watt",
+      "value": 2,
+      "unit": "x (over)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "100kW rack baseline; independent rack model required."
+    },
+    {
+      "id": "A054",
+      "theme": "Venice ARM competition",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1092,
+        1101
+      ],
+      "metric": "Venice agents/watt versus leading ARM chip",
+      "value": 2.8,
+      "unit": "x (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "AMD footnotes model threads proxy; not actual agent completion throughput."
+    },
+    {
+      "id": "A055",
+      "theme": "Venice ARM competition",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1097,
+        1102
+      ],
+      "metric": "Venice rack performance/watt versus ARM",
+      "value": 3.3,
+      "unit": "x (up to)",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Rack BOM, networking, workload and cooling normalize."
+    },
+    {
+      "id": "A056",
+      "theme": "Venice ARM competition",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1119,
+        1129
+      ],
+      "metric": "Venice per-core performance advantage versus ARM",
+      "value": 20,
+      "unit": "%",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Unknown comparator/workload."
+    },
+    {
+      "id": "A057",
+      "theme": "Venice ARM competition",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1123,
+        1129
+      ],
+      "metric": "Venice per-socket performance advantage versus ARM",
+      "value": 2.2,
+      "unit": "x",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Check SKU and benchmark setup."
+    },
+    {
+      "id": "A058",
+      "theme": "Venice rack",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1149,
+        1161
+      ],
+      "metric": "Agentic CPU rack core density range",
+      "value": "25000–50000",
+      "unit": "cores/rack",
+      "statement_class": "vendor_configuration_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Verify form factors, rack powers, CPU mix, cores versus threads; transcript ambiguous."
+    },
+    {
+      "id": "A059",
+      "theme": "Venice timeline",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1168,
+        1179
+      ],
+      "metric": "Venice OEM/cloud rollout",
+      "value": "Q4 2026",
+      "unit": "expected start",
+      "statement_class": "company_schedule",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Reported full production versus public SKU/orderable deployment."
+    },
+    {
+      "id": "A060",
+      "theme": "Meta",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1284,
+        1298
+      ],
+      "metric": "Meta EPYC product generations",
+      "value": 4,
+      "unit": "generations at least",
+      "statement_class": "partner_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Milan, Bergamo, Turin and Venice; partnership history not deployment volume."
+    },
+    {
+      "id": "A061",
+      "theme": "Meta",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1333,
+        1339
+      ],
+      "metric": "Meta Instinct deal",
+      "value": 6,
+      "unit": "GW (up to)",
+      "statement_class": "partner_announcement",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Timing, CPU attach, degree of firm commitment unknown."
+    },
+    {
+      "id": "A062",
+      "theme": "Meta",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1408,
+        1418
+      ],
+      "metric": "Meta planning lead time",
+      "value": 2,
+      "unit": "years (illustrative)",
+      "statement_class": "partner_opinion",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Horizon / co-design cycle, not universal build lead time."
+    },
+    {
+      "id": "A063",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1728,
+        1742
+      ],
+      "metric": "Hyperloom tested model suite",
+      "value": 14000,
+      "unit": "models",
+      "statement_class": "software_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "What does a model entry/run mean? Distinct? Validate logs."
+    },
+    {
+      "id": "A064",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1769,
+        1777
+      ],
+      "metric": "ROCm.ai example optimization tokens/second",
+      "value": 38,
+      "unit": "% improvement",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Single model and configuration demo, not benchmark average."
+    },
+    {
+      "id": "A065",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1784,
+        1790
+      ],
+      "metric": "ROCm.ai inference speedup vs ROCm 7",
+      "value": 3.3,
+      "unit": "x",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Same hardware and specified workloads; not CPU compute support."
+    },
+    {
+      "id": "A066",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1798,
+        1806
+      ],
+      "metric": "ROCm.ai training uplift vs ROCm 7",
+      "value": 2.4,
+      "unit": "x average",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Same hardware, optimizations and methodology."
+    },
+    {
+      "id": "A067",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1810,
+        1818
+      ],
+      "metric": "MI455 demonstrated memory bandwidth",
+      "value": 20,
+      "unit": "TB/s",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Check aggregate device versus rack, measured parameters."
+    },
+    {
+      "id": "A068",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1810,
+        1818
+      ],
+      "metric": "MI455 demonstrated compute",
+      "value": 20,
+      "unit": "PFLOPS",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Precision, power, kernel, peak vs measured."
+    },
+    {
+      "id": "A069",
+      "theme": "ROCm.ai",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        1837,
+        1844
+      ],
+      "metric": "Helios live demo model parameters",
+      "value": 1.6,
+      "unit": "trillion parameters",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "DeepSeek V4 Pro name requires independent confirmation."
+    },
+    {
+      "id": "A070",
+      "theme": "HPC",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2050,
+        2062
+      ],
+      "metric": "MI430X FP64 throughput",
+      "value": 288,
+      "unit": "TFLOPS",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Precision/dense sparse distinction; generation comparisons."
+    },
+    {
+      "id": "A071",
+      "theme": "HPC",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2049,
+        2062
+      ],
+      "metric": "MI430X FP64 vs competition",
+      "value": 9,
+      "unit": "x nearly",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Competitor and workload missing."
+    },
+    {
+      "id": "A072",
+      "theme": "HPC",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2059,
+        2064
+      ],
+      "metric": "MI430X shipping",
+      "value": "H1 2027",
+      "unit": "expected period",
+      "statement_class": "company_schedule",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Orderability and national-lab deployment distinction."
+    },
+    {
+      "id": "A073",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2155,
+        2162
+      ],
+      "metric": "AMD public-cloud VM consumption growth",
+      "value": 76,
+      "unit": "% CAGR for 3 years",
+      "statement_class": "company_metric",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Base, provider coverage, consumed vCPU-hours vs instances? Not necessarily global share."
+    },
+    {
+      "id": "A074",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2177,
+        2181
+      ],
+      "metric": "Venice SKU core-count range",
+      "value": "8–256",
+      "unit": "cores",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Range across family, identify power and list ASP per SKU."
+    },
+    {
+      "id": "A075",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2192,
+        2200
+      ],
+      "metric": "AMD enterprise workload benchmark versus competition",
+      "value": 2.5,
+      "unit": "x minimum",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Need workload matrix and comparators."
+    },
+    {
+      "id": "A076",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2262,
+        2268
+      ],
+      "metric": "MI350P model support capacity",
+      "value": 260,
+      "unit": "billion parameters (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Model quantization/context/precision makes comparison non-generalizable."
+    },
+    {
+      "id": "A077",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2268,
+        2272
+      ],
+      "metric": "MI350P token/$ vs competitor",
+      "value": 4,
+      "unit": "x over",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Official release says up to 4.2x, not exact 4x; verify comparator."
+    },
+    {
+      "id": "A078",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2318,
+        2326
+      ],
+      "metric": "Mixed hosted vs local routing token cost reduction",
+      "value": 43,
+      "unit": "%",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Customer token mix, $/token and model quality need validation."
+    },
+    {
+      "id": "A079",
+      "theme": "Enterprise",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2323,
+        2329
+      ],
+      "metric": "Local request responsiveness",
+      "value": 3,
+      "unit": "x (up to)",
+      "statement_class": "vendor_demo",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Compare workloads and latency distributions."
+    },
+    {
+      "id": "A080",
+      "theme": "AT&T",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2381,
+        2404
+      ],
+      "metric": "AT&T daily calls",
+      "value": 300000,
+      "unit": "calls/day (over)",
+      "statement_class": "partner_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Opportunity for CPU transcription/ETL, clarify call count measure."
+    },
+    {
+      "id": "A081",
+      "theme": "AT&T",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2380,
+        2390
+      ],
+      "metric": "AT&T generative AI production models",
+      "value": 100,
+      "unit": "models (over)",
+      "statement_class": "partner_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Non-x86 attribution and workload economics unclear."
+    },
+    {
+      "id": "A082",
+      "theme": "AT&T",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2490,
+        2498
+      ],
+      "metric": "Open telco model downloads",
+      "value": 18,
+      "unit": "million (over)",
+      "statement_class": "partner_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Download count is not production adoption."
+    },
+    {
+      "id": "A083",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2592,
+        2599
+      ],
+      "metric": "Small open model equivalence",
+      "value": "120B→9B",
+      "unit": "model parameters",
+      "statement_class": "management_comparison",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Benchmark, quantization and model names require verification."
+    },
+    {
+      "id": "A084",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2615,
+        2622
+      ],
+      "metric": "Ryzen AI 400 model support",
+      "value": 24,
+      "unit": "billion parameters (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Assumes model size/precision."
+    },
+    {
+      "id": "A085",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2619,
+        2624
+      ],
+      "metric": "Ryzen AI Max model support",
+      "value": 200,
+      "unit": "billion parameters (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Runtime/quantization caveat."
+    },
+    {
+      "id": "A086",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2630,
+        2636
+      ],
+      "metric": "Ryzen AI Halo unified memory",
+      "value": 120,
+      "unit": "GB",
+      "statement_class": "transcript_ambiguous",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Later keynote says 128GB baseline; verify SKU configuration."
+    },
+    {
+      "id": "A087",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2683,
+        2689
+      ],
+      "metric": "Gorgon Halo unified memory",
+      "value": 192,
+      "unit": "GB",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Prior 128GB baseline; test OS availability."
+    },
+    {
+      "id": "A088",
+      "theme": "Personal AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2684,
+        2689
+      ],
+      "metric": "Gorgon Halo model capacity",
+      "value": 300,
+      "unit": "billion parameters (up to)",
+      "statement_class": "product_spec_claim",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Quantization/context model support."
+    },
+    {
+      "id": "A089",
+      "theme": "Cisco",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2738,
+        2749
+      ],
+      "metric": "Continuous agent demand pattern",
+      "value": "24/7",
+      "unit": "hours/day",
+      "statement_class": "partner_hypothesis",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Operational duty cycle is a testable scenario, not proof of every agent."
+    },
+    {
+      "id": "A090",
+      "theme": "Physical AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2990,
+        2998
+      ],
+      "metric": "Kria AI real-time comparison vs NVIDIA",
+      "value": 3.4,
+      "unit": "x",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Third-party benchmark claimed; locate test details."
+    },
+    {
+      "id": "A091",
+      "theme": "Physical AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2990,
+        2998
+      ],
+      "metric": "Kria concurrent agent comparison",
+      "value": 2.3,
+      "unit": "x",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "Concurrency scope unclear."
+    },
+    {
+      "id": "A092",
+      "theme": "Physical AI",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        2992,
+        2999
+      ],
+      "metric": "Kria CPU capacity comparison",
+      "value": 1.6,
+      "unit": "x",
+      "statement_class": "vendor_benchmark",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P2",
+      "caveat": "CPU proxy and target platform unclear."
+    },
+    {
+      "id": "A093",
+      "theme": "CPU roadmap",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        3065,
+        3073
+      ],
+      "metric": "Zen7 Florence planned",
+      "value": 2028,
+      "unit": "year",
+      "statement_class": "roadmap_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "Official release confirms Florence/Ferrara/Fidenza Zen7 and AI extensions."
+    },
+    {
+      "id": "A094",
+      "theme": "CPU roadmap",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        3074,
+        3080
+      ],
+      "metric": "Zen8 Ravenna planned",
+      "value": 2030,
+      "unit": "year",
+      "statement_class": "roadmap_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P0",
+      "caveat": "ASR renders 'Revena', official says Ravenna."
+    },
+    {
+      "id": "A095",
+      "theme": "GPU roadmap",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        3092,
+        3100
+      ],
+      "metric": "MI500 planned",
+      "value": 2027,
+      "unit": "year",
+      "statement_class": "roadmap_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Official release confirms 2027."
+    },
+    {
+      "id": "A096",
+      "theme": "GPU roadmap",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        3097,
+        3102
+      ],
+      "metric": "MI600 planned",
+      "value": 2028,
+      "unit": "year",
+      "statement_class": "roadmap_forecast",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Official release confirms 2028."
+    },
+    {
+      "id": "A097",
+      "theme": "GPU roadmap",
+      "source_id": "amd-advancing-ai-2026-keynote-transcript",
+      "source_lines": [
+        3107,
+        3116
+      ],
+      "metric": "Four-year inference throughput ambition",
+      "value": 2000,
+      "unit": "x (more than)",
+      "statement_class": "management_projection",
+      "verification_status": "keynote_extracted",
+      "priority_for_follow_up": "P1",
+      "caveat": "Vague baseline/benchmark; highly promotional projection."
+    }
+  ]
+}
